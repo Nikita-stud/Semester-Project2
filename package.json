@@ -1,0 +1,16 @@
+{
+  "name": "semester-project2",
+  "version": "1.0.0",
+  "description": "My own portfolio website is for you to look through my progress and maybe eventually decide to get me onboard of whatever cool idea or project you have going on. The website focuses on the academic progress of my acquired skills.",
+  "main": "für-mich.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "build": "npx tailwindcss -i ./css/input.css -o ./css/style.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
