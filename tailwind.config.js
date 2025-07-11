@@ -3,6 +3,9 @@ module.exports = {
   content: ["./**/*.{html,js}", "!./node_modules/**/*"],
   theme: {
     extend: {
+      screens: {
+        xs: "280px",
+      },
       fontFamily: {
         garamond: ["EB Garamond"],
         // helvetica: ["EB Garamond"],
@@ -20,6 +23,9 @@ module.exports = {
         grey: "#757575",
         yellow: "#FFCA13",
         darkerYellow: "#92613A",
+      },
+      backgroundImage: {
+        mobileCircles: "url('../images/mobile-sides.png')",
       },
     },
   },

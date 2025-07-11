@@ -30,7 +30,17 @@
       </a>
     </header>
 
-    <main class="grid place-items-center grid-rows-1fr md:grid-cols-[auto_1fr]">
+    <main
+      class="grid place-items-center grid-rows-1fr md:grid-cols-[auto_1fr] relative"
+    >
+      <div
+        class="bg-mobileCircles -z-10 top-40 -left-[210px] w-[442px] h-[300px] bg-contain bg-no-repeat bg-center fixed pointer-events-none"
+      ></div>
+
+      <div
+        class="bg-mobileCircles -z-10 top-[20px] -right-[210px] w-[442px] h-[300px] scale-x-[-1] bg-contain bg-no-repeat bg-center fixed pointer-events-none"
+      ></div>
+
       <section>
         <h1
           class="grid place-items-center font-garamond font-bold text-mobileMainHeader"
@@ -39,9 +49,9 @@
         </h1>
         <div class="mt-[20px]">
           <form id="registerForm" class="flex flex-col gap-[20px]">
-            <div class="flex flex-col">
+            <div class="grid grid-flow-col place-content-center">
               <fieldset
-                class="relative bg-formWhite border w-[280px] h-[60px] rounded-full"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px]"
               >
                 <legend class="ml-10 font-bold text-grey px-2">
                   Name
@@ -58,9 +68,9 @@
                 />
               </fieldset>
             </div>
-            <div class="flex flex-col">
+            <div class="grid grid-flow-col place-content-center">
               <fieldset
-                class="relative bg-formWhite border w-[280px] h-[60px] rounded-full"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px]"
               >
                 <legend class="ml-10 font-bold text-grey px-2">
                   Email
@@ -76,9 +86,9 @@
                 />
               </fieldset>
             </div>
-            <div class="flex flex-col">
+            <div class="grid grid-flow-col place-content-center">
               <fieldset
-                class="relative bg-formWhite border w-[280px] h-[60px] rounded-full"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px]"
               >
                 <legend class="ml-10 font-bold text-grey px-2">
                   Password
@@ -97,7 +107,7 @@
             <button
               type="submit"
               id="submitRegister"
-              class="my-2 w-[280px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton"
+              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px]"
             >
               Create Account
             </button>
@@ -110,7 +120,11 @@
           </p>
           <p class="text-mobileText">
             Already have an account?
-            <a href="login.html" class="text-darkerYellow font-bold">Sign in</a>
+            <a
+              href="login.html"
+              class="text-darkerYellow font-bold grid place-content-center xs:inline"
+              >Sign in</a
+            >
           </p>
         </div>
       </section>
