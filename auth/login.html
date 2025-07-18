@@ -12,13 +12,139 @@
       src="https://kit.fontawesome.com/54f19440a6.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="/js/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="/js/index.js"></script>
   </head>
+  <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <header class="pl-[20px] pt-[20px]">
+      <a href="/index.html">
+        <img
+          src="/images/logo-mobile.png"
+          class="md:hidden"
+          alt="Logo of Farmersbid website"
+        />
+        <img
+          src="/images/logo-desktop.png"
+          class="hidden md:block"
+          alt="Logo of Farmersbid website"
+        />
+      </a>
+    </header>
 
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <main class="grid place-items-center grid-rows-1fr relative">
+      <div
+        class="bg-mobileCircles -z-10 top-60 -left-[190px] w-[442px] h-[380px] bg-contain bg-no-repeat bg-center fixed pointer-events-none md:bg-desktopCircles md:rotate-90 md:scale-x-[-1] md:top-[15px] md:-left-[190px] md:w-[550px] md:h-[939px]"
+      ></div>
+
+      <div
+        class="bg-mobileCircles -z-10 top-[100px] -right-[190px] w-[442px] h-[380px] scale-x-[-1] bg-contain bg-no-repeat bg-center fixed pointer-events-none md:bg-desktopCircles md:-rotate-90 md:-top-[210px] md:-right-[190px] md:w-[550px] md:h-[939px]"
+      ></div>
+
+      <section>
+        <h1
+          class="grid place-items-center font-garamond font-bold text-mobileMainHeader md:text-desktopMainHeader md:mt-10"
+        >
+          Welcome Back!!
+        </h1>
+        <div class="mt-[20px]">
+          <form id="registerForm" class="flex flex-col gap-[20px]">
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Email
+                  <i class="fa-solid fa-asterisk text-[10px] absolute ml-1"></i>
+                </legend>
+                <label for="email"
+                  ><i
+                    class="fa-solid fa-envelope text-grey absolute left-4 top-1 md:text-desktopText md:left-10 md:top-[5px]"
+                  ></i
+                ></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email@gmail.com"
+                  class="ml-10 focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Password
+                  <i class="fa-solid fa-asterisk text-[10px] absolute ml-1"></i>
+                </legend>
+                <label for="password"
+                  ><i
+                    class="fa-solid fa-lock text-grey absolute left-4 top-1 md:text-desktopText md:left-10 md:top-[5px]"
+                  ></i
+                ></label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  class="ml-10 focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <button
+              type="submit"
+              id="submitRegister"
+              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+        <div class="grid place-items-center text-dark xs:text-grey">
+          <p
+            class="my-2 text-dark text-mobileText xs:text-grey md:text-desktopText md:text-dark lg:text-grey"
+          >
+            <i class="fa-solid fa-minus"></i> or
+            <i class="fa-solid fa-minus"></i>
+          </p>
+          <p
+            class="text-mobileText md:text-desktopText md:text-dark xl:text-grey"
+          >
+            Dont have an account?
+            <a
+              href="register.html"
+              class="text-darkerYellow font-bold grid place-content-center xs:inline hover:text-opacity-90 hover:underline"
+              >Create one</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-[20px] pr-[20px] flex justify-end">
+      <a href="/index.html">
+        <img
+          src="/images/logo-mobile.png"
+          class="md:hidden"
+          alt="Logo of Farmersbid website"
+        />
+        <img
+          src="/images/logo-desktop.png"
+          class="hidden md:block"
+          alt="Logo of Farmersbid website"
+        />
+      </a>
+    </footer>
   </body>
 </html>

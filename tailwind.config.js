@@ -15,6 +15,10 @@ module.exports = {
         mobileSecondaryHeader: "28px",
         mobileButton: "21px",
         mobileText: "16px",
+        desktopMainHeader: "49px",
+        desktopSecondaryHeader: "37px",
+        desktopButton: "24px",
+        desktopText: "21px",
       },
       colors: {
         white: "#F3FFFB",
@@ -26,6 +30,7 @@ module.exports = {
       },
       backgroundImage: {
         mobileCircles: "url('../images/mobile-sides.png')",
+        desktopCircles: "url('../images/desktop-sides.png')",
       },
     },
   },
