@@ -598,8 +598,80 @@ video {
   left: -0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.right-20 {
+  right: 5rem;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.right-\[20px\] {
+  right: 20px;
+}
+
+.right-\[50px\] {
+  right: 50px;
+}
+
+.right-\[90px\] {
+  right: 90px;
+}
+
+.right-\[80px\] {
+  right: 80px;
+}
+
+.right-\[70px\] {
+  right: 70px;
+}
+
+.right-\[75px\] {
+  right: 75px;
+}
+
+.right-\[85px\] {
+  right: 85px;
+}
+
+.right-\[95px\] {
+  right: 95px;
+}
+
 .-z-10 {
   z-index: -10;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .my-2 {
@@ -617,6 +689,14 @@ video {
 
 .mt-\[20px\] {
   margin-top: 20px;
+}
+
+.ml-0 {
+  margin-left: 0px;
+}
+
+.-ml-2 {
+  margin-left: -0.5rem;
 }
 
 .flex {
@@ -695,6 +775,10 @@ video {
   justify-content: flex-end;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .gap-\[20px\] {
   gap: 20px;
 }
@@ -768,6 +852,18 @@ video {
 
 .pt-\[20px\] {
   padding-top: 20px;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom;
 }
 
 .font-garamond {
@@ -867,6 +963,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
+
   .md\:left-10 {
     left: 2.5rem;
   }
@@ -1067,6 +1167,42 @@ video {
     right: -180px;
   }
 
+  .md\:bottom-4 {
+    bottom: 1rem;
+  }
+
+  .md\:right-\[85px\] {
+    right: 85px;
+  }
+
+  .md\:right-\[95px\] {
+    right: 95px;
+  }
+
+  .md\:right-\[100px\] {
+    right: 100px;
+  }
+
+  .md\:right-\[90px\] {
+    right: 90px;
+  }
+
+  .md\:right-\[87px\] {
+    right: 87px;
+  }
+
+  .md\:right-\[110px\] {
+    right: 110px;
+  }
+
+  .md\:right-\[105px\] {
+    right: 105px;
+  }
+
+  .md\:right-\[195px\] {
+    right: 195px;
+  }
+
   .md\:ml-14 {
     margin-left: 3.5rem;
   }
@@ -1089,6 +1225,22 @@ video {
 
   .md\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .md\:-ml-2 {
+    margin-left: -0.5rem;
+  }
+
+  .md\:-ml-24 {
+    margin-left: -6rem;
+  }
+
+  .md\:-ml-4 {
+    margin-left: -1rem;
+  }
+
+  .md\:-ml-6 {
+    margin-left: -1.5rem;
   }
 
   .md\:block {

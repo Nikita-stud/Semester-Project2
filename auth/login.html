@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FarmersBid | Login Page</title>
+    <title>Login Page | FarmersBid</title>
     <meta
       name="description"
       content="Login your used to get access to your favorite farmers, see what is new on your feed and bid on new bids"
@@ -48,9 +48,15 @@
 
       <section>
         <h1
-          class="grid place-items-center font-garamond font-bold text-mobileMainHeader md:text-desktopMainHeader md:mt-10"
+          class="relative flex justify-center align-bottom font-garamond font-bold text-mobileMainHeader md:text-desktopMainHeader md:mt-10 md:-ml-6"
         >
-          Welcome Back!!
+          Welcome Back
+          <i
+            class="hidden fa-solid fa-exclamation md:block md:absolute md:bottom-4 md:right-[110px]"
+          ></i
+          ><i
+            class="hidden fa-solid fa-exclamation md:block md:absolute md:bottom-4 md:right-[95px]"
+          ></i>
         </h1>
         <div class="mt-[20px]">
           <form id="registerForm" class="flex flex-col gap-[20px]">
@@ -112,15 +118,11 @@
           </form>
         </div>
         <div class="grid place-items-center text-dark xs:text-grey">
-          <p
-            class="my-2 text-dark text-mobileText xs:text-grey md:text-desktopText md:text-dark lg:text-grey"
-          >
+          <p class="my-2 text-mobileText xs:text-grey md:text-desktopText">
             <i class="fa-solid fa-minus"></i> or
             <i class="fa-solid fa-minus"></i>
           </p>
-          <p
-            class="text-mobileText md:text-desktopText md:text-dark xl:text-grey"
-          >
+          <p class="text-mobileText md:text-desktopText">
             Dont have an account?
             <a
               href="register.html"
