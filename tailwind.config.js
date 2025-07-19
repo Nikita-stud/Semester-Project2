@@ -27,6 +27,7 @@ module.exports = {
         grey: "#757575",
         yellow: "#FFCA13",
         darkerYellow: "#92613A",
+        green: "#50733D",
       },
       backgroundImage: {
         mobileCircles: "url('../images/mobile-sides.png')",

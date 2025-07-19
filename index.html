@@ -12,13 +12,168 @@
       src="https://kit.fontawesome.com/54f19440a6.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="js/index.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="/js/index.js"></script>
   </head>
+  <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <header class="relative p-[20px]">
+      <div class="flex justify-between">
+        <a href="/index.html">
+          <img
+            src="/images/logo-mobile.png"
+            class="md:hidden"
+            alt="Logo of Farmersbid website"
+          />
+          <img
+            src="/images/logo-desktop.png"
+            class="hidden md:block"
+            alt="Logo of Farmersbid website"
+          />
+        </a>
 
-  <body>
-    <header></header>
+        <div id="hamburger">
+          <a href="#" class="flex items-center">
+            <img
+              src="/images/nav-mobile.png"
+              class="md:hidden"
+              alt="Navigation Bar"
+            />
+          </a>
+        </div>
+
+        <div
+          id="overlay"
+          class="fixed cursor-pointer inset-0 bg-black bg-opacity-50 z-10 hidden"
+        >
+          <p class="absolute top-[15px] right-[20px]">
+            <i class="fa-solid fa-xmark text-green text-desktopMainHeader"></i>
+          </p>
+        </div>
+
+        <div
+          id="toggleMenu"
+          class="fixed hidden top-0 left-0 w-[246px] h-screen bg-white z-20 shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+        >
+          <div class="mt-[87px] w-full h-[3px] bg-green rounded-md"></div>
+          <nav>
+            <ul
+              class="pl-[100px] flex flex-col gap-[20px] text-mobileButton text-grey"
+            >
+              <li>
+                <a href="auth/login.html"
+                  ><i class="fa-solid fa-right-to-bracket text-green"></i>
+                  Login</a
+                >
+              </li>
+              <li>
+                <a href="about/index.html"
+                  ><i class="fa-solid fa-bars text-green"></i> About</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-cart-shopping text-green"></i>
+                  Products</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fa-solid fa-users text-green"></i> Contact</a
+                >
+              </li>
+              <li>
+                <a href="profile/index.html"
+                  ><i class="fa-solid fa-user text-green"></i> Profile</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <button
+            id="ctaToggleScreen"
+            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow flex align-middle justify-center rounded-full"
+          >
+            <i class="fa-regular fa-moon text-green flex items-center"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mt-[20px] w-full h-[3px] bg-green rounded-md"></div>
+    </header>
+
     <main></main>
-    <footer></footer>
+
+    <footer class="p-[20px]">
+      <div class="w-full h-[3px] bg-green rounded-md"></div>
+      <section class="flex flex-col gap-[20px]">
+        <div>
+          <h6
+            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
+          >
+            Company
+          </h6>
+          <nav>
+            <ul
+              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+            >
+              <li><a href="/about/index.html">About</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <h6
+            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
+          >
+            Support
+          </h6>
+          <nav>
+            <ul
+              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+            >
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <h6
+            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
+          >
+            Legal
+          </h6>
+          <nav>
+            <ul
+              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+            >
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Accessibility</a></li>
+              <li><a href="#">Copyright</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a href="/index.html" class="pt-[20px] pr-[20px] flex justify-end">
+          <img
+            src="/images/logo-mobile.png"
+            class="md:hidden"
+            alt="Logo of Farmersbid website"
+          />
+          <img
+            src="/images/logo-desktop.png"
+            class="hidden md:block"
+            alt="Logo of Farmersbid website"
+          />
+        </a>
+      </section>
+    </footer>
   </body>
 </html>
