@@ -105,7 +105,45 @@
       <div class="mt-[20px] w-full h-[3px] bg-green rounded-md"></div>
     </header>
 
-    <main></main>
+    <main>
+      <section
+        class="relative bg-mobileSheep bg-cover bg-center w-full h-[477px] bg-no-repeat"
+      >
+        <h1
+          class="text-mobileMainHeader font-garamond max-w-[370px] font-bold text-white p-[20px]"
+        >
+          Made by farmers who truly know their crops
+        </h1>
+        <button
+          class="absolute h-[60px] bottom-[60px] left-1/2 transform -translate-x-1/2 rounded-full bg-yellow text-darkerYellow font-bold grid place-content-center xs:w-[280px] xs:text-mobileButton"
+        >
+          Place your product
+        </button>
+      </section>
+
+      <div class="mt-[20px] flex align-middle justify-center">
+        <form action="#">
+          <label for="search"></label>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search..."
+            class="pl-[20px] h-[47px] rounded-full border border-dark font-bold grid place-content-center xs:w-[280px] xs:text-mobileText"
+          />
+          <div class="mt-[4px]">
+            <p
+              class="flex justify-end cursor-pointer font-bold text-mobileButton text-dark"
+            >
+              <i
+                class="fa-solid fa-repeat flex items-center text-green pr-1"
+              ></i>
+              Filter
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
 
     <footer class="p-[20px]">
       <div class="w-full h-[3px] bg-green rounded-md"></div>

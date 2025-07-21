@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       screens: {
         xs: "280px",
+        mob: "470px",
       },
       fontFamily: {
         garamond: ["EB Garamond"],
@@ -32,6 +33,7 @@ module.exports = {
       backgroundImage: {
         mobileCircles: "url('../images/mobile-sides.png')",
         desktopCircles: "url('../images/desktop-sides.png')",
+        mobileSheep: "url('../images/sheep-mobile.jpg')",
       },
     },
   },
