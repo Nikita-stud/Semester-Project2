@@ -1,3 +1,4 @@
+import { getPosts } from "./api/posts/getPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 
 function pathEvents() {
@@ -17,7 +18,15 @@ function pathEvents() {
       break;
     case "/index.html":
     case "/":
-      console.log("I am calling in index.html");
+      const fetchListings = async () => {
+        try {
+          const listingsObject = await getPosts();
+          console.log("I am the Object:", listingsObject);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      fetchListings();
       break;
     case "/feed/post/":
       break;

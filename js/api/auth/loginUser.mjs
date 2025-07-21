@@ -29,6 +29,7 @@ export async function loginUser(user) {
     }
   } catch (error) {
     console.log(error);
+    // catchAndDisplay(`#errorContainer`, jsonValue.errors?.[0]?.message);
   } finally {
     fieldset.disabled = false;
     button.innerText = "LOGIN";
