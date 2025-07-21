@@ -67,29 +67,38 @@
             >
               <li>
                 <a href="auth/login.html"
-                  ><i class="fa-solid fa-right-to-bracket text-green"></i>
+                  ><i
+                    class="fa-solid fa-right-to-bracket text-mobileButton text-green"
+                  ></i>
                   Login</a
                 >
               </li>
               <li>
                 <a href="about/index.html"
-                  ><i class="fa-solid fa-bars text-green"></i> About</a
+                  ><i class="fa-solid fa-bars text-mobileButton text-green"></i>
+                  About</a
                 >
               </li>
               <li>
                 <a href="#"
-                  ><i class="fa-solid fa-cart-shopping text-green"></i>
+                  ><i
+                    class="fa-solid fa-cart-shopping text-mobileButton text-green"
+                  ></i>
                   Products</a
                 >
               </li>
               <li>
                 <a href="#"
-                  ><i class="fa-solid fa-users text-green"></i> Contact</a
+                  ><i
+                    class="fa-solid fa-users text-mobileButton text-green"
+                  ></i>
+                  Contact</a
                 >
               </li>
               <li>
                 <a href="profile/index.html"
-                  ><i class="fa-solid fa-user text-green"></i> Profile</a
+                  ><i class="fa-solid fa-user text-mobileButton text-green"></i>
+                  Profile</a
                 >
               </li>
             </ul>
@@ -98,7 +107,9 @@
             id="ctaToggleScreen"
             class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow flex align-middle justify-center rounded-full"
           >
-            <i class="fa-regular fa-moon text-green flex items-center"></i>
+            <i
+              class="fa-regular fa-moon text-mobileButton text-green flex items-center"
+            ></i>
           </button>
         </div>
       </div>
@@ -122,14 +133,18 @@
       </section>
 
       <div class="mt-[20px] flex align-middle justify-center">
-        <form action="#">
-          <label for="search"></label>
+        <form action="#" class="relative">
+          <label for="search"
+            ><i
+              class="fa-solid fa-magnifying-glass text-mobileButton absolute top-[13px] right-[20px] text-grey"
+            ></i
+          ></label>
           <input
             type="search"
             id="search"
             name="search"
             placeholder="Search..."
-            class="pl-[20px] h-[47px] rounded-full border border-dark font-bold grid place-content-center xs:w-[280px] xs:text-mobileText"
+            class="pl-[20px] h-[47px] bg-formWhite rounded-full border border-dark font-light text-grey grid place-content-center xs:w-[280px] xs:text-desktopText"
           />
           <div class="mt-[4px]">
             <p
@@ -143,6 +158,33 @@
           </div>
         </form>
       </div>
+
+      <section class="relative px-[20px] pt-[20px]">
+        <div class="w-full h-[3px] bg-green rounded-md"></div>
+        <div
+          class="absolute bg-mobileCircles -z-10 -top-[50px] -left-[270px] w-[442px] h-[380px] bg-contain bg-no-repeat bg-center pointer-events-none"
+        ></div>
+        <h3 class="py-[20px] text-mobileSecondaryHeader font-bold text-dark">
+          Explore our products
+        </h3>
+        <p class="pb-[20px] text-center text-mobileText text-dark">
+          Discover a wide range of high-quality crops and herbs from local
+          farmers, all available for bidding. Filter by categories like vegan to
+          find the perfect items for your needs. There are often amazing deals,
+          so be fast and register already now to never miss a bid. All high
+          quality food in one place for you to enjoy.
+        </p>
+        <div
+          class="absolute bg-mobileCircles -z-10 -top-[50px] -right-[270px] w-[442px] h-[380px] scale-x-[-1] bg-contain bg-no-repeat bg-center pointer-events-none"
+        ></div>
+        <div class="w-full h-[3px] bg-green rounded-md"></div>
+      </section>
+
+      <section class="px-[20px]">
+        <h4 class="py-[20px] text-mobileSecondaryHeader font-bold text-dark">
+          Hottest products today
+        </h4>
+      </section>
     </main>
 
     <footer class="p-[20px]">
