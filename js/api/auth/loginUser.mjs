@@ -12,8 +12,9 @@ export async function loginUser(user) {
   try {
     const postData = createPostRequest(user);
     const response = await fetch(API_LOGIN, postData);
+    console.log("response", response);
     const json = await response.json();
-    jsonValue = json;
+    // jsonValue = json;
 
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Login failed");

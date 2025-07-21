@@ -11,11 +11,13 @@ function pathEvents() {
       break;
     case "/auth/register.html":
     case "/auth/register":
+      console.log("I am registering in in index.html");
       formHandler("#registerForm", pathName, "#submitRegister");
     case "auth/register":
       break;
     case "/index.html":
     case "/":
+      console.log("I am calling in index.html");
       break;
     case "/feed/post/":
       break;
