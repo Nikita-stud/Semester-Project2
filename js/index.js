@@ -1,3 +1,4 @@
+import { createPosts } from "./api/posts/createPosts.mjs";
 import { getPosts } from "./api/posts/getPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 
@@ -21,7 +22,8 @@ function pathEvents() {
       const fetchListings = async () => {
         try {
           const listingsObject = await getPosts();
-          console.log("I am the Object:", listingsObject);
+          const listingDataObjects = listingsObject.data;
+          createPosts(listingDataObjects);
         } catch (error) {
           console.log(error);
         }

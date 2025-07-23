@@ -16,7 +16,8 @@ export async function registerUser(user) {
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Registration failed");
     } else {
-      document.location.href = "/auth/login.html";
+      console.log(response.status, json);
+      window.location.href = "/auth/login.html";
     }
   } catch (error) {
     console.log(error);

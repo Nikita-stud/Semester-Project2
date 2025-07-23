@@ -12,7 +12,6 @@ export async function loginUser(user) {
   try {
     const postData = createPostRequest(user);
     const response = await fetch(API_LOGIN, postData);
-    console.log("response", response);
     const json = await response.json();
     // jsonValue = json;
 
@@ -22,7 +21,6 @@ export async function loginUser(user) {
 
     const token = json.data.accessToken;
     if (token) {
-      console.log("login token is saved");
       saveLocalStorage("token", token);
       saveLocalStorage("email", user.email);
       document.location.href = "/index.html";

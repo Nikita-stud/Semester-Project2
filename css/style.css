@@ -578,12 +578,24 @@ video {
   left: -190px;
 }
 
+.-left-\[270px\] {
+  left: -270px;
+}
+
 .-right-\[190px\] {
   right: -190px;
 }
 
-.bottom-\[20px\] {
-  bottom: 20px;
+.-right-\[270px\] {
+  right: -270px;
+}
+
+.-top-\[50px\] {
+  top: -50px;
+}
+
+.bottom-\[60px\] {
+  bottom: 60px;
 }
 
 .left-0 {
@@ -618,92 +630,12 @@ video {
   top: 100px;
 }
 
-.top-\[15px\] {
-  top: 15px;
-}
-
-.bottom-\[40px\] {
-  bottom: 40px;
-}
-
-.bottom-\[60px\] {
-  bottom: 60px;
-}
-
-.top-\[20px\] {
-  top: 20px;
-}
-
-.top-\[18px\] {
-  top: 18px;
-}
-
-.right-\[0pcx\] {
-  right: 0pcx;
-}
-
-.right-\[0px\] {
-  right: 0px;
-}
-
-.top-\[16px\] {
-  top: 16px;
-}
-
 .top-\[13px\] {
   top: 13px;
 }
 
-.-top-\[20px\] {
-  top: -20px;
-}
-
-.-top-\[25px\] {
-  top: -25px;
-}
-
-.-left-\[230px\] {
-  left: -230px;
-}
-
-.-left-\[280px\] {
-  left: -280px;
-}
-
-.-left-\[260px\] {
-  left: -260px;
-}
-
-.-left-\[265px\] {
-  left: -265px;
-}
-
-.-left-\[270px\] {
-  left: -270px;
-}
-
-.-right-\[270px\] {
-  right: -270px;
-}
-
-.top-\[25px\] {
-  top: 25px;
-}
-
-.top-\[0px\] {
-  top: 0px;
-}
-
-.-top-\[50px\] {
-  top: -50px;
-}
-
-.-top-\[75px\] {
-  top: -75px;
-}
-
-.-top-\[65px\] {
-  top: -65px;
+.top-\[15px\] {
+  top: 15px;
 }
 
 .-z-10 {
@@ -716,14 +648,6 @@ video {
 
 .z-20 {
   z-index: 20;
-}
-
-.m-\[20px\] {
-  margin: 20px;
-}
-
-.m-auto {
-  margin: auto;
 }
 
 .my-2 {
@@ -747,12 +671,12 @@ video {
   margin-top: 20px;
 }
 
-.mt-\[87px\] {
-  margin-top: 87px;
-}
-
 .mt-\[4px\] {
   margin-top: 4px;
+}
+
+.mt-\[87px\] {
+  margin-top: 87px;
 }
 
 .flex {
@@ -813,18 +737,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.max-w-\[280px\] {
-  max-width: 280px;
-}
-
-.max-w-\[350px\] {
-  max-width: 350px;
-}
-
-.max-w-\[380px\] {
-  max-width: 380px;
 }
 
 .max-w-\[370px\] {
@@ -893,10 +805,6 @@ video {
   gap: 20px;
 }
 
-.break-words {
-  overflow-wrap: break-word;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -909,14 +817,14 @@ video {
   border-width: 1px;
 }
 
-.border-grey {
-  --tw-border-opacity: 1;
-  border-color: rgb(117 117 117 / var(--tw-border-opacity, 1));
-}
-
 .border-dark {
   --tw-border-opacity: 1;
   border-color: rgb(16 24 2 / var(--tw-border-opacity, 1));
+}
+
+.border-grey {
+  --tw-border-opacity: 1;
+  border-color: rgb(117 117 117 / var(--tw-border-opacity, 1));
 }
 
 .bg-black {
@@ -942,11 +850,6 @@ video {
 .bg-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 202 19 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -981,17 +884,14 @@ video {
   padding: 20px;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
-.p-\[0px\] {
-  padding: 0px;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .py-\[20px\] {
@@ -999,9 +899,8 @@ video {
   padding-bottom: 20px;
 }
 
-.px-\[20px\] {
-  padding-left: 20px;
-  padding-right: 20px;
+.pb-\[20px\] {
+  padding-bottom: 20px;
 }
 
 .pl-\[100px\] {
@@ -1012,36 +911,16 @@ video {
   padding-left: 20px;
 }
 
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
 .pr-\[20px\] {
   padding-right: 20px;
 }
 
 .pt-\[20px\] {
   padding-top: 20px;
-}
-
-.pl-1 {
-  padding-left: 0.25rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
-.pr-1 {
-  padding-right: 0.25rem;
-}
-
-.pb-\[20px\] {
-  padding-bottom: 20px;
 }
 
 .text-center {
@@ -1088,16 +967,8 @@ video {
   font-size: 16px;
 }
 
-.text-desktopText {
-  font-size: 21px;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.font-thin {
-  font-weight: 100;
 }
 
 .font-light {
@@ -1161,49 +1032,21 @@ video {
     display: inline;
   }
 
-  .xs\:w-\[240px\] {
-    width: 240px;
-  }
-
   .xs\:w-\[280px\] {
     width: 280px;
-  }
-
-  .xs\:text-mobileText {
-    font-size: 16px;
-  }
-
-  .xs\:text-mobileButton {
-    font-size: 21px;
   }
 
   .xs\:text-desktopText {
     font-size: 21px;
   }
 
+  .xs\:text-mobileButton {
+    font-size: 21px;
+  }
+
   .xs\:text-grey {
     --tw-text-opacity: 1;
     color: rgb(117 117 117 / var(--tw-text-opacity, 1));
-  }
-}
-
-@media (min-width: 470px) {
-  .mob\:w-\[280px\] {
-    width: 280px;
-  }
-
-  .mob\:text-mobileButton {
-    font-size: 21px;
-  }
-}
-
-@media (min-width: 640px) {
-  .sm\:w-\[280px\] {
-    width: 280px;
-  }
-
-  .sm\:text-mobileButton {
-    font-size: 21px;
   }
 }
 
