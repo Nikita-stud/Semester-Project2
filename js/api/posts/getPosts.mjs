@@ -12,7 +12,7 @@ export async function getPosts() {
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
     }
-    console.log("Posts YOLO", json);
+    console.log("Posts in getPosts.mjs", json);
     return json;
   } catch (error) {
     console.log(error);

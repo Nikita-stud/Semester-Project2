@@ -24,6 +24,7 @@ module.exports = {
       colors: {
         white: "#F3FFFB",
         formWhite: "#FFFFFF",
+        redTime: "#9F3247",
         dark: "#101802",
         grey: "#757575",
         yellow: "#FFCA13",

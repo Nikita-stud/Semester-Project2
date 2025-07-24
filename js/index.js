@@ -1,6 +1,7 @@
 import { createPosts } from "./api/posts/createPosts.mjs";
 import { getPosts } from "./api/posts/getPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
+import { fetchSinglePost } from "./ui/auth/fetchSinglePost.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -30,7 +31,8 @@ function pathEvents() {
       };
       fetchListings();
       break;
-    case "/feed/post/":
+    case "/post/index.html":
+      fetchSinglePost();
       break;
   }
 }

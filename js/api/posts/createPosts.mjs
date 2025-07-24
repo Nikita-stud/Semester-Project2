@@ -1,4 +1,4 @@
-// import { generateUniqueId } from "../../events/helpers/generateUniqueID.mjs";
+import { transformTime } from "../../ui/auth/helpers/transformTime.mjs";
 
 export function createPosts(posts) {
   console.log("data", posts);
@@ -49,14 +49,7 @@ export function createPosts(posts) {
     }
 
     const textDiv = document.createElement("div");
-    textDiv.classList.add(
-      "h-[121px]",
-      "p-[20px]",
-      "flex",
-      "flex-col",
-      "justify-center",
-      "align-middle"
-    );
+    textDiv.classList.add("h-[121px]", "p-[20px]", "flex", "flex-col");
 
     const insideTitlePriceDiv = document.createElement("div");
     insideTitlePriceDiv.classList.add("flex", "justify-between");
@@ -79,11 +72,33 @@ export function createPosts(posts) {
       "text-ellipsis",
       "font-bold"
     );
-    price.innerText = `CR ${posts[i]._count.bids}`;
+    const highestBid =
+      posts[i].bids.length > 0
+        ? Math.max(...posts[i].bids.map((bid) => bid.amount))
+        : 0;
+    price.innerText = `CR ${highestBid}`;
+
+    const time = document.createElement("p");
+    time.classList.add("text-mobileText", "text-redTime", "font-bold");
+    const apiDate = new Date(posts[i].endsAt);
+    const date = transformTime(apiDate);
+    const { day, month, year, hours, min } = date;
+    time.innerText = `${day}/${month}/${year}, ${hours}:${min}`;
+
+    const lowerContent = document.createElement("div");
+    lowerContent.classList.add(
+      "w-full",
+      "pb-[20px]",
+      "grid",
+      "place-items-center"
+    );
 
     const cta = document.createElement("button");
     cta.innerHTML = "View";
     cta.setAttribute("id", posts[i].id);
+    cta.addEventListener("click", () => {
+      window.location.href = `/post/?id=${article.id}`;
+    });
     cta.classList.add(
       "w-[208px]",
       "h-[47px]",
@@ -102,6 +117,8 @@ export function createPosts(posts) {
     textDiv.append(insideTitlePriceDiv);
     insideTitlePriceDiv.append(title);
     insideTitlePriceDiv.append(price);
-    textDiv.append(cta);
+    textDiv.append(time);
+    article.append(lowerContent);
+    lowerContent.append(cta);
   }
 }
