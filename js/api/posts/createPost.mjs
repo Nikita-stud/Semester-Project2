@@ -1,1 +1,3 @@
-export function createPost(post) {}
+export function createPost(post) {
+  console.log("THIS IS A SINGLE POST", post);
+}

@@ -31,7 +31,7 @@ function pathEvents() {
       };
       fetchListings();
       break;
-    case "/post/index.html":
+    case "/post/":
       fetchSinglePost();
       break;
   }
