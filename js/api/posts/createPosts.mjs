@@ -4,38 +4,104 @@ export function createPosts(posts) {
   console.log("data", posts);
   const postsContainer = document.getElementById("posts_container");
 
+  postsContainer.classList.add(
+    "grid",
+    "grid-flow-cols",
+    "grid-cols-1",
+    "sm:grid-cols-2",
+    "md:grid-cols-3",
+    "lg:grid-cols-4",
+    "gap-[20px]",
+    "p-[20px]"
+  );
+
   for (let i = 0; i < posts.length; i++) {
     const article = document.createElement("article");
     article.classList.add(
-      "p-10",
-      "w-100",
-      "bg-slate-50",
-      "shadow-md",
-      "rounded-xl"
+      "w-[281px]",
+      "h-[402px]",
+      "flex",
+      "flex-col",
+      "border",
+      "rounded-md",
+      "overflow-hidden",
+      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
     );
     article.setAttribute("id", posts[i].id);
 
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("w-full", "h-[281px]", "overflow-hidden");
+
+    const img = document.createElement("img");
+    console.log(posts[i].media?.[0]?.url);
+    if (posts[i].media?.[0]?.url) {
+      img.classList.add(
+        "rounded-t-md",
+        "w-[200px]",
+        "h-[200px]",
+        "object-contain",
+        "overflow-hidden"
+      );
+      img.src = posts[i].media[0].url;
+      img.alt = posts[i].media[0].alt || "Post image which is not described";
+    } else {
+      continue;
+    }
+
+    const textDiv = document.createElement("div");
+    textDiv.classList.add(
+      "h-[121px]",
+      "p-[20px]",
+      "flex",
+      "flex-col",
+      "justify-center",
+      "align-middle"
+    );
+
+    const insideTitlePriceDiv = document.createElement("div");
+    insideTitlePriceDiv.classList.add("flex", "justify-between");
+
     const title = document.createElement("h2");
-    title.classList.add("text-mobileSecondaryHeader");
+    title.classList.add(
+      "text-mobileSecondaryHeader",
+      "line-clamp-2",
+      "overflow-hidden",
+      "text-ellipsis"
+    );
     const capitalTitle = posts[i].title.toUpperCase();
     title.innerText = capitalTitle;
 
-    const img = document.createElement("img");
-    if (posts[i].media && posts[i].media.url) {
-      img.classList.add(
-        "w-full",
-        "mb-4",
-        "h-100",
-        "m-auto",
-        "object-cover",
-        "bg-no-repeat"
-      );
-      img.src = posts[i].media.url;
-      img.alt = posts[i].media.alt || "Post image which is not described";
-    }
+    const price = document.createElement("p");
+    price.classList.add(
+      "text-mobileSecondaryHeader",
+      "line-clamp-2",
+      "overflow-hidden",
+      "text-ellipsis",
+      "font-bold"
+    );
+    price.innerText = `CR ${posts[i]._count.bids}`;
+
+    const cta = document.createElement("button");
+    cta.innerHTML = "View";
+    cta.setAttribute("id", posts[i].id);
+    cta.classList.add(
+      "w-[208px]",
+      "h-[47px]",
+      "bg-yellow",
+      "text-darkerYellow",
+      "text-mobileButton",
+      "rounded-full",
+      "hover:border",
+      "hover:text-opacity-90"
+    );
 
     postsContainer.append(article);
-    article.append(img);
-    article.append(title);
+    article.append(imgContainer);
+    imgContainer.append(img);
+    article.append(textDiv);
+    textDiv.append(insideTitlePriceDiv);
+    insideTitlePriceDiv.append(title);
+    insideTitlePriceDiv.append(price);
+    textDiv.append(cta);
   }
 }
