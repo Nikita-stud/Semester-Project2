@@ -14,7 +14,7 @@ export async function fetchSinglePost() {
     const fetched = await fetch(`${API_POST}/${postID}`, post);
     const json = await fetched.json();
     // jsonValue = json;
-    createPost(json);
+    createPost(json.data);
 
     if (!fetched.ok) {
       throw new Error(json.errors?.[0]?.message || "Failed fetching the post");
