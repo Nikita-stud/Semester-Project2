@@ -1000,10 +1000,20 @@ video {
   color: rgb(243 255 251 / var(--tw-text-opacity, 1));
 }
 
+.opacity-10 {
+  opacity: 0.1;
+}
+
 .shadow-\[0_6px_10px_rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
   --tw-shadow: 0 6px 10px rgba(0,0,0,0.25);
   --tw-shadow-colored: 0 6px 10px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.transition-\[2s\] {
+  transition-property: 2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .hover\:border:hover {

@@ -2,6 +2,8 @@ import { createPosts } from "./api/posts/createPosts.mjs";
 import { getPosts } from "./api/posts/getPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 import { fetchSinglePost } from "./ui/auth/fetchSinglePost.mjs";
+import { handleScroll } from "./ui/auth/helpers/handleScroll.mjs";
+import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -20,6 +22,8 @@ function pathEvents() {
       break;
     case "/index.html":
     case "/":
+      toggleNav();
+      window.addEventListener("scroll", handleScroll);
       const fetchListings = async () => {
         try {
           const listingsObject = await getPosts();
@@ -37,25 +41,3 @@ function pathEvents() {
   }
 }
 pathEvents();
-
-// const hamburger = document.getElementById("hamburger");
-// const darkBackground = document.getElementById("overlay");
-// const menu = document.getElementById("toggleMenu");
-
-// function toggleNav() {
-//   hamburger.addEventListener("click", () => {
-//     darkBackground.classList.toggle("hidden");
-//     menu.classList.toggle("hidden");
-//     hamburger.classList.toggle("hidden");
-//   });
-//   closeNav();
-// }
-// toggleNav();
-
-// function closeNav() {
-//   darkBackground.addEventListener("click", () => {
-//     menu.classList.toggle("hidden");
-//     darkBackground.classList.toggle("hidden");
-//     hamburger.classList.toggle("hidden");
-//   });
-// }

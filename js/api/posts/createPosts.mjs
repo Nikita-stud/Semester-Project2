@@ -33,7 +33,6 @@ export function createPosts(posts) {
     imgContainer.classList.add("w-full", "h-[281px]", "overflow-hidden");
 
     const img = document.createElement("img");
-    console.log(posts[i].media?.[0]?.url);
     if (posts[i].media?.[0]?.url) {
       img.classList.add(
         "rounded-t-md",
