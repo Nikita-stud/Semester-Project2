@@ -22,8 +22,11 @@
     <script type="module" src="/js/index.js"></script>
   </head>
   <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
-    <header id="headerContainer" class="relative transition-[2s] p-[20px]">
-      <div class="flex justify-between">
+    <header
+      id="headerContainer"
+      class="fixed z-20 top-0 left-0 w-full transition-[1s] px-[20px] pt-[20px]"
+    >
+      <div class="relative flex justify-between">
         <a href="/index.html">
           <img
             src="/images/logo-mobile.png"
@@ -60,7 +63,10 @@
           id="toggleMenu"
           class="fixed hidden top-0 left-0 w-[246px] h-screen bg-white z-20 shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
         >
-          <div class="mt-[87px] w-full h-[3px] bg-green rounded-md"></div>
+          <div
+            id="headerLine"
+            class="mt-[87px] w-full h-[3px] bg-green rounded-md"
+          ></div>
           <nav>
             <ul
               class="pl-[100px] flex flex-col gap-[20px] text-mobileButton text-grey"
@@ -116,7 +122,7 @@
       <div class="mt-[20px] w-full h-[3px] bg-green rounded-md"></div>
     </header>
 
-    <main>
+    <main class="pt-[110px]">
       <section
         class="relative bg-mobileSheep bg-cover bg-center w-full h-[477px] bg-no-repeat"
       >

@@ -7,10 +7,11 @@ export function createPosts(posts) {
   postsContainer.classList.add(
     "grid",
     "grid-flow-cols",
+    "place-items-center",
     "grid-cols-1",
     "sm:grid-cols-2",
-    "md:grid-cols-3",
-    "lg:grid-cols-4",
+    "lg:grid-cols-3",
+    "xl:grid-cols-4",
     "gap-[20px]",
     "p-[20px]"
   );
@@ -23,7 +24,7 @@ export function createPosts(posts) {
       "flex",
       "flex-col",
       "border",
-      "rounded-md",
+      "rounded-[20px]",
       "overflow-hidden",
       "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
     );
@@ -36,9 +37,9 @@ export function createPosts(posts) {
     if (posts[i].media?.[0]?.url) {
       img.classList.add(
         "rounded-t-md",
-        "w-[200px]",
-        "h-[200px]",
-        "object-contain",
+        "w-full",
+        "h-full",
+        "object-cover",
         "overflow-hidden"
       );
       img.src = posts[i].media[0].url;
@@ -48,15 +49,24 @@ export function createPosts(posts) {
     }
 
     const textDiv = document.createElement("div");
-    textDiv.classList.add("h-[121px]", "p-[20px]", "flex", "flex-col");
+    textDiv.classList.add(
+      "h-[101px]",
+      "px-[10px]",
+      "py-[15px]",
+      "flex",
+      "flex-col"
+    );
 
     const insideTitlePriceDiv = document.createElement("div");
     insideTitlePriceDiv.classList.add("flex", "justify-between");
 
     const title = document.createElement("h2");
     title.classList.add(
-      "text-mobileSecondaryHeader",
-      "line-clamp-2",
+      "text-mobileButton",
+      "w-[180px]",
+      "font-bold",
+      "text-grey",
+      "line-clamp-1",
       "overflow-hidden",
       "text-ellipsis"
     );
@@ -65,11 +75,14 @@ export function createPosts(posts) {
 
     const price = document.createElement("p");
     price.classList.add(
-      "text-mobileSecondaryHeader",
+      "text-mobileText",
       "line-clamp-2",
+      "text-dark",
       "overflow-hidden",
       "text-ellipsis",
-      "font-bold"
+      "font-bold",
+      "flex",
+      "items-center"
     );
     const highestBid =
       posts[i].bids.length > 0
@@ -78,7 +91,12 @@ export function createPosts(posts) {
     price.innerText = `CR ${highestBid}`;
 
     const time = document.createElement("p");
-    time.classList.add("text-mobileText", "text-redTime", "font-bold");
+    time.classList.add(
+      "text-mobileText",
+      "text-redTime",
+      "pt-[5px]",
+      "font-bold"
+    );
     const apiDate = new Date(posts[i].endsAt);
     const date = transformTime(apiDate);
     const { day, month, year, hours, min } = date;
@@ -87,7 +105,7 @@ export function createPosts(posts) {
     const lowerContent = document.createElement("div");
     lowerContent.classList.add(
       "w-full",
-      "pb-[20px]",
+      "pb-[15px]",
       "grid",
       "place-items-center"
     );

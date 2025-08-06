@@ -3,6 +3,7 @@ import { getPosts } from "./api/posts/getPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 import { fetchSinglePost } from "./ui/auth/fetchSinglePost.mjs";
 import { handleScroll } from "./ui/auth/helpers/handleScroll.mjs";
+import { sendToHeaderUponReloading } from "./ui/auth/helpers/sendToHeaderUponReloading.mjs";
 import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
 
 function pathEvents() {
@@ -23,6 +24,7 @@ function pathEvents() {
     case "/index.html":
     case "/":
       toggleNav();
+      window.addEventListener("load", sendToHeaderUponReloading);
       window.addEventListener("scroll", handleScroll);
       const fetchListings = async () => {
         try {

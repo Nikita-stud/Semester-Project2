@@ -1,11 +1,14 @@
 const header = document.getElementById("headerContainer");
+const lastScrolledY = window.scrollY;
 
 export function handleScroll() {
-  const scrolledY = window.scrollY;
+  const currentScrolledY = window.scrollY;
+  const scrolledDirection = currentScrolledY > lastScrolledY ? "down" : "up;";
+  lastScrolledY = currentScrolledY;
 
-  if (scrolledY > 1) {
-    header.classList.add("opacity-10", "ease-in");
+  if (scrolledY > 23) {
+    header.classList.add("bg-white", "bg-opacity-90", "ease-in");
   } else {
-    header.classList.remove("opacity-10", "ease-in");
+    header.classList.remove("bg-white", "bg-opacity-90", "ease-in");
   }
 }
