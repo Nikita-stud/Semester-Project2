@@ -687,6 +687,10 @@ video {
   margin-top: 87px;
 }
 
+.mt-\[27px\] {
+  margin-top: 27px;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -877,6 +881,22 @@ video {
 
 .gap-\[2opx\] {
   gap: 2opx;
+}
+
+.gap-\[5px\] {
+  gap: 5px;
+}
+
+.gap-\[3px\] {
+  gap: 3px;
+}
+
+.gap-\[2px\] {
+  gap: 2px;
+}
+
+.gap-\[1px\] {
+  gap: 1px;
 }
 
 .overflow-hidden {
@@ -1091,6 +1111,10 @@ video {
 
 .text-mobileText {
   font-size: 16px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .font-bold {

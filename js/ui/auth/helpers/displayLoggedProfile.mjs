@@ -1,13 +1,23 @@
 import { checkIfLoggedIn } from "../checkIfLoggedIn.mjs";
 const logButton = document.getElementById("ifLoggedIn");
 const profileContainer = document.getElementById("navLoggedProfile");
+const headerLine = document.getElementById("headerLine");
 
 export function displayLoggedProfile(profileObject) {
   console.log("This is the profile", profileObject);
 
-  profileContainer.classList.add("flex", "flex-col");
+  profileContainer.classList.add(
+    "flex",
+    "flex-col",
+    "text-mobileText",
+    "px-[20px]",
+    "pt-[20px]"
+  );
 
   if (checkIfLoggedIn()) {
+    headerLine.classList.toggle("mt-[87px]");
+    headerLine.classList.toggle("mt-[20px]");
+
     const img = document.createElement("img");
     img.classList.add(
       "rounded-full",
@@ -26,6 +36,7 @@ export function displayLoggedProfile(profileObject) {
     name.innerText = profileObject.name;
 
     const email = document.createElement("p");
+    email.classList.add("text-grey");
     email.innerText = profileObject.email;
 
     profileContainer.append(img);
