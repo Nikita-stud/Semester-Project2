@@ -1,4 +1,4 @@
-import { createPost } from "../../api/posts/createPost.mjs";
+import { createPost } from "./createPost.mjs";
 import { API_POST } from "../../constants/constants.mjs";
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 import { getQueryParam } from "../../events/helpers/getQueryParam.mjs";
@@ -11,7 +11,10 @@ export async function fetchSinglePost() {
   // let jsonValue = {};
   try {
     const post = createAllowedRequest("GET");
-    const fetched = await fetch(`${API_POST}/${postID}`, post);
+    const fetched = await fetch(
+      `${API_POST}/${postID}?&_bids=true&_seller=true`,
+      post
+    );
     const json = await fetched.json();
     // jsonValue = json;
     createPost(json.data);

@@ -1,7 +1,7 @@
 import { createPosts } from "./api/posts/createPosts.mjs";
-import { getPosts } from "./api/posts/getPosts.mjs";
+import { fetchPosts } from "./api/posts/fetchPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
-import { fetchSinglePost } from "./ui/auth/fetchSinglePost.mjs";
+import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
 import { handleScroll } from "./ui/auth/helpers/handleScroll.mjs";
 import { sendToHeaderUponReloading } from "./ui/auth/helpers/sendToHeaderUponReloading.mjs";
 import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
@@ -28,7 +28,7 @@ function pathEvents() {
       window.addEventListener("scroll", handleScroll);
       const fetchListings = async () => {
         try {
-          const listingsObject = await getPosts();
+          const listingsObject = await fetchPosts();
           const listingDataObjects = listingsObject.data;
           createPosts(listingDataObjects);
         } catch (error) {

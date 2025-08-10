@@ -2,7 +2,7 @@ import { API_AUCTION } from "../../constants/constants.mjs";
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 // import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
-export async function getPosts() {
+export async function fetchPosts() {
   // let jsonValue = {};
   try {
     const fetchPosts = createAllowedRequest("GET");

@@ -19,6 +19,7 @@ export function createPosts(posts) {
   for (let i = 0; i < posts.length; i++) {
     const article = document.createElement("article");
     article.classList.add(
+      "relative",
       "w-[281px]",
       "h-[402px]",
       "flex",
@@ -31,7 +32,7 @@ export function createPosts(posts) {
     article.setAttribute("id", posts[i].id);
 
     const imgContainer = document.createElement("div");
-    imgContainer.classList.add("w-full", "h-[281px]", "overflow-hidden");
+    imgContainer.classList.add("w-full", "h-[291px]", "overflow-hidden");
 
     const img = document.createElement("img");
     if (posts[i].media?.[0]?.url) {
@@ -47,6 +48,25 @@ export function createPosts(posts) {
     } else {
       continue;
     }
+
+    const icon = document.createElement("i");
+    icon.classList.add(
+      "fa-regular",
+      "fa-heart",
+      "absolute",
+      "top-[15px]",
+      "right-[15px]",
+      "cursor-pointer",
+      "p-[10px]",
+      "bg-formWhite",
+      "text-mobileButton",
+      "rounded-md"
+    );
+    icon.addEventListener("click", () => {
+      icon.classList.toggle("fa-regular");
+      icon.classList.toggle("fa-solid");
+      icon.classList.toggle("text-redTime");
+    });
 
     const textDiv = document.createElement("div");
     textDiv.classList.add(
@@ -87,7 +107,7 @@ export function createPosts(posts) {
     const highestBid =
       posts[i].bids.length > 0
         ? Math.max(...posts[i].bids.map((bid) => bid.amount))
-        : 0;
+        : "None";
     price.innerText = `CR ${highestBid}`;
 
     const time = document.createElement("p");
@@ -130,6 +150,7 @@ export function createPosts(posts) {
     postsContainer.append(article);
     article.append(imgContainer);
     imgContainer.append(img);
+    imgContainer.append(icon);
     article.append(textDiv);
     textDiv.append(insideTitlePriceDiv);
     insideTitlePriceDiv.append(title);
