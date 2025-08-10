@@ -63,6 +63,7 @@
           id="toggleMenu"
           class="fixed hidden top-0 left-0 w-[246px] h-screen bg-white z-20 shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
         >
+          <div id="navLoggedProfile"></div>
           <div
             id="headerLine"
             class="mt-[87px] w-full h-[3px] bg-green rounded-md"
@@ -72,7 +73,7 @@
               class="pl-[100px] flex flex-col gap-[20px] text-mobileButton text-grey"
             >
               <li>
-                <a href="auth/login.html"
+                <a href="auth/login.html" id="ifLoggedIn"
                   ><i
                     class="fa-solid fa-right-to-bracket text-mobileButton text-green"
                   ></i>

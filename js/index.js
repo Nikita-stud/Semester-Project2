@@ -5,6 +5,9 @@ import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
 import { handleScroll } from "./ui/auth/helpers/handleScroll.mjs";
 import { sendToHeaderUponReloading } from "./ui/auth/helpers/sendToHeaderUponReloading.mjs";
 import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
+import { fetchProfile } from "./api/posts/fetchProfile.mjs";
+import { displayLoggedProfile } from "./ui/auth/helpers/displayLoggedProfile.mjs";
+import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -28,6 +31,10 @@ function pathEvents() {
       window.addEventListener("scroll", handleScroll);
       const fetchListings = async () => {
         try {
+          if (checkIfLoggedIn()) {
+            const profileJSON = await fetchProfile();
+            displayLoggedProfile(profileJSON.data);
+          }
           const listingsObject = await fetchPosts();
           const listingDataObjects = listingsObject.data;
           createPosts(listingDataObjects);
