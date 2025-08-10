@@ -22,7 +22,7 @@ export async function loginUser(user) {
     const token = json.data.accessToken;
     if (token) {
       saveLocalStorage("token", token);
-      saveLocalStorage("email", user.email);
+      saveLocalStorage("UserName", json.data.name);
       document.location.href = "/index.html";
     }
   } catch (error) {
