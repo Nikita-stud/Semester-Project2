@@ -43,7 +43,11 @@ export function displayLoggedProfile(profileObject) {
     profileContainer.append(name);
     profileContainer.append(email);
 
-    logButton.innerHTML = `<i class="fa-solid fa-door-open text-mobileText text-green">Logout</i>`;
+    logButton.innerHTML = `<a href="auth/login.html" class="font-nunito">
+                              <i class="fa-solid fa-door-open text-mobileText text-green"></i>
+                              <span class="ml-[35px] font-nunito">Logout
+                              </span>
+                            </a>`;
     logButton.addEventListener("click", () => {
       localStorage.removeItem("UserName");
       document.location.href = "/auth/login.html";

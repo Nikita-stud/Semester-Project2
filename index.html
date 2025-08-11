@@ -15,18 +15,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
     <script type="module" src="/js/index.js"></script>
   </head>
-  <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto]">
+  <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto] p-0 m-0">
     <header
       id="headerContainer"
-      class="fixed z-20 top-0 left-0 w-full transition-[1s] px-[20px] pt-[20px]"
+      class="fixed z-20 top-0 left-0 w-full transition-[1s] pt-[20px]"
     >
-      <div class="relative flex justify-between">
+      <div id="headerContent" class="relative px-[20px] flex justify-between">
         <a href="/index.html">
           <img
             src="/images/logo-mobile.png"
@@ -41,7 +41,7 @@
         </a>
 
         <div id="hamburger">
-          <a href="#" class="flex items-center">
+          <a href="#" class="flex items-center pt-2">
             <img
               src="/images/nav-mobile.png"
               class="md:hidden"
@@ -66,53 +66,53 @@
           <div id="navLoggedProfile"></div>
           <div
             id="headerLine"
-            class="mt-[87px] w-full h-[3px] bg-green rounded-md"
+            class="mt-[87px] mb-[15px] w-full h-[3px] bg-green rounded-md"
           ></div>
           <nav>
             <ul
-              class="pl-[100px] flex flex-col gap-[20px] text-mobileButton text-grey"
+              class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
             >
-              <li>
-                <a href="auth/login.html" id="ifLoggedIn"
+              <li id="ifLoggedIn">
+                <a href="auth/login.html" class="font-nunito"
                   ><i
                     class="fa-solid fa-right-to-bracket text-mobileButton text-green"
                   ></i>
-                  Login</a
+                  <span class="ml-[33px] font-nunito">Login</span></a
                 >
               </li>
               <li>
                 <a href="about/index.html"
                   ><i class="fa-solid fa-bars text-mobileButton text-green"></i>
-                  About</a
+                  <span class="ml-[35px] font-nunito">About</span></a
                 >
               </li>
               <li>
-                <a href="#"
+                <a href="#" class="font-nunito"
                   ><i
                     class="fa-solid fa-cart-shopping text-mobileButton text-green"
                   ></i>
-                  Products</a
+                  <span class="ml-[28px] font-nunito">Products</span></a
                 >
               </li>
               <li>
-                <a href="#"
+                <a href="#" class="font-nunito"
                   ><i
                     class="fa-solid fa-users text-mobileButton text-green"
                   ></i>
-                  Contact</a
+                  <span class="ml-[26px] font-nunito">Contact</span></a
                 >
               </li>
               <li>
-                <a href="profile/index.html"
+                <a href="profile/index.html" class="font-nunito"
                   ><i class="fa-solid fa-user text-mobileButton text-green"></i>
-                  Profile</a
+                  <span class="ml-[35px] font-nunito">Profile</span></a
                 >
               </li>
             </ul>
           </nav>
           <button
             id="ctaToggleScreen"
-            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow flex align-middle justify-center rounded-full"
+            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow grid place-content-center m-auto rounded-full"
           >
             <i
               class="fa-regular fa-moon text-mobileButton text-green flex items-center"
@@ -120,11 +120,14 @@
           </button>
         </div>
       </div>
-      <div class="mt-[20px] w-full h-[3px] bg-green rounded-md"></div>
+      <div id="headerUnderline" class="w-full px-[20px]">
+        <div class="mt-[20px] h-[3px] bg-green rounded-md"></div>
+      </div>
     </header>
 
     <main class="pt-[110px]">
       <section
+        id="landingContainer"
         class="relative bg-mobileSheep bg-cover bg-center w-full h-[477px] bg-no-repeat"
       >
         <h1
@@ -133,6 +136,7 @@
           Made by farmers who truly know their crops
         </h1>
         <button
+          id="postOwnBidButton"
           class="absolute h-[60px] bottom-[60px] left-1/2 transform -translate-x-1/2 rounded-full bg-yellow text-darkerYellow font-bold grid place-content-center xs:w-[280px] xs:text-mobileButton"
         >
           Place your product

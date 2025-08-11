@@ -8,6 +8,8 @@ import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
 import { displayLoggedProfile } from "./ui/auth/helpers/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
+import { postOwnPost } from "./api/posts/postOwnPost.mjs";
+import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -32,8 +34,11 @@ function pathEvents() {
       const fetchListings = async () => {
         try {
           if (checkIfLoggedIn()) {
+            postOwnPost();
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
+          } else {
+            checkToPostOwnList();
           }
           const listingsObject = await fetchPosts();
           const listingDataObjects = listingsObject.data;

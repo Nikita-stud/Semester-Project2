@@ -9,7 +9,7 @@ module.exports = {
       },
       fontFamily: {
         garamond: ["EB Garamond"],
-        // helvetica: ["EB Garamond"],
+        nunito: ["Nunito Sans", "sans-serif", "Arial"],
       },
       fontSize: {
         mobileMainHeader: "36px",
