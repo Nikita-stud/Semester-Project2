@@ -6,7 +6,7 @@ import { handleScroll } from "./ui/auth/helpers/handleScroll.mjs";
 import { sendToHeaderUponReloading } from "./ui/auth/helpers/sendToHeaderUponReloading.mjs";
 import { toggleNav } from "./ui/auth/helpers/toggleNav.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
-import { displayLoggedProfile } from "./ui/auth/helpers/displayLoggedProfile.mjs";
+import { displayLoggedProfile } from "./ui/auth/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 import { postOwnPost } from "./api/posts/postOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";

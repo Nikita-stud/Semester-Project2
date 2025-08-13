@@ -1,4 +1,4 @@
-import { checkIfLoggedIn } from "../checkIfLoggedIn.mjs";
+import { checkIfLoggedIn } from "./checkIfLoggedIn.mjs";
 const logButton = document.getElementById("ifLoggedIn");
 const profileContainer = document.getElementById("navLoggedProfile");
 const headerLine = document.getElementById("headerLine");
