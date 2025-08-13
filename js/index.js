@@ -10,6 +10,7 @@ import { displayLoggedProfile } from "./ui/auth/helpers/displayLoggedProfile.mjs
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 import { postOwnPost } from "./api/posts/postOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
+import { displayFilterData } from "./ui/auth/helpers/displayFilterData.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -17,18 +18,17 @@ function pathEvents() {
   switch (pathName) {
     case "/auth/login.html":
     case "/auth/login":
-      console.log("I am login in in index.html");
       formHandler("#loginForm", pathName, "#loginButton");
       break;
     case "/auth/register.html":
     case "/auth/register":
-      console.log("I am registering in in index.html");
       formHandler("#registerForm", pathName, "#submitRegister");
     case "auth/register":
       break;
     case "/index.html":
     case "/":
       toggleNav();
+      displayFilterData();
       window.addEventListener("load", sendToHeaderUponReloading);
       window.addEventListener("scroll", handleScroll);
       const fetchListings = async () => {
