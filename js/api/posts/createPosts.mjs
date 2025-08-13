@@ -1,4 +1,4 @@
-import { transformTime } from "../../ui/auth/helpers/transformTime.mjs";
+import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPosts(posts) {
   console.log("data", posts);

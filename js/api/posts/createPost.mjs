@@ -1,5 +1,5 @@
-import { cleanApiTitle } from "../../ui/auth/helpers/cleanApiTitle.mjs";
-import { transformTime } from "../../ui/auth/helpers/transformTime.mjs";
+import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
+import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPost(post) {
   const articleContainer = document.getElementById("articleContainer");
