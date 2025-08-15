@@ -1,5 +1,6 @@
 import { loginUser } from "../../api/auth/loginUser.mjs";
 import { registerUser } from "../../api/auth/registerUser.mjs";
+import { postOwnPost } from "../../api/posts/postOwnPost.mjs";
 
 export function formHandler(formID, pathName, buttonID) {
   const formRegister = document.querySelector(`${formID}`);
@@ -17,6 +18,10 @@ export function formHandler(formID, pathName, buttonID) {
     }
     if (pathName === "/auth/login.html" || pathName === "auth/login") {
       loginUser(entries);
+    }
+    if (pathName === "/index.html" || pathName === "/") {
+      console.log("myCreatedPost", entries);
+      // postOwnPost(entries);
     }
   });
 }

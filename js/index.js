@@ -8,7 +8,7 @@ import { toggleNav } from "./ui/helpers/toggleNav.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
 import { displayLoggedProfile } from "./ui/auth/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
-import { postOwnPost } from "./api/posts/postOwnPost.mjs";
+import { createOwnPost } from "./api/posts/createOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 
@@ -34,7 +34,8 @@ function pathEvents() {
       const fetchListings = async () => {
         try {
           if (checkIfLoggedIn()) {
-            postOwnPost();
+            createOwnPost();
+            formHandler("#postForm", pathName, "#postButton");
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
           } else {
