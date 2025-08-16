@@ -1,4 +1,5 @@
 import { API_POST } from "../../constants/constants.mjs";
+import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
 // import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
@@ -11,8 +12,8 @@ export async function postOwnPost(postData) {
     const bodyData = {
       title: product,
       description: description,
-      bids: [{ amount: price }],
       endsAt: time,
+      bids: [{ amount: price }],
       tags: [userName],
     };
     if (postData.image) {

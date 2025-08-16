@@ -20,8 +20,9 @@ export function formHandler(formID, pathName, buttonID) {
       loginUser(entries);
     }
     if (pathName === "/index.html" || pathName === "/") {
-      console.log("myCreatedPost", entries);
-      // postOwnPost(entries);
+      cta.innerText = "Creating...";
+      console.log("myCreatedPost12333333", entries);
+      postOwnPost(entries);
     }
   });
 }
