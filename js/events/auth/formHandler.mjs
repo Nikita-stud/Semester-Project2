@@ -21,7 +21,6 @@ export function formHandler(formID, pathName, buttonID) {
     }
     if (pathName === "/index.html" || pathName === "/") {
       cta.innerText = "Creating...";
-      console.log("myCreatedPost12333333", entries);
       postOwnPost(entries);
     }
   });

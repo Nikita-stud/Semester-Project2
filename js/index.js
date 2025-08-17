@@ -11,10 +11,12 @@ import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 import { createOwnPost } from "./ui/posts/createOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
+import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
   console.log(pathName);
+
   switch (pathName) {
     case "/auth/login.html":
     case "/auth/login":
@@ -23,6 +25,7 @@ function pathEvents() {
     case "/auth/register.html":
     case "/auth/register":
       formHandler("#registerForm", pathName, "#submitRegister");
+      break;
     case "auth/register":
       break;
     case "/index.html":
@@ -38,6 +41,7 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
+            displayProfilePage(profileJSON.data);
           } else {
             checkToPostOwnList();
           }
@@ -52,6 +56,26 @@ function pathEvents() {
       break;
     case "/post/":
       fetchSinglePost();
+      break;
+    case "/profile/index.html":
+      toggleNav();
+      window.addEventListener("load", sendToHeaderUponReloading);
+      window.addEventListener("scroll", handleScroll);
+      const fetchProfileData = async () => {
+        try {
+          if (checkIfLoggedIn()) {
+            const profileJSON = await fetchProfile();
+            displayLoggedProfile(profileJSON.data);
+            displayProfilePage(profileJSON.data);
+          }
+          // const listingsObject = await fetchPosts();
+          // const listingDataObjects = listingsObject.data;
+          // createPosts(listingDataObjects);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      fetchProfileData();
       break;
   }
 }

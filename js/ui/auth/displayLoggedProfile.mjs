@@ -4,8 +4,6 @@ const profileContainer = document.getElementById("navLoggedProfile");
 const headerLine = document.getElementById("headerLine");
 
 export function displayLoggedProfile(profileObject) {
-  console.log("This is the profile", profileObject);
-
   profileContainer.classList.add(
     "flex",
     "flex-col",

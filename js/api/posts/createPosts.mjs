@@ -1,7 +1,7 @@
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPosts(posts) {
-  console.log("data", posts);
+  posts.sort((a, b) => new Date(b.created) - new Date(a.created));
   const postsContainer = document.getElementById("posts_container");
 
   postsContainer.classList.add(
@@ -35,19 +35,26 @@ export function createPosts(posts) {
     imgContainer.classList.add("w-full", "h-[291px]", "overflow-hidden");
 
     const img = document.createElement("img");
+    img.classList.add(
+      "rounded-t-md",
+      "object-content",
+      "w-full",
+      "h-full",
+      "overflow-hidden"
+    );
     if (posts[i].media?.[0]?.url) {
-      img.classList.add(
-        "rounded-t-md",
-        "w-full",
-        "h-full",
-        "object-cover",
-        "overflow-hidden"
-      );
+      img.classList.add("object-cover");
+      img.classList.remove("object-content");
       img.src = posts[i].media[0].url;
       img.alt = posts[i].media[0].alt || "Post image which is not described";
     } else {
-      continue;
+      img.src = "../../images/no-img.png";
+      img.alt = "The is no image available";
     }
+    img.onerror = () => {
+      img.src = "../../images/no-img.png";
+      img.alt = "The image is not visible";
+    };
 
     const icon = document.createElement("i");
     icon.classList.add(
