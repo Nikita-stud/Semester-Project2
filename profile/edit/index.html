@@ -127,29 +127,123 @@
 
     <main class="pt-[110px]">
       <section>
-        <form action="" id="editProfileForm">
-          <fieldset>
+        <form id="editProfileForm">
+          <div id="profilePageBackground" class="relative w-full h-[174px]">
             <div
-              id="profilePageBackground"
-              class="relative bg-green w-full h-[174px]"
+              class="relative flex align-middle bg-dark z-10 w-full h-full bg-opacity-50"
             >
-              <div
-                id="profilePageImage"
-                class="absolute top-[0] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[100px] h-[100px] object-cover overflow-hidden"
-              >
-                <div class="bg-dark z-10 w-full h-full opacity-55"></div>
-              </div>
-              <div
-                class="absolute top-[80px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
-              >
-                <h1
-                  id="profilePageName"
-                  class="text-mobileMainHeader pt-[20px] m-auto font-garamond font-bold text-dark"
-                ></h1>
-                <p id="profilePageEmail" class="text-grey font-nunito"></p>
+              <i
+                class="fa-solid fa-arrow-up-from-bracket text-yellow top-0 left-0 right-0 bottom-0 m-auto cursor-pointer text-mobileSecondaryHeader"
+              ></i>
+            </div>
+
+            <div
+              id="profilePageImage"
+              class="absolute opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden"
+            >
+              <div class="relative bg-dark z-10 w-full h-full bg-opacity-60">
+                <i
+                  class="absolute fa-solid fa-arrow-up-from-bracket text-yellow top-[50px] cursor-pointer left-[52px] opacity-100 z-20 text-mobileSecondaryHeader"
+                ></i>
               </div>
             </div>
-          </fieldset>
+          </div>
+          <div class="mt-[80px] flex flex-col gap-[5px]">
+            <h1
+              id="profileCredits"
+              class="text-mobileSecondaryHeader pt-[0px] m-auto font-garamond font-bold text-dark"
+            ></h1>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Name
+                </legend>
+                <label for="name"><span class="hidden">Hidden</span></label>
+                <input
+                  id="name"
+                  readonly
+                  class="ml-10 pointer-events-none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Email
+                </legend>
+                <label for="email"><span class="hidden">Hidden</span></label>
+                <input
+                  id="email"
+                  readonly
+                  class="ml-10 pointer-events-none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Password
+                </legend>
+                <label for="password"><span class="hidden">Hidden</span></label>
+                <input
+                  id="password"
+                  placeholder="********"
+                  readonly
+                  class="ml-10 pointer-events-none none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Bio
+                </legend>
+                <label for="bio"><span class="hidden">Hidden</span></label>
+                <input
+                  type="text"
+                  id="bio"
+                  name="bio"
+                  placeholder="Enter your bio"
+                  pattern="[A-Za-z0-9_]+"
+                  maxlength="160"
+                  class="ml-10 focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+          </div>
+          <div class="flex flex-col items-center mt-[10px]">
+            <button
+              type="submit"
+              id="saveProfile"
+              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+            >
+              Save
+            </button>
+            <button
+              id="cancel"
+              type="button"
+              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </section>
     </main>

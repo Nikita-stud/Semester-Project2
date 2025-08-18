@@ -11,7 +11,7 @@ export function displayProfilePage(profile) {
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
   profilePageEmail.innerText = profile.email;
-  profileCredits.innerText = `Available Credits: CR ${profile.name}`;
+  profileCredits.innerText = `Available Credits: CR ${profile.credits}`;
 
   editProfileContainer.addEventListener("click", () => {
     document.location.href = "edit/index.html";

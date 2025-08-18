@@ -10,6 +10,8 @@ import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
+import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
+import { sendUpdatedProfile } from "./api/helpers/sendUpdatedProfile.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -80,14 +82,11 @@ function pathEvents() {
             setupCommonPageEvents();
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
-
-            displayProfilePage(profileJSON.data);
+            formHandler("#editProfileForm", pathName, "#saveProfile");
+            displayEditProfilePage(profileJSON.data);
           } else {
             window.location.replace(`/auth/login.html`);
           }
-          // const listingsObject = await fetchPosts();
-          // const listingDataObjects = listingsObject.data;
-          // createPosts(listingDataObjects);
         } catch (error) {
           console.log(error);
         }
