@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>FarmersBid | Profile Page</title>
+    <title>FarmersBid | Edit Profile Page</title>
     <meta
       name="description"
-      content="Your own profile page, see active bids, your history, change your profile or explore other farmers"
+      content="Edit your profile to best suit your needs and background"
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
     <script type="module" src="/js/index.js"></script>
   </head>
   <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto] p-0 m-0">
@@ -127,18 +127,18 @@
 
     <main class="pt-[110px]">
       <section>
-        <div
-          id="profilePageBackground"
-          class="relative bg-green w-full h-[174px]"
-        >
-          <div
-            class="absolute bg-formWhite rounded-[20px] mx-[20px] mt-[120px] h-[174px] m-auto left-0 right-0 bottom-0 top-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-          >
-            <div class="relative">
+        <form action="" id="editProfileForm">
+          <fieldset>
+            <div
+              id="profilePageBackground"
+              class="relative bg-green w-full h-[174px]"
+            >
               <div
                 id="profilePageImage"
                 class="absolute top-[0] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[100px] h-[100px] object-cover overflow-hidden"
-              ></div>
+              >
+                <div class="bg-dark z-10 w-full h-full opacity-55"></div>
+              </div>
               <div
                 class="absolute top-[80px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
               >
@@ -149,79 +149,8 @@
                 <p id="profilePageEmail" class="text-grey font-nunito"></p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="pt-[140px] px-[20px]">
-        <h2
-          id="profileCredits"
-          class="text-mobileButton grid place-content-center font-bold font-nunito"
-        ></h2>
-        <div id="editProfileContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-user flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Edit profile
-            </h3>
-            <i
-              class="fa-solid fa-angle-right flex items-center mr-[6px] text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-          <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        </div>
-        <div class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-list flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">My Listing</h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-          <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        </div>
-        <div class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-cart-shopping flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">Active bids</h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-          <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        </div>
-
-        <div class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-trophy flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">Winnings</h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-          <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        </div>
-        <div class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Expired bids
-            </h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-          <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        </div>
+          </fieldset>
+        </form>
       </section>
     </main>
 

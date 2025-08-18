@@ -2,9 +2,6 @@ import { createPosts } from "./api/posts/createPosts.mjs";
 import { fetchPosts } from "./api/posts/fetchPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
-import { handleScroll } from "./ui/helpers/handleScroll.mjs";
-import { sendToHeaderUponReloading } from "./ui/helpers/sendToHeaderUponReloading.mjs";
-import { toggleNav } from "./ui/helpers/toggleNav.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
 import { displayLoggedProfile } from "./ui/auth/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
@@ -12,6 +9,7 @@ import { createOwnPost } from "./ui/posts/createOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
+import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -30,10 +28,8 @@ function pathEvents() {
       break;
     case "/index.html":
     case "/":
-      toggleNav();
       displayFilterData();
-      window.addEventListener("load", sendToHeaderUponReloading);
-      window.addEventListener("scroll", handleScroll);
+      setupCommonPageEvents();
       const fetchListings = async () => {
         try {
           if (checkIfLoggedIn()) {
@@ -58,15 +54,15 @@ function pathEvents() {
       fetchSinglePost();
       break;
     case "/profile/index.html":
-      toggleNav();
-      window.addEventListener("load", sendToHeaderUponReloading);
-      window.addEventListener("scroll", handleScroll);
       const fetchProfileData = async () => {
         try {
           if (checkIfLoggedIn()) {
+            setupCommonPageEvents();
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
             displayProfilePage(profileJSON.data);
+          } else {
+            window.location.replace(`/auth/login.html`);
           }
           // const listingsObject = await fetchPosts();
           // const listingDataObjects = listingsObject.data;
@@ -76,6 +72,26 @@ function pathEvents() {
         }
       };
       fetchProfileData();
+      break;
+    case "/profile/edit/index.html":
+      const getProfileData = async () => {
+        try {
+          if (checkIfLoggedIn()) {
+            setupCommonPageEvents();
+            const profileJSON = await fetchProfile();
+            displayLoggedProfile(profileJSON.data);
+            displayProfilePage(profileJSON.data);
+          } else {
+            window.location.replace(`/auth/login.html`);
+          }
+          // const listingsObject = await fetchPosts();
+          // const listingDataObjects = listingsObject.data;
+          // createPosts(listingDataObjects);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getProfileData();
       break;
   }
 }

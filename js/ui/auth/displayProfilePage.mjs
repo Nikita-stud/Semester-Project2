@@ -5,6 +5,7 @@ const profilePageImage = document.getElementById("profilePageImage");
 const profilePageBackground = document.getElementById("profilePageBackground");
 const profilePageEmail = document.getElementById("profilePageEmail");
 const profileCredits = document.getElementById("profileCredits");
+const editProfileContainer = document.getElementById("editProfileContainer");
 
 export function displayProfilePage(profile) {
   console.log("This is the profile", profile);
@@ -14,6 +15,10 @@ export function displayProfilePage(profile) {
     profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
     profilePageEmail.innerText = profile.email;
     profileCredits.innerText = `Available Credits: CR ${profile.name}`;
+
+    editProfileContainer.addEventListener("click", () => {
+      document.location.href = "edit/index.html";
+    });
   } else {
     console.log("!!!!");
     window.location.replace(`/auth/login.html`);
