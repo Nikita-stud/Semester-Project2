@@ -25,8 +25,16 @@ export function toggleNav() {
 
   if (!checkIfLoggedIn()) {
     profileNavLink.classList.add("hidden");
+  } else {
+    profileNavLink.addEventListener("click", () => {
+      window.location.replace(`/profile/index.html`);
+    });
   }
-  if (pathName === "/profile/index.html#") {
+
+  if (
+    pathName === "/profile/index.html" ||
+    pathName === "/profile/edit/index.html"
+  ) {
     profileNavLink.classList.add("font-bold");
   }
 }

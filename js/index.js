@@ -80,6 +80,7 @@ function pathEvents() {
             setupCommonPageEvents();
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
+
             displayProfilePage(profileJSON.data);
           } else {
             window.location.replace(`/auth/login.html`);
