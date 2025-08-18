@@ -128,23 +128,43 @@
     <main class="pt-[110px]">
       <section>
         <form id="editProfileForm">
-          <div id="profilePageBackground" class="relative w-full h-[174px]">
+          <div
+            id="profilePageBackground"
+            class="relative bg-cover bg-no-repeat w-full h-[174px] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          >
             <div
+              id="profileBannerPreview"
               class="relative flex align-middle bg-dark z-10 w-full h-full bg-opacity-50"
             >
               <i
+                id="uploadBannerIcon"
                 class="fa-solid fa-arrow-up-from-bracket text-yellow top-0 left-0 right-0 bottom-0 m-auto cursor-pointer text-mobileSecondaryHeader"
-              ></i>
+              >
+                <input
+                  type="file"
+                  id="banner"
+                  name="banner"
+                  class="absolute text-desktopMainHeader left-1/2 -translate-x-1/2 right-0 top-[80px] bottom-0 m-auto opacity-0"
+              /></i>
             </div>
 
             <div
               id="profilePageImage"
-              class="absolute opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden"
+              class="absolute bg-cover bg-no-repeat opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             >
-              <div class="relative bg-dark z-10 w-full h-full bg-opacity-60">
+              <div
+                id="avatarPreview"
+                class="relative bg-dark z-10 w-full h-full bg-opacity-60"
+              >
                 <i
+                  id="uploadAvatarIcon"
                   class="absolute fa-solid fa-arrow-up-from-bracket text-yellow top-[50px] cursor-pointer left-[52px] opacity-100 z-20 text-mobileSecondaryHeader"
-                ></i>
+                  ><input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    class="absolute p-6 text-mobileSecondaryHeader left-1/2 -translate-x-1/2 right-0 top-[0px] bottom-0 m-auto opacity-0"
+                /></i>
               </div>
             </div>
           </div>
@@ -205,7 +225,6 @@
                 />
               </fieldset>
             </div>
-
             <div class="grid grid-flow-col place-content-center">
               <fieldset
                 class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"

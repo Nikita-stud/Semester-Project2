@@ -682,6 +682,10 @@ video {
   top: 8px;
 }
 
+.top-\[0px\] {
+  top: 0px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -1168,6 +1172,10 @@ video {
   padding: 20px;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1243,6 +1251,10 @@ video {
 
 .pt-\[5px\] {
   padding-top: 5px;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -1347,6 +1359,10 @@ video {
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow-\[0_4px_4px_rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
