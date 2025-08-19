@@ -144,6 +144,7 @@
                   type="file"
                   id="banner"
                   name="banner"
+                  accept="image/*"
                   class="absolute text-desktopMainHeader left-1/2 -translate-x-1/2 right-0 top-[80px] bottom-0 m-auto opacity-0"
               /></i>
             </div>
@@ -163,6 +164,7 @@
                     type="file"
                     id="avatar"
                     name="avatar"
+                    accept="image/*"
                     class="absolute p-6 text-mobileSecondaryHeader left-1/2 -translate-x-1/2 right-0 top-[0px] bottom-0 m-auto opacity-0"
                 /></i>
               </div>
@@ -227,7 +229,7 @@
             </div>
             <div class="grid grid-flow-col place-content-center">
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[180px] rounded-[20px] xs:w-[280px] md:w-[530px] md:h-[81px]"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -235,15 +237,16 @@
                   Bio
                 </legend>
                 <label for="bio"><span class="hidden">Hidden</span></label>
-                <input
-                  type="text"
+                <textarea
                   id="bio"
                   name="bio"
                   placeholder="Enter your bio"
                   pattern="[A-Za-z0-9_]+"
                   maxlength="160"
-                  class="ml-10 focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
-                />
+                  cols="20"
+                  rows="6"
+                  class="ml-10 resize-none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                ></textarea>
               </fieldset>
             </div>
           </div>
