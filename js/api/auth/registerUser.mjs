@@ -6,6 +6,7 @@ export async function registerUser(user) {
   const button = document.getElementById("submitRegister");
   const fieldset = document.getElementById("fieldset");
   fieldset.disabled = true;
+
   // let jsonValue = {};
   try {
     const postData = createPostRequest(user);

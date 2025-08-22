@@ -11,7 +11,6 @@ import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
-import { sendUpdatedProfile } from "./api/helpers/sendUpdatedProfile.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -34,6 +33,10 @@ function pathEvents() {
       setupCommonPageEvents();
       const fetchListings = async () => {
         try {
+          const listingsObject = await fetchPosts();
+          const listingDataObjects = listingsObject.data;
+          createPosts(listingDataObjects);
+
           if (checkIfLoggedIn()) {
             createOwnPost();
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
@@ -43,11 +46,8 @@ function pathEvents() {
           } else {
             checkToPostOwnList();
           }
-          const listingsObject = await fetchPosts();
-          const listingDataObjects = listingsObject.data;
-          createPosts(listingDataObjects);
         } catch (error) {
-          console.log(error);
+          console.log("error in index", error);
         }
       };
       fetchListings();

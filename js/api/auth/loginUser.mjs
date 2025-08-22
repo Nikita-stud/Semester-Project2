@@ -6,6 +6,7 @@ import { createPostRequest } from "../../events/helpers/createPostRequest.mjs";
 export async function loginUser(user) {
   const button = document.getElementById("loginButton");
   const fieldset = document.getElementById("fieldset");
+
   fieldset.disabled = true;
   button.innerText = "Logging in...";
   // let jsonValue = {};

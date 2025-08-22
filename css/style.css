@@ -839,6 +839,10 @@ video {
   height: 174px;
 }
 
+.h-\[180px\] {
+  height: 180px;
+}
+
 .h-\[25px\] {
   height: 25px;
 }
@@ -881,10 +885,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[180px\] {
-  height: 180px;
 }
 
 .min-h-screen {
@@ -1151,6 +1151,11 @@ video {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {

@@ -72,12 +72,18 @@
             <ul
               class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
             >
-              <li id="ifLoggedIn">
-                <a id="loginNav" class="font-nunito"
+              <li id="productsNavLink">
+                <a href="#" class="font-nunito"
                   ><i
-                    class="fa-solid fa-right-to-bracket text-mobileButton text-green"
+                    class="fa-solid fa-cart-shopping text-mobileButton text-green"
                   ></i>
-                  <span class="ml-[33px] font-nunito">Login</span></a
+                  <span class="ml-[28px] font-nunito">Home</span></a
+                >
+              </li>
+              <li id="profileNavLink">
+                <a href="profile/index.html" class="font-nunito"
+                  ><i class="fa-solid fa-user text-mobileButton text-green"></i>
+                  <span class="ml-[35px] font-nunito">Profile</span></a
                 >
               </li>
               <li>
@@ -86,26 +92,12 @@
                   <span class="ml-[35px] font-nunito">About</span></a
                 >
               </li>
-              <li>
-                <a href="#" class="font-nunito"
+              <li id="ifLoggedIn">
+                <a id="loginNav" class="font-nunito"
                   ><i
-                    class="fa-solid fa-cart-shopping text-mobileButton text-green"
+                    class="fa-solid fa-right-to-bracket text-mobileButton text-green"
                   ></i>
-                  <span class="ml-[28px] font-nunito">Products</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="font-nunito"
-                  ><i
-                    class="fa-solid fa-users text-mobileButton text-green"
-                  ></i>
-                  <span class="ml-[26px] font-nunito">Contact</span></a
-                >
-              </li>
-              <li>
-                <a id="profileNavLink" class="font-nunito"
-                  ><i class="fa-solid fa-user text-mobileButton text-green"></i>
-                  <span class="ml-[35px] font-nunito">Profile</span></a
+                  <span class="ml-[33px] font-nunito">Login</span></a
                 >
               </li>
             </ul>
@@ -133,42 +125,9 @@
             class="relative bg-cover bg-no-repeat w-full h-[174px] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           >
             <div
-              id="profileBannerPreview"
-              class="relative flex align-middle bg-dark z-10 w-full h-full bg-opacity-50"
-            >
-              <i
-                id="uploadBannerIcon"
-                class="fa-solid fa-arrow-up-from-bracket text-yellow top-0 left-0 right-0 bottom-0 m-auto cursor-pointer text-mobileSecondaryHeader"
-              >
-                <input
-                  type="file"
-                  id="banner"
-                  name="banner"
-                  accept="image/*"
-                  class="absolute text-desktopMainHeader left-1/2 -translate-x-1/2 right-0 top-[80px] bottom-0 m-auto opacity-0"
-              /></i>
-            </div>
-
-            <div
               id="profilePageImage"
               class="absolute bg-cover bg-no-repeat opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            >
-              <div
-                id="avatarPreview"
-                class="relative bg-dark z-10 w-full h-full bg-opacity-60"
-              >
-                <i
-                  id="uploadAvatarIcon"
-                  class="absolute fa-solid fa-arrow-up-from-bracket text-yellow top-[50px] cursor-pointer left-[52px] opacity-100 z-20 text-mobileSecondaryHeader"
-                  ><input
-                    type="file"
-                    id="avatar"
-                    name="avatar"
-                    accept="image/*"
-                    class="absolute p-6 text-mobileSecondaryHeader left-1/2 -translate-x-1/2 right-0 top-[0px] bottom-0 m-auto opacity-0"
-                /></i>
-              </div>
-            </div>
+            ></div>
           </div>
           <div class="mt-[80px] flex flex-col gap-[5px]">
             <h1
@@ -224,6 +183,46 @@
                   placeholder="********"
                   readonly
                   class="ml-10 pointer-events-none none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Banner image
+                </legend>
+                <label for="banner"><span class="hidden">Hidden</span></label>
+                <input
+                  type="url"
+                  id="banner"
+                  name="banner"
+                  maxlength="300"
+                  placeholder="https:/..."
+                  class="ml-10 focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                />
+              </fieldset>
+            </div>
+            <div class="grid grid-flow-col place-content-center">
+              <fieldset
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+              >
+                <legend
+                  class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
+                >
+                  Profile image
+                </legend>
+                <label for="avatar"><span class="hidden">Hidden</span></label>
+                <input
+                  type="url"
+                  id="avatar"
+                  name="avatar"
+                  maxlength="300"
+                  placeholder="https:/..."
+                  class="ml-10 none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
                 />
               </fieldset>
             </div>

@@ -1,4 +1,6 @@
 import { checkIfLoggedIn } from "../auth/checkIfLoggedIn.mjs";
+const productsNavLink = document.getElementById("productsNavLink");
+
 const profileNavLink = document.getElementById("profileNavLink");
 const loginNav = document.getElementById("loginNav");
 const pathName = window.location.pathname;
@@ -31,10 +33,15 @@ export function toggleNav() {
     });
   }
 
-  if (
-    pathName === "/profile/index.html" ||
-    pathName === "/profile/edit/index.html"
-  ) {
-    profileNavLink.classList.add("font-bold");
+  switch (pathName) {
+    case "/index.html":
+    case "/":
+      productsNavLink.classList.add("font-bold");
+      break;
+    case "/profile/index.html":
+    case "/profile/edit/index.html":
+      profileNavLink.classList.add("font-bold");
+
+      break;
   }
 }
