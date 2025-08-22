@@ -2,6 +2,7 @@ import { generateUniqueId } from "../../events/helpers/generateUniqueID.mjs";
 
 export function createProfileListings(container, profile) {
   console.log("This is the profile in createProfileListings", profile);
+  console.log("This is the listings", profile.listings);
   const existingContainer = container.querySelector(".listings");
   if (existingContainer) {
     existingContainer.remove();
