@@ -1,3 +1,5 @@
+import { createProfileListings } from "../posts/createProfileListings.mjs";
+
 const profilePageName = document.getElementById("profilePageName");
 const profilePageImage = document.getElementById("profilePageImage");
 const profilePageBackground = document.getElementById("profilePageBackground");
@@ -17,7 +19,6 @@ export function displayProfilePage(profile) {
 
   for (let i = 0; i < toggleItems.length; i++) {
     const item = toggleItems[i];
-
     item.addEventListener("click", () => {
       const itemID = item.id;
       switch (itemID) {
@@ -25,12 +26,20 @@ export function displayProfilePage(profile) {
           document.location.href = "edit/index.html";
           break;
         case "myListingContainer":
+          const listingContainer = createProfileListings(item, profile);
+          console.log(listingContainer);
           break;
         case "activeBidsContainer":
+          const activeContainer = createProfileListings(item, profile);
+          console.log(activeContainer);
           break;
         case "winningsContainer":
+          const winningsContainer = createProfileListings(item, profile);
+          console.log(winningsContainer);
           break;
         case "expiredBidsContainer":
+          const expiredContainer = createProfileListings(item, profile);
+          console.log(expiredContainer);
           break;
       }
     });
