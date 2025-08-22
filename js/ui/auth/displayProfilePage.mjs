@@ -3,7 +3,7 @@ const profilePageImage = document.getElementById("profilePageImage");
 const profilePageBackground = document.getElementById("profilePageBackground");
 const profilePageEmail = document.getElementById("profilePageEmail");
 const profileCredits = document.getElementById("profileCredits");
-const editProfileContainer = document.getElementById("editProfileContainer");
+const toggleContainer = document.getElementById("toggleContainer");
 
 export function displayProfilePage(profile) {
   console.log("This is the profile", profile);
@@ -13,7 +13,26 @@ export function displayProfilePage(profile) {
   profilePageEmail.innerText = profile.email;
   profileCredits.innerText = `Available Credits: CR ${profile.credits}`;
 
-  editProfileContainer.addEventListener("click", () => {
-    document.location.href = "edit/index.html";
-  });
+  const toggleItems = toggleContainer.children;
+
+  for (let i = 0; i < toggleItems.length; i++) {
+    const item = toggleItems[i];
+
+    item.addEventListener("click", () => {
+      const itemID = item.id;
+      switch (itemID) {
+        case "editProfileContainer":
+          document.location.href = "edit/index.html";
+          break;
+        case "myListingContainer":
+          break;
+        case "activeBidsContainer":
+          break;
+        case "winningsContainer":
+          break;
+        case "expiredBidsContainer":
+          break;
+      }
+    });
+  }
 }

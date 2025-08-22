@@ -41,7 +41,6 @@ export function toggleNav() {
     case "/profile/index.html":
     case "/profile/edit/index.html":
       profileNavLink.classList.add("font-bold");
-
       break;
   }
 }
