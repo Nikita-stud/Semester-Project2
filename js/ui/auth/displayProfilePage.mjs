@@ -27,19 +27,16 @@ export function displayProfilePage(profile) {
           break;
         case "myListingContainer":
           const listingContainer = createProfileListings(item, profile);
-          console.log(listingContainer);
           break;
         case "activeBidsContainer":
           const activeContainer = createProfileListings(item, profile);
-          console.log(activeContainer);
           break;
         case "winningsContainer":
           const winningsContainer = createProfileListings(item, profile);
-          console.log(winningsContainer);
           break;
         case "expiredBidsContainer":
           const expiredContainer = createProfileListings(item, profile);
-          console.log(expiredContainer);
+
           break;
       }
     });

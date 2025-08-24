@@ -1,8 +1,6 @@
 import { generateUniqueId } from "../../events/helpers/generateUniqueID.mjs";
 
 export function createProfileListings(container, profile) {
-  console.log("This is the profile in createProfileListings", profile);
-  console.log("This is the listings", profile.listings);
   const existingContainer = container.querySelector(".listings");
   if (existingContainer) {
     existingContainer.remove();
@@ -12,6 +10,22 @@ export function createProfileListings(container, profile) {
   const uniqueId = generateUniqueId();
   container.insertAdjacentElement("beforeend", bidsContainer);
   bidsContainer.setAttribute("id", uniqueId);
-  bidsContainer.classList.add("listings", "bg-green", "w-full", "h-[200px]");
+  bidsContainer.classList.add(
+    "listings",
+    "mt-[20px]",
+    "bg-yellow",
+    "w-full",
+    "h-[200px]"
+  );
+  const profileListings = profile.listings;
+  profileListings.forEach((bid) => {
+    const div = document.createElement("div");
+    const header = document.createElement("h2");
+    header.innerText = bid.title;
+
+    bidsContainer.append(div);
+    div.append(header);
+  });
+
   return bidsContainer;
 }
