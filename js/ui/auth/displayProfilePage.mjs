@@ -1,3 +1,4 @@
+import { fetchProfileListings } from "../../api/posts/fetchProfileListings.mjs";
 import { createProfileListings } from "../posts/createProfileListings.mjs";
 
 const profilePageName = document.getElementById("profilePageName");
@@ -7,7 +8,10 @@ const profilePageEmail = document.getElementById("profilePageEmail");
 const profileCredits = document.getElementById("profileCredits");
 const toggleContainer = document.getElementById("toggleContainer");
 
-export function displayProfilePage(profile) {
+export async function displayProfilePage(profile) {
+  const listingsBids = await fetchProfileListings(profile.listings);
+  console.log("myBIDSSSSS:", listingsBids);
+
   console.log("This is the profile", profile);
   profilePageName.innerText = profile.name;
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
