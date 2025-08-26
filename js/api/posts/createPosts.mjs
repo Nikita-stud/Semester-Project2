@@ -2,8 +2,9 @@ import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPosts(posts) {
   posts.sort((a, b) => new Date(b.created) - new Date(a.created));
-  const postsContainer = document.getElementById("posts_container");
+  const filtered = posts.filter((post) => new Date(post.endsAt) > new Date());
 
+  const postsContainer = document.getElementById("posts_container");
   postsContainer.classList.add(
     "grid",
     "grid-flow-cols",
@@ -16,7 +17,7 @@ export function createPosts(posts) {
     "p-[20px]"
   );
 
-  for (let i = 0; i < posts.length; i++) {
+  for (let i = 0; i < filtered.length; i++) {
     const article = document.createElement("article");
     article.classList.add(
       "relative",
@@ -29,7 +30,7 @@ export function createPosts(posts) {
       "overflow-hidden",
       "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
     );
-    article.setAttribute("id", posts[i].id);
+    article.setAttribute("id", filtered[i].id);
 
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("w-full", "h-[291px]", "overflow-hidden");
@@ -42,11 +43,11 @@ export function createPosts(posts) {
       "h-full",
       "overflow-hidden"
     );
-    if (posts[i].media?.[0]?.url) {
+    if (filtered[i].media?.[0]?.url) {
       img.classList.add("object-cover");
       img.classList.remove("object-content");
-      img.src = posts[i].media[0].url;
-      img.alt = posts[i].media[0].alt || "Post image which is not described";
+      img.src = filtered[i].media[0].url;
+      img.alt = filtered[i].media[0].alt || "Post image which is not described";
     } else {
       img.src = "../../images/no-img.png";
       img.alt = "The is no image available";
@@ -97,7 +98,7 @@ export function createPosts(posts) {
       "overflow-hidden",
       "text-ellipsis"
     );
-    const capitalTitle = posts[i].title.toUpperCase();
+    const capitalTitle = filtered[i].title.toUpperCase();
     title.innerText = capitalTitle;
 
     const price = document.createElement("p");
@@ -112,8 +113,8 @@ export function createPosts(posts) {
       "items-center"
     );
     const highestBid =
-      posts[i].bids.length > 0
-        ? Math.max(...posts[i].bids.map((bid) => bid.amount))
+      filtered[i].bids.length > 0
+        ? Math.max(...filtered[i].bids.map((bid) => bid.amount))
         : "None";
     price.innerText = `CR ${highestBid}`;
 
@@ -124,8 +125,9 @@ export function createPosts(posts) {
       "pt-[5px]",
       "font-bold"
     );
-    const apiDate = new Date(posts[i].endsAt);
+    const apiDate = new Date(filtered[i].endsAt);
     const date = transformTime(apiDate);
+
     const { day, month, year, hours, min } = date;
     time.innerText = `${day}/${month}/${year}, ${hours}:${min}`;
 
@@ -139,7 +141,7 @@ export function createPosts(posts) {
 
     const cta = document.createElement("button");
     cta.innerHTML = "View";
-    cta.setAttribute("id", posts[i].id);
+    cta.setAttribute("id", filtered[i].id);
     cta.addEventListener("click", () => {
       window.location.href = `/post/?id=${article.id}`;
     });

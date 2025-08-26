@@ -10,7 +10,7 @@ export function createPost(post) {
 
   const h1 = document.createElement("h1");
   const cleanTitle = cleanApiTitle(post.title);
-  h1.innerText = cleanTitle;
+  h1.innerText = cleanTitle.toUpperCase();
   h1.classList.add(
     "flex",
     "items-center",
@@ -46,8 +46,13 @@ export function createPost(post) {
   );
   const apiDate = new Date(post.endsAt);
   const date = transformTime(apiDate);
+  const isExpired = new Date(post.endsAt) < new Date();
   const { day, month, year, hours, min } = date;
-  time.innerText = `${day}/${month}/${year}, ${hours}:${min}`;
+  if (!isExpired) {
+    time.innerText = `Ends on: ${day}/${month}/${year}, ${hours}:${min}`;
+  } else {
+    time.innerText = `Expired on: ${day}/${month}/${year}`;
+  }
 
   const priceAndBidsContainer = document.createElement("div");
   priceAndBidsContainer.classList.add("flex", "justify-between", "mt-[18px]");

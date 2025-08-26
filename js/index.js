@@ -42,7 +42,6 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
-            displayProfilePage(profileJSON.data);
           } else {
             checkToPostOwnList();
           }

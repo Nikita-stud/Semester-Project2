@@ -7,13 +7,12 @@ export async function fetchPosts() {
   try {
     const fetchPosts = createAllowedRequest("GET");
     const response = await fetch(API_AUCTION, fetchPosts);
-
     const json = await response.json();
-    console.log("this are the posts", json); // jsonValue = json;
+    // jsonValue = json;
+
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
     }
-    console.log("Posts in getPosts.mjs", json);
     return json;
   } catch (error) {
     console.log(error);

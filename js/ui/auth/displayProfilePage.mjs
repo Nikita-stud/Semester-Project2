@@ -42,13 +42,13 @@ export async function displayProfilePage(profile) {
           createProfileListings(item, expiredListings);
           break;
         case "activeBidsContainer":
-          createProfileListings(item, listingsBids);
+          // createProfileListings(item, listingsBids);
           break;
         case "winningsContainer":
-          createProfileListings(item, listingsBids);
+          // createProfileListings(item, listingsBids);
           break;
         case "expiredBidsContainer":
-          createProfileListings(item, listingsBids);
+          // createProfileListings(item, listingsBids);
           break;
       }
     });

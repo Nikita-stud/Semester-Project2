@@ -3,10 +3,6 @@ import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.
 // import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function fetchProfileListings(listings) {
-  // for (let i = 0; i < listings.length; i++) {
-  //   console.log(listings[i].id);
-  // }
-  // console.log(listings.id);
   // let jsonValue = {};
   try {
     const listingsProm = listings.map(async (listing) => {
@@ -19,7 +15,7 @@ export async function fetchProfileListings(listings) {
         throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
       }
       const json = await response.json();
-      console.log("jsonData", json.data);
+      console.log("fetchProfileListings ", json.data);
       return json.data;
     });
     const listing = await Promise.all(listingsProm);
