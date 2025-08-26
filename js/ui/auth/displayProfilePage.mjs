@@ -10,9 +10,8 @@ const toggleContainer = document.getElementById("toggleContainer");
 
 export async function displayProfilePage(profile) {
   const listingsBids = await fetchProfileListings(profile.listings);
-  console.log("myBIDSSSSS:", listingsBids);
+  console.log(listingsBids);
 
-  console.log("This is the profile", profile);
   profilePageName.innerText = profile.name;
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
@@ -25,22 +24,31 @@ export async function displayProfilePage(profile) {
     const item = toggleItems[i];
     item.addEventListener("click", () => {
       const itemID = item.id;
+      const currentTime = new Date();
       switch (itemID) {
         case "editProfileContainer":
           document.location.href = "edit/index.html";
           break;
         case "myListingContainer":
-          const listingContainer = createProfileListings(item, profile);
+          const activeListing = listingsBids.filter(
+            (listing) => new Date(listing.endsAt) > currentTime
+          );
+          createProfileListings(item, activeListing);
+          break;
+        case "expiredListingContainer":
+          const expiredListings = listingsBids.filter(
+            (listing) => new Date(listing.endsAt) < currentTime
+          );
+          createProfileListings(item, expiredListings);
           break;
         case "activeBidsContainer":
-          const activeContainer = createProfileListings(item, profile);
+          createProfileListings(item, listingsBids);
           break;
         case "winningsContainer":
-          const winningsContainer = createProfileListings(item, profile);
+          createProfileListings(item, listingsBids);
           break;
         case "expiredBidsContainer":
-          const expiredContainer = createProfileListings(item, profile);
-
+          createProfileListings(item, listingsBids);
           break;
       }
     });

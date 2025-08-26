@@ -1,7 +1,7 @@
 import { generateUniqueId } from "../../events/helpers/generateUniqueID.mjs";
 import { transformTime } from "../helpers/transformTime.mjs";
 
-export function createProfileListings(container, profile) {
+export function createProfileListings(container, profileListings) {
   const existingContainer = container.querySelector(".listings");
   if (existingContainer) {
     existingContainer.remove();
@@ -20,7 +20,6 @@ export function createProfileListings(container, profile) {
     "flex-col",
     "gap-[20px]"
   );
-  const profileListings = profile.listings;
   profileListings.forEach((bid) => {
     const div = document.createElement("div");
     div.classList.add(
@@ -55,8 +54,13 @@ export function createProfileListings(container, profile) {
     );
     const apiDate = new Date(bid.endsAt);
     const date = transformTime(apiDate);
+    const isExpired = new Date(bid.endsAt) < new Date();
     const { day, month, year, hours, min } = date;
-    time.innerText = `Ends on: ${day}/${month}/${year}, ${hours}:${min}`;
+    if (!isExpired) {
+      time.innerText = `Ends on: ${day}/${month}/${year}, ${hours}:${min}`;
+    } else {
+      time.innerText = `Expired on: ${day}/${month}/${year}`;
+    }
 
     const price = document.createElement("p");
     price.classList.add(
@@ -74,6 +78,13 @@ export function createProfileListings(container, profile) {
         ? Math.max(...bid.bids.map((bid) => bid.amount))
         : "None";
     price.innerText = `Current bid CR ${highestBid}`;
+    if (!isExpired) {
+      price.innerText = `Current bid CR ${highestBid}`;
+    } else if (highestBid === "None") {
+      price.innerText = `No one placed a bid`;
+    } else {
+      price.innerText = `Final bid was CR ${highestBid}`;
+    }
 
     const img = document.createElement("img");
     img.classList.add(
