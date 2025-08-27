@@ -1,4 +1,4 @@
-export function handleScroll() {
+export function handleNavOnScroll() {
   const header = document.getElementById("headerContainer");
   const headerUnderline = document.getElementById("headerUnderline");
   const currentScrolledY = window.scrollY;

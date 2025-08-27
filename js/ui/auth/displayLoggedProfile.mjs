@@ -42,7 +42,7 @@ export function displayLoggedProfile(profileObject) {
     profileContainer.append(email);
 
     logButton.innerHTML = `<a href="auth/login.html" class="font-nunito">
-                              <i class="fa-solid fa-door-open text-mobileText text-green"></i>
+                              <i id="loginNavIcon" class="fa-solid fa-door-open hidden text-mobileText text-green"></i>
                               <span class="ml-[35px] font-nunito">Logout
                               </span>
                             </a>`;

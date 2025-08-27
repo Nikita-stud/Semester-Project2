@@ -24,6 +24,19 @@ export function toggleNav() {
     darkBackground.classList.toggle("hidden");
     hamburger.classList.toggle("hidden");
   });
+  // const initialWidth = window.innerWidth;
+  // window.addEventListener("resize", () => {
+  //   let width = window.innerWidth;
+  //   if (initialWidth >= width && initialWidth <= width) {
+  //     menu.classList.add("hidden");
+  //     darkBackground.classList.add("hidden");
+  //     hamburger.classList.add("hidden");
+  //   } else if (width < 768) {
+  //     menu.classList.remove("hidden");
+  //     darkBackground.classList.remove("hidden");
+  //     hamburger.classList.remove("hidden");
+  //   }
+  // });
 
   if (!checkIfLoggedIn()) {
     profileNavLink.classList.add("hidden");

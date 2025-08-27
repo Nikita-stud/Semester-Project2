@@ -31,6 +31,7 @@ function pathEvents() {
     case "/":
       displayFilterData();
       setupCommonPageEvents();
+
       const fetchListings = async () => {
         try {
           const listingsObject = await fetchPosts();
