@@ -17,8 +17,11 @@
   </head>
 
   <body class="bg-white">
-    <header class="relative p-[20px]">
-      <div class="flex justify-between">
+    <header
+      id="headerContainer"
+      class="fixed z-20 top-0 left-0 w-full transition-[1s] pt-[20px]"
+    >
+      <div id="headerContent" class="relative px-[20px] flex justify-between">
         <a href="/index.html">
           <img
             src="/images/logo-mobile.png"
@@ -33,7 +36,7 @@
         </a>
 
         <div id="hamburger">
-          <a href="#" class="flex items-center">
+          <a class="flex items-center pt-2">
             <img
               src="/images/nav-mobile.png"
               class="md:hidden"
@@ -55,9 +58,14 @@
           id="toggleMenu"
           class="fixed hidden top-0 left-0 w-[246px] h-screen bg-white z-20 shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
         >
-          <div class="mt-[87px] w-full h-[3px] bg-green rounded-md"></div>
+          <div id="navLoggedProfile"></div>
+          <div
+            id="headerLine"
+            class="mt-[87px] mb-[15px] w-full h-[3px] bg-green rounded-md"
+          ></div>
           <nav>
             <ul
+              id="headerNavUl"
               class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
             >
               <li id="productsNavLink">
@@ -92,7 +100,7 @@
           </nav>
           <button
             id="ctaToggleScreen"
-            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow flex align-middle justify-center rounded-full"
+            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow grid place-content-center m-auto rounded-full"
           >
             <i
               class="fa-regular fa-moon text-mobileButton text-green flex items-center"
@@ -100,79 +108,91 @@
           </button>
         </div>
       </div>
-      <div class="mt-[20px] w-full h-[3px] bg-green rounded-md"></div>
+      <div id="headerUnderline" class="w-full px-[20px]">
+        <div class="mt-[20px] h-[3px] bg-green rounded-md"></div>
+      </div>
     </header>
 
     <main class="p-[20px] border">
       <article id="articleContainer"></article>
     </main>
-
-    <footer class="p-[20px]">
+    <footer class="p-[20px] md:p-[50px]">
       <div class="w-full h-[3px] bg-green rounded-md"></div>
-      <section class="flex flex-col gap-[20px]">
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Company
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+      <section
+        class="flex flex-col gap-[20px] md:flex-row-reverse md:justify-between"
+      >
+        <section
+          class="flex flex-col mt-[20px] gap-[20px] md:flex-row md:justify-end md:gap-[30px] lg:gap-[70px] xl:gap-[100px]"
+        >
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="/about/index.html">About</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Support
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+              Company
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Shipping</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Legal
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+              Support
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Accessibility</a></li>
-              <li><a href="#">Copyright</a></li>
-            </ul>
-          </nav>
-        </div>
-        <a href="/index.html" class="pt-[20px] pr-[20px] flex justify-end">
-          <img
-            src="/images/logo-mobile.png"
-            class="md:hidden"
-            alt="Logo of Farmersbid website"
-          />
-          <img
-            src="/images/logo-desktop.png"
-            class="hidden md:block"
-            alt="Logo of Farmersbid website"
-          />
-        </a>
+              Legal
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Copyright</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section class="md:flex md:items-start md:self-end">
+          <a
+            href="/index.html"
+            class="pt-[20px] pr-[20px] flex justify-end md:justify-start"
+          >
+            <img
+              src="/images/logo-mobile.png"
+              class="md:hidden"
+              alt="Logo of Farmersbid website"
+            />
+            <img
+              src="/images/logo-desktop.png"
+              class="hidden md:block"
+              alt="Logo of Farmersbid website"
+            />
+          </a>
+        </section>
       </section>
     </footer>
   </body>

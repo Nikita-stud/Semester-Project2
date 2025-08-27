@@ -1614,6 +1614,10 @@ video {
     display: block;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:hidden {
     display: none;
   }
@@ -1658,13 +1662,97 @@ video {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .md\:place-content-start {
+    place-content: start;
+  }
+
+  .md\:place-items-start {
+    place-items: start;
+  }
+
+  .md\:place-items-end {
+    place-items: end;
+  }
+
+  .md\:place-items-center {
+    place-items: center;
+  }
+
+  .md\:place-items-baseline {
+    place-items: baseline;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:justify-items-end {
+    justify-items: end;
+  }
+
+  .md\:gap-\[50px\] {
+    gap: 50px;
+  }
+
+  .md\:gap-\[40px\] {
+    gap: 40px;
+  }
+
+  .md\:gap-\[30px\] {
+    gap: 30px;
+  }
+
+  .md\:self-start {
+    align-self: flex-start;
+  }
+
+  .md\:self-end {
+    align-self: flex-end;
+  }
+
+  .md\:self-center {
+    align-self: center;
+  }
+
   .md\:bg-desktopCircles {
     background-image: url('../images/desktop-sides.png');
+  }
+
+  .md\:p-\[50px\] {
+    padding: 50px;
   }
 
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:align-baseline {
+    vertical-align: baseline;
   }
 
   .md\:text-desktopButton {
@@ -1687,11 +1775,28 @@ video {
     --tw-text-opacity: 1;
     color: rgb(16 24 2 / var(--tw-text-opacity, 1));
   }
+
+  .md\:text-grey {
+    --tw-text-opacity: 1;
+    color: rgb(117 117 117 / var(--tw-text-opacity, 1));
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:gap-\[50px\] {
+    gap: 50px;
+  }
+
+  .lg\:gap-\[70px\] {
+    gap: 70px;
+  }
+
+  .lg\:p-\[50px\] {
+    padding: 50px;
   }
 
   .lg\:text-grey {
@@ -1703,6 +1808,10 @@ video {
 @media (min-width: 1280px) {
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:gap-\[100px\] {
+    gap: 100px;
   }
 
   .xl\:text-grey {

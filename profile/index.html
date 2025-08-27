@@ -70,6 +70,7 @@
           ></div>
           <nav>
             <ul
+              id="headerNavUl"
               class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
             >
               <li id="productsNavLink">
@@ -95,7 +96,7 @@
               <li id="ifLoggedIn">
                 <a id="loginNav" class="font-nunito"
                   ><i
-                    class="fa-solid fa-right-to-bracket hidden text-mobileButton text-green"
+                    class="fa-solid fa-right-to-bracket text-mobileButton text-green"
                   ></i>
                   <span class="ml-[33px] font-nunito">Login</span></a
                 >
@@ -234,72 +235,83 @@
       </section>
     </main>
 
-    <footer class="p-[20px]">
+    <footer class="p-[20px] md:p-[50px]">
       <div class="w-full h-[3px] bg-green rounded-md"></div>
-      <section class="flex flex-col gap-[20px]">
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Company
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+      <section
+        class="flex flex-col gap-[20px] md:flex-row-reverse md:justify-between"
+      >
+        <section
+          class="flex flex-col mt-[20px] gap-[20px] md:flex-row md:justify-end md:gap-[30px] lg:gap-[70px] xl:gap-[100px]"
+        >
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="/about/index.html">About</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Support
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+              Company
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Shipping</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div>
-          <h6
-            class="text-mobileSecondaryHeader mb-[5px] md:text-desktopSecondaryHeader"
-          >
-            Legal
-          </h6>
-          <nav>
-            <ul
-              class="text-mobileText flex flex-col gap-[10px] md:text-desktopText"
+              Support
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
             >
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Accessibility</a></li>
-              <li><a href="#">Copyright</a></li>
-            </ul>
-          </nav>
-        </div>
-        <a href="/index.html" class="pt-[20px] pr-[20px] flex justify-end">
-          <img
-            src="/images/logo-mobile.png"
-            class="md:hidden"
-            alt="Logo of Farmersbid website"
-          />
-          <img
-            src="/images/logo-desktop.png"
-            class="hidden md:block"
-            alt="Logo of Farmersbid website"
-          />
-        </a>
+              Legal
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Copyright</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section class="md:flex md:items-start md:self-end">
+          <a
+            href="/index.html"
+            class="pt-[20px] pr-[20px] flex justify-end md:justify-start"
+          >
+            <img
+              src="/images/logo-mobile.png"
+              class="md:hidden"
+              alt="Logo of Farmersbid website"
+            />
+            <img
+              src="/images/logo-desktop.png"
+              class="hidden md:block"
+              alt="Logo of Farmersbid website"
+            />
+          </a>
+        </section>
       </section>
     </footer>
   </body>
