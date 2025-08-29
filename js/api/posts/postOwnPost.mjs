@@ -38,26 +38,3 @@ export async function postOwnPost(postData) {
     // catchAndDisplay("#posts_container", jsonValue.errors?.[0]?.message)
   }
 }
-
-async function uploadImages(files) {
-  const media = [];
-
-  for (let i = 0; i < Math.min(files.length, 5); i++) {
-    const file = files[i];
-    const uploadedImages = await uploadToStorage(file);
-    media.push({
-      url: uploadedImages.url,
-    });
-  }
-  return media;
-}
-
-async function uploadToStorage(file) {
-  const formData = new FormData();
-  formData.append("file", file);
-  const fetchPosts = createAllowedDataRequest("POST", bodyData);
-  const response = await fetch(API_POST, fetchPosts);
-
-  return await response.json();
-  // const response = await fetch((API_POST, fetchPosts);)
-}

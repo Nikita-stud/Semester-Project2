@@ -11,6 +11,7 @@ import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
+import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -43,6 +44,7 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
+            renderPostOwnPost();
           } else {
             checkToPostOwnList();
           }

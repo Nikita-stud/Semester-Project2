@@ -159,20 +159,23 @@
                       maxlength="10"
                       class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"
                     />
-                    <p id="textCount"  class="text-mobileText text-yellow">/20</p>
+                    <p id="textCount"  class="text-mobileText text-yellow">0/10</p>
                 </div>
                 <div class="flex flex-col font-nunito px-[20px]">
-                    <label for="price" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
-                    Starting price
+                    <label for="description" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
+                    Description
                       <i
                         class="fa-solid fa-asterisk text-[10px] absolute ml-1"
-                      ></i></label>
+                      ></i>
+                    </label>
                     <input
-                      type="price"
-                      id="price"
-                      name="price"
-                      placeholder="CR"
+                      type="text"
+                      id="description"
+                      name="description"
+                      placeholder="Salat"
+                      maxlength="200"
                       class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
+                    <p id="descriptionCount"  class="text-mobileText text-yellow">0/200</p>
                 </div>
                 <div class="flex flex-col font-nunito px-[20px]">
                     <label for="time" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
@@ -184,23 +187,7 @@
                       type="datetime-local"
                       id="time"
                       name="time"
-                      placeholder="Days"
-                      class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
-                </div>
-                <div class="flex flex-col font-nunito px-[20px]">
-                    <label for="description" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
-                    Short description
-                      <i
-                        class="fa-solid fa-asterisk text-[10px] absolute ml-1"
-                      ></i>
-                    </label>
-                    <input
-                      type="description"
-                      id="description"
-                      name="description"
-                      placeholder="Salat"
-                      maxlength="80"
-                      class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
+                      class="px-[20px] h-[47px] text-grey rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
                 </div>
                 <div class="flex flex-col font-nunito px-[20px]">
                     <label for="image" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
@@ -210,28 +197,12 @@
                       ></i>
                     </label>
                     <input
-                      type="file"
+                      type="url"
                       id="image"
                       name="image"
-                      placeholder="images.jpg"
-                      accept="image/*"
-                      multiple
+                      placeholder="Image URL"
                       class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
-                </div>
-                <div class="flex flex-col font-nunito px-[20px]">
-                    <label for="description" class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white">
-                    Detailed description
-                      <i
-                        class="fa-solid fa-asterisk text-[10px] absolute ml-1"
-                      ></i>
-                    </label>
-                    <input
-                      type="detailed"
-                      id="detailed"
-                      name="detailed"
-                      placeholder="Eating healthy"
-                      maxlength="200"
-                      class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"/>
+                    <p id="imageCount"  class="text-mobileText text-yellow">Up to 5</p>
                 </div>
                 <div class="flex flex-col align-middle justify-center m-auto">
                   <button
