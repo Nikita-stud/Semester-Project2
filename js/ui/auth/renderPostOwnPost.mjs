@@ -36,11 +36,22 @@ export function renderPostOwnPost() {
 
   let count = 1;
   const addedImgDivs = [];
-  addImgCta.addEventListener("click", () => {
+
+  addImgCta.addEventListener("click", handleImg);
+
+  function handleImg() {
     count++;
     if (count > 5) {
       return;
     }
+    addImgCta.style.display = "none";
+
+    const previousCta = document.querySelectorAll(".add-image");
+    if (previousCta.length > 0) {
+      const lastCta = previousCta[previousCta.length - 1];
+      lastCta.style.display = "none";
+    }
+
     const newImgDiv = document.createElement("div");
     newImgDiv.classList.add(
       "flex",
@@ -50,25 +61,35 @@ export function renderPostOwnPost() {
       "mt-[5px]"
     );
     newImgDiv.innerHTML = ` <label
-                              for="image-${count}"
+                              for="image${count}"
                               class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white"
                             >
                               Image ${count}
                             </label>
                             <input
                               type="url"
-                              id="image"
-                              name="image"
+                              id="image${count}"
+                              name="image${count}"
                               placeholder="Image URL"
                               class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"
                             />
-                              <p id="imageCount" class="text-mobileText text-yellow">
+                            <div class="flex justify-between">
+                              <p class="text-mobileText text-yellow">
                                 Image ${count} of 5
+                              </p>
+                              <p
+                                class="add-image text-mobileText text-yellow mt-[5px] underline cursor-pointer underline-offset-[3px]"
+                              >
+                                Add image URL <i class="fa-solid fa-plus"></i>
                               </p>
                             </div>`;
     inputContainer.insertAdjacentElement("beforeend", newImgDiv);
+    if (count < 5) {
+      const newAdd = newImgDiv.querySelector(".add-image");
+      newAdd.addEventListener("click", handleImg);
+    }
     addedImgDivs.push(newImgDiv);
-  });
+  }
 
   postButton.addEventListener("click", () => {
     mainLandingContainer.classList.toggle("hidden");
@@ -82,6 +103,7 @@ export function renderPostOwnPost() {
       div.remove();
     });
     addedImgDivs.length = 0;
+    addImgCta.style.display = "block";
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
     landingContainer.classList.add("bg-mobileSheep", "w-full", "h-[477px]");

@@ -11,6 +11,7 @@ import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
 import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
+import { filterPosts } from "./events/posts/filterPosts.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -37,6 +38,7 @@ function pathEvents() {
           const listingsObject = await fetchPosts();
           const listingDataObjects = listingsObject.data;
           createPosts(listingDataObjects);
+          filterPosts(listingDataObjects);
 
           if (checkIfLoggedIn()) {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");

@@ -862,6 +862,10 @@ video {
   -webkit-line-clamp: 2;
 }
 
+.block {
+  display: block;
+}
+
 .inline {
   display: inline;
 }

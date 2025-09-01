@@ -5,23 +5,34 @@ import { createAllowedDataRequest } from "../../events/helpers/createAlloweddata
 
 export async function postOwnPost(postData) {
   // let jsonValue = {};
-  const userName = loadLocalStorage("UserName");
-  const { product, price, time, description, image } = postData;
-
-  const imageFiles = image.files;
-  console.log("imageFiles", imageFiles);
-
   try {
+    const userName = loadLocalStorage("UserName");
+    const {
+      product,
+      time,
+      description,
+      image,
+      image2,
+      image3,
+      image4,
+      image5,
+    } = postData;
+
+    let images = [image, image2, image3, image4, image5];
+    const filteredImages = images.filter((img) => img && img.trim().length > 0);
+
     const bodyData = {
       title: product,
       description: description,
       endsAt: time,
-      bids: [{ amount: price }],
       tags: [userName],
     };
-    if (image.files && image.files.length > 0) {
-      const uploadedFiles = await uploadImages(image.files);
-      bodyData.media = uploadedFiles;
+
+    if (filteredImages.length > 0) {
+      bodyData.media = filteredImages.map((img, index) => ({
+        url: img,
+        alt: `Image${index + 1} for ${product}`,
+      }));
     }
 
     const fetchPosts = createAllowedDataRequest("POST", bodyData);

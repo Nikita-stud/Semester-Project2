@@ -26,6 +26,7 @@ export function formHandler(formID, pathName, buttonID) {
     }
     if (pathName === "/index.html" || pathName === "/") {
       cta.innerText = "Creating...";
+      console.log("entries", entries);
       postOwnPost(entries);
     }
     if (pathName === "/profile/edit/index.html") {
