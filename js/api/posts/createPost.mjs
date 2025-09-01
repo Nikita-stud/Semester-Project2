@@ -87,31 +87,100 @@ export function createPost(post) {
   bids.innerHTML = `<i class="fa-solid fa-chevron-left text-mobileText"></i>${post.bids.length} bids<i class="fa-solid fa-chevron-right text-mobileText"></i>`;
 
   const imgContainer = document.createElement("div");
-  imgContainer.classList.add("grid", "grid-col-3", "gap-[2opx]");
+  imgContainer.classList.add("grid", "grid-cols-2", "gap-[20px]", "w-full");
 
-  // for (let i = 0; i < 6; i++) {
-  //   const img = document.createElement("img");
-  //   img.classList.add(
-  //     "rounded-md",
-  //     "w-[100px]",
-  //     "h-[100px]",
-  //     "object-cover",
-  //     "overflow-hidden"
-  //   );
-  //   const imgContent =
-  //     post.media[i] > 0 ? post.media[i].url : "../../images/no-img.png";
-  //   img.src = imgContent;
-  //   img.alt = post.media[i].alt || "Post image which is not described";
+  const mainImg = document.createElement("img");
+  mainImg.classList.add(
+    "mt-[20px]",
+    "rounded-md",
+    "w-full",
+    "h-[276px]",
+    "object-cover",
+    "overflow-hidden",
+    "col-span-2"
+  );
+  const mainImgContent =
+    post.media[0] && post.media[0].url
+      ? post.media[0].url
+      : "../../images/no-img.png";
+  mainImg.src = mainImgContent;
+  mainImg.alt = post.media[0].alt || "Post image which is not described";
+  imgContainer.append(mainImg);
 
-  //   // if (post.media[i]) {
-  //   //   img.src = post.media[i].url;
-  //   //   img.alt = post.media[i].alt;
-  //   // } else {
-  //   //   img.src = "../../images/no-img.png";
-  //   //   img.alt = "No image available";
-  //   // }
-  //   imgContainer.append(img);
-  // }
+  for (let i = 1; i < post.media.length; i++) {
+    const img = document.createElement("img");
+
+    img.classList.add(
+      "rounded-md",
+      "w-full",
+      "h-[132px]",
+      "object-cover",
+      "overflow-hidden"
+    );
+
+    const imgContent =
+      post.media[i] && post.media[i].url
+        ? post.media[i].url
+        : "../../images/no-img.png";
+    img.src = imgContent;
+    img.alt = post.media[i].alt || "Post image which is not described";
+
+    img.onerror = () => {
+      img.src = "../../images/no-img.png";
+      img.alt = "The image is not visible";
+    };
+    imgContainer.append(img);
+  }
+  const descriptionContainer = document.createElement("div");
+  descriptionContainer.innerHTML = `<p class="font-bold text-mobileButton">Description: <span class="font-light text-mobileText">${post.description}</span></p>
+                                    <p class="font-bold text-mobileButton">Tags: <span class="font-light text-mobileText">${post.tags}</span></p>`;
+  descriptionContainer.classList.add("mt-[20px]", "text-dark", "font-nunito");
+
+  const sellerContainer = document.createElement("div");
+  sellerContainer.classList.add(
+    "my-[20px]",
+    "p-[10px]",
+    "flex",
+    "flex-col",
+    "rounded-[20px]",
+    "border",
+    "border-grey",
+    "bg-yellow",
+    "w-full",
+    "h-full"
+  );
+  const sellerProfileContainer = document.createElement("div");
+  sellerProfileContainer.classList.add("flex", "gap-[10px]");
+
+  const sellerProfileTextContainer = document.createElement("div");
+  sellerProfileTextContainer.classList.add("flex", "flex-col", "mt-[12px]");
+
+  const profileImg = document.createElement("img");
+  profileImg.classList.add(
+    "rounded-full",
+    "w-[80px]",
+    "h-[80px]",
+    "object-cover",
+    "overflow-hidden"
+  );
+  const profileDispImg = post.seller.avatar.url
+    ? post.seller.avatar.url
+    : "../../images/no-img.png";
+  profileImg.src = profileDispImg;
+  profileImg.alt = post.seller.avatar.alt || "Profile image not described";
+
+  const name = document.createElement("p");
+  name.innerText = post.seller.name;
+
+  const email = document.createElement("p");
+  email.classList.add("text-grey");
+  email.innerText = post.seller.email;
+
+  sellerContainer.append(sellerProfileContainer);
+  sellerProfileContainer.append(profileImg);
+  sellerProfileContainer.append(sellerProfileTextContainer);
+  sellerProfileTextContainer.append(name);
+  sellerProfileTextContainer.append(email);
 
   articleContainer.append(headerAndIconContainer);
   headerAndIconContainer.append(h1);
@@ -121,4 +190,6 @@ export function createPost(post) {
   priceAndBidsContainer.append(price);
   priceAndBidsContainer.append(bids);
   articleContainer.append(imgContainer);
+  articleContainer.append(descriptionContainer);
+  articleContainer.append(sellerContainer);
 }

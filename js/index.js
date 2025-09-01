@@ -55,6 +55,11 @@ function pathEvents() {
       fetchListings();
       break;
     case "/post/":
+      if (checkIfLoggedIn()) {
+        setupCommonPageEvents();
+      } else {
+        window.location.replace(`/auth/login.html`);
+      }
       fetchSinglePost();
       break;
     case "/profile/index.html":
