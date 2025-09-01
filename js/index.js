@@ -5,7 +5,6 @@ import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
 import { displayLoggedProfile } from "./ui/auth/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
-import { createOwnPost } from "./ui/posts/createOwnPost.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
@@ -40,7 +39,6 @@ function pathEvents() {
           createPosts(listingDataObjects);
 
           if (checkIfLoggedIn()) {
-            createOwnPost();
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayLoggedProfile(profileJSON.data);
