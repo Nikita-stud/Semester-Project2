@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .no-clear-button::-webkit-search-cancel-button {
+    display: none;
+  }
+  .no-clear-button::-moz-search-cancel-button {
+    display: none;
+  }
+  .no-clear-button::-ms-clear {
+    display: none;
+  }
+}
