@@ -1,3 +1,4 @@
+import { checkIfLoggedIn } from "../../ui/auth/checkIfLoggedIn.mjs";
 import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
@@ -12,12 +13,15 @@ export function createPost(post) {
   const cleanTitle = cleanApiTitle(post.title);
   h1.innerText = cleanTitle.toUpperCase();
   h1.classList.add(
+    "text-mobileButton",
     "flex",
     "items-center",
-    "w-[200px]",
+    "mr-[20px]",
+    "break-words",
     "line-clamp-1",
     "text-ellipsis",
-    "text-mobileMainHeader",
+    "xs:text-mobileSecondaryHeader",
+    "mob:text-mobileMainHeader",
     "font-garamond"
   );
 
@@ -26,6 +30,12 @@ export function createPost(post) {
     "fa-regular",
     "fa-heart",
     "cursor-pointer",
+    "w-[47px]",
+    "h-[47px]",
+    "flex",
+    "justify-center",
+    "place-items-center",
+    "align-middle",
     "p-[20px]",
     "bg-formWhite",
     "border",
@@ -95,16 +105,17 @@ export function createPost(post) {
     "rounded-md",
     "w-full",
     "h-[276px]",
-    "object-cover",
+    "object-contain",
+    "object-center",
+    "sm:object-cover",
     "overflow-hidden",
     "col-span-2"
   );
-  const mainImgContent =
-    post.media[0] && post.media[0].url
-      ? post.media[0].url
-      : "../../images/no-img.png";
+  const mainImgContent = post.media[0]?.url
+    ? post.media[0].url
+    : "../../images/no-img.png";
   mainImg.src = mainImgContent;
-  mainImg.alt = post.media[0].alt || "Post image which is not described";
+  mainImg.alt = post.media[0]?.alt || "Post image which is not described";
   imgContainer.append(mainImg);
 
   for (let i = 1; i < post.media.length; i++) {
@@ -119,11 +130,11 @@ export function createPost(post) {
     );
 
     const imgContent =
-      post.media[i] && post.media[i].url
+      post.media[i] && post.media[i]?.url
         ? post.media[i].url
         : "../../images/no-img.png";
     img.src = imgContent;
-    img.alt = post.media[i].alt || "Post image which is not described";
+    img.alt = post.media[i]?.alt || "Post image which is not described";
 
     img.onerror = () => {
       img.src = "../../images/no-img.png";
@@ -132,8 +143,16 @@ export function createPost(post) {
     imgContainer.append(img);
   }
   const descriptionContainer = document.createElement("div");
-  descriptionContainer.innerHTML = `<p class="font-bold text-mobileButton">Description: <span class="font-light text-mobileText">${post.description}</span></p>
-                                    <p class="font-bold text-mobileButton">Tags: <span class="font-light text-mobileText">${post.tags}</span></p>`;
+  let descriptionOfPost = "None";
+  if (post.description) {
+    descriptionOfPost = post.description;
+  }
+  let tags = "None";
+  if (post.tags.length > 0) {
+    tags = post.tags;
+  }
+  descriptionContainer.innerHTML = `<p class="font-bold text-mobileButton">Description: <span class="font-light text-mobileText">${descriptionOfPost}</span></p>
+                                    <p class="font-bold text-mobileButton">Tags: <span class="font-light text-mobileText break-words">${tags}</span></p>`;
   descriptionContainer.classList.add("mt-[20px]", "text-dark", "font-nunito");
 
   const sellerContainer = document.createElement("div");
@@ -168,6 +187,31 @@ export function createPost(post) {
     "mob:place-items-start",
     "mt-[12px]"
   );
+
+  let buttonText = "";
+  const button = document.createElement("button");
+  button.classList.add(
+    "h-[60px]",
+    "w-[180px]",
+    "xs:w-[240px]",
+    "mob:w-[280px]",
+    "m-auto",
+    "my-[20px]",
+    "rounded-full",
+    "bg-yellow",
+    "text-darkerYellow",
+    "text-mobileButton",
+    "font-bold",
+    "grid",
+    "place-content-center"
+  );
+
+  if (checkIfLoggedIn) {
+    buttonText = "Bid Now";
+  } else {
+    buttonText = "Login In";
+  }
+  button.innerText = buttonText;
 
   const profileImg = document.createElement("img");
   profileImg.classList.add(
@@ -216,5 +260,6 @@ export function createPost(post) {
   priceAndBidsContainer.append(bids);
   articleContainer.append(imgContainer);
   articleContainer.append(descriptionContainer);
+  articleContainer.append(button);
   articleContainer.append(sellerContainer);
 }
