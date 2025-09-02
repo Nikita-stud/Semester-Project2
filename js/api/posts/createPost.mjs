@@ -138,6 +138,7 @@ export function createPost(post) {
 
   const sellerContainer = document.createElement("div");
   sellerContainer.classList.add(
+    "overflow-hidden",
     "my-[20px]",
     "p-[10px]",
     "flex",
@@ -145,15 +146,28 @@ export function createPost(post) {
     "rounded-[20px]",
     "border",
     "border-grey",
-    "bg-yellow",
+    "bg-formWhite",
     "w-full",
     "h-full"
   );
   const sellerProfileContainer = document.createElement("div");
-  sellerProfileContainer.classList.add("flex", "gap-[10px]");
+  sellerProfileContainer.classList.add(
+    "flex",
+    "flex-col",
+    "place-items-center",
+    "mob:place-items-start",
+    "mob:flex-row",
+    "gap-[10px]"
+  );
 
   const sellerProfileTextContainer = document.createElement("div");
-  sellerProfileTextContainer.classList.add("flex", "flex-col", "mt-[12px]");
+  sellerProfileTextContainer.classList.add(
+    "grid",
+    "grid-cols",
+    "place-items-center",
+    "mob:place-items-start",
+    "mt-[12px]"
+  );
 
   const profileImg = document.createElement("img");
   profileImg.classList.add(
@@ -173,14 +187,25 @@ export function createPost(post) {
   name.innerText = post.seller.name;
 
   const email = document.createElement("p");
-  email.classList.add("text-grey");
+  email.classList.add("text-grey", "break-words", "break-all");
   email.innerText = post.seller.email;
+
+  const myDescription = document.createElement("p");
+  myDescription.classList.add(
+    "mt-[10px]",
+    "text-dark",
+    "font-nunito",
+    "text-mobileText",
+    "font-semibold"
+  );
+  myDescription.innerHTML = `${post.seller.name} writes: <span class="font-normal">${post.seller.bio}</span>`;
 
   sellerContainer.append(sellerProfileContainer);
   sellerProfileContainer.append(profileImg);
   sellerProfileContainer.append(sellerProfileTextContainer);
   sellerProfileTextContainer.append(name);
   sellerProfileTextContainer.append(email);
+  sellerContainer.append(myDescription);
 
   articleContainer.append(headerAndIconContainer);
   headerAndIconContainer.append(h1);

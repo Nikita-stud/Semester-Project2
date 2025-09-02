@@ -724,10 +724,6 @@ video {
   top: 8px;
 }
 
-.-left-1\/2 {
-  left: -50%;
-}
-
 .-z-10 {
   z-index: -10;
 }
@@ -824,6 +820,10 @@ video {
   margin-top: 120px;
 }
 
+.mt-\[12px\] {
+  margin-top: 12px;
+}
+
 .mt-\[13px\] {
   margin-top: 13px;
 }
@@ -850,18 +850,6 @@ video {
 
 .mt-\[87px\] {
   margin-top: 87px;
-}
-
-.mt-\[40px\] {
-  margin-top: 40px;
-}
-
-.mt-\[5ps\] {
-  margin-top: 5ps;
-}
-
-.mt-\[12px\] {
-  margin-top: 12px;
 }
 
 .line-clamp-1 {
@@ -910,6 +898,10 @@ video {
   height: 130px;
 }
 
+.h-\[132px\] {
+  height: 132px;
+}
+
 .h-\[150px\] {
   height: 150px;
 }
@@ -924,6 +916,10 @@ video {
 
 .h-\[25px\] {
   height: 25px;
+}
+
+.h-\[276px\] {
+  height: 276px;
 }
 
 .h-\[291px\] {
@@ -968,14 +964,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[276px\] {
-  height: 276px;
-}
-
-.h-\[132px\] {
-  height: 132px;
 }
 
 .min-h-screen {
@@ -1052,16 +1040,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-1\/2 {
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .scale-x-\[-1\] {
   --tw-scale-x: -1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1127,10 +1105,6 @@ video {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .gap-\[10px\] {
   gap: 10px;
 }
@@ -1143,20 +1117,8 @@ video {
   gap: 20px;
 }
 
-.gap-\[2opx\] {
-  gap: 2opx;
-}
-
 .gap-\[5px\] {
   gap: 5px;
-}
-
-.gap-\[q0px\] {
-  gap: q0px;
-}
-
-.gap-\[0px\] {
-  gap: 0px;
 }
 
 .overflow-hidden {
@@ -1165,6 +1127,14 @@ video {
 
 .text-ellipsis {
   text-overflow: ellipsis;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
 }
 
 .rounded-\[20px\] {
@@ -1186,10 +1156,6 @@ video {
 
 .border {
   border-width: 1px;
-}
-
-.border-2 {
-  border-width: 2px;
 }
 
 .border-b-\[3px\] {
@@ -1239,11 +1205,6 @@ video {
 .bg-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 202 19 / var(--tw-bg-opacity, 1));
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -1325,16 +1286,6 @@ video {
   padding-bottom: 20px;
 }
 
-.py-\[40px\] {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.px-\[40px\] {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 .pb-\[15px\] {
   padding-bottom: 15px;
 }
@@ -1385,10 +1336,6 @@ video {
 
 .pt-\[5px\] {
   padding-top: 5px;
-}
-
-.pt-\[40px\] {
-  padding-top: 40px;
 }
 
 .text-center {
@@ -1449,6 +1396,14 @@ video {
 
 .font-light {
   font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-black {
@@ -1569,12 +1524,36 @@ video {
 }
 
 @media (min-width: 280px) {
+  .xs\:m-auto {
+    margin: auto;
+  }
+
   .xs\:inline {
     display: inline;
   }
 
   .xs\:w-\[280px\] {
     width: 280px;
+  }
+
+  .xs\:flex-row {
+    flex-direction: row;
+  }
+
+  .xs\:flex-col {
+    flex-direction: column;
+  }
+
+  .xs\:place-items-center {
+    place-items: center;
+  }
+
+  .xs\:justify-center {
+    justify-content: center;
+  }
+
+  .xs\:align-middle {
+    vertical-align: middle;
   }
 
   .xs\:text-desktopText {
@@ -1593,6 +1572,32 @@ video {
   .xs\:text-white {
     --tw-text-opacity: 1;
     color: rgb(243 255 251 / var(--tw-text-opacity, 1));
+  }
+}
+
+@media (min-width: 470px) {
+  .mob\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .mob\:flex-row {
+    flex-direction: row;
+  }
+
+  .mob\:flex-col {
+    flex-direction: column;
+  }
+
+  .mob\:place-items-start {
+    place-items: start;
+  }
+
+  .mob\:place-items-end {
+    place-items: end;
+  }
+
+  .mob\:justify-center {
+    justify-content: center;
   }
 }
 
