@@ -35,6 +35,7 @@ module.exports = {
         mobileCircles: "url('../images/mobile-sides.png')",
         desktopCircles: "url('../images/desktop-sides.png')",
         mobileSheep: "url('../images/sheep-mobile.jpg')",
+        desktopSheep: "url('../images/sheep-desktop.jpg')",
       },
     },
   },

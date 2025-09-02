@@ -12,7 +12,7 @@ export function toggleNav() {
   const menu = document.getElementById("toggleMenu");
 
   loginNav.addEventListener("click", () => {
-    window.location.replace("auth/login.html");
+    window.location.replace("/auth/login.html");
   });
 
   hamburger.addEventListener("click", () => {

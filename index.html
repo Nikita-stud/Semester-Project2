@@ -121,17 +121,22 @@
     <main class="pt-[110px]">
       <section
         id="landingContainer"
-        class="relative bg-mobileSheep bg-cover bg-center w-full h-[477px] bg-no-repeat"
+        class="relative bg-mobileSheep bg-cover bg-center w-full h-[477px] bg-no-repeat md:bg-desktopSheep md:w-auto md:mx-[50px] md:md:mt-[35px]"
       >
         <div id="mainLandingContainer">
           <h1
-            class="text-mobileMainHeader font-garamond max-w-[370px] font-bold text-white p-[20px]"
+            class="text-mobileMainHeader font-garamond max-w-[370px] font-bold text-white p-[20px] md:text-dark md:px-[50px] md:max-w-max md:m-auto md:pt-[50px] xl:text-desktopMainHeader"
           >
             Made by farmers who truly know their crops
           </h1>
+          <p
+            class="hidden text-mobileSecondaryHeader -mt-5 font-semibold font-garamond md:justify-center md:flex xl:text-desktopSecondaryHeader"
+          >
+            Start selling your products today
+          </p>
           <button
             id="postOwnBidButton"
-            class="absolute h-[60px] bottom-[60px] left-1/2 transform -translate-x-1/2 rounded-full bg-yellow text-darkerYellow font-bold grid place-content-center xs:w-[280px] xs:text-mobileButton"
+            class="absolute h-[60px] bottom-[60px] left-1/2 transform -translate-x-1/2 rounded-full bg-yellow text-darkerYellow font-bold grid place-content-center xs:w-[280px] xs:text-mobileButton lg:h-[74px] lg:w-[530px] lg:text-desktopButton lg:bottom-[50px]"
           >
             Place your product
           </button>
