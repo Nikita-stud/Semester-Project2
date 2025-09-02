@@ -13,11 +13,232 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../../css/style.css" />
+    <script type="module" src="../js/index.js"></script>
   </head>
+  <body class="bg-white min-h-screen grid grid-rows-[auto_1fr_auto] p-0 m-0">
+    <header
+      id="headerContainer"
+      class="fixed z-20 top-0 left-0 w-full transition-[1s] pt-[20px]"
+    >
+      <div id="headerContent" class="relative px-[20px] flex justify-between">
+        <a href="/index.html">
+          <img
+            src="/images/logo-mobile.png"
+            class="md:hidden"
+            alt="Logo of Farmersbid website"
+          />
+          <img
+            src="/images/logo-desktop.png"
+            class="hidden md:block"
+            alt="Logo of Farmersbid website"
+          />
+        </a>
 
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+        <div id="hamburger">
+          <a class="flex items-center pt-2">
+            <img
+              src="/images/nav-mobile.png"
+              class="md:hidden"
+              alt="Navigation Bar"
+            />
+          </a>
+        </div>
+
+        <div
+          id="overlay"
+          class="fixed cursor-pointer inset-0 bg-black bg-opacity-50 z-10 hidden"
+        >
+          <p class="absolute top-[15px] right-[20px]">
+            <i class="fa-solid fa-xmark text-green text-desktopMainHeader"></i>
+          </p>
+        </div>
+
+        <div
+          id="toggleMenu"
+          class="fixed hidden top-0 left-0 w-[246px] h-screen bg-white z-20 shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+        >
+          <div id="navLoggedProfile"></div>
+          <div
+            id="headerLine"
+            class="mt-[87px] mb-[15px] w-full h-[3px] bg-green rounded-md"
+          ></div>
+          <nav>
+            <ul
+              id="headerNavUl"
+              class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
+            >
+              <li id="productsNavLink">
+                <a href="/" class="font-nunito"
+                  ><i
+                    class="fa-solid fa-cart-shopping text-mobileButton text-green"
+                  ></i>
+                  <span class="ml-[28px] font-nunito">Home</span></a
+                >
+              </li>
+              <li id="profileNavLink">
+                <a href="/profile/index.html" class="font-nunito"
+                  ><i class="fa-solid fa-user text-mobileButton text-green"></i>
+                  <span class="ml-[35px] font-nunito">Profile</span></a
+                >
+              </li>
+              <li id="aboutNavLink">
+                <a href="#"
+                  ><i class="fa-solid fa-bars text-mobileButton text-green"></i>
+                  <span class="ml-[35px] font-nunito">About</span></a
+                >
+              </li>
+              <li id="ifLoggedIn">
+                <a id="loginNav" class="font-nunito"
+                  ><i
+                    class="fa-solid fa-right-to-bracket text-mobileButton text-green"
+                  ></i>
+                  <span class="ml-[33px] font-nunito">Login</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+          <button
+            id="ctaToggleScreen"
+            class="text-desktopButton mt-[20px] w-[208px] h-[47px] bg-yellow grid place-content-center m-auto rounded-full"
+          >
+            <i
+              class="fa-regular fa-moon text-mobileButton text-green flex items-center"
+            ></i>
+          </button>
+        </div>
+      </div>
+      <div id="headerUnderline" class="w-full px-[20px]">
+        <div class="mt-[20px] h-[3px] bg-green rounded-md"></div>
+      </div>
+    </header>
+
+    <main class="mt-[110px]">
+      <section class="px-[20px]">
+        <h1 class="font-garamond text-mobileMainHeader">About us</h1>
+        <p class="font-nunito text-mobileText">
+          At <span class="font-bold">FarbersBid</span> were passionate about
+          bringing farm-fresh goodness straight to your table. We believe in the
+          power of real, wholesome food—grown with care by local farmers who
+          share our commitment to quality and sustainability.
+        </p>
+        <div>
+          <img
+            src="../images/hands.jpg"
+            alt="Hands that plant the seed in the ground"
+            class="rounded-[20px] my-[20px]"
+          />
+          <h2 class="text-mobileSecondaryHeader text-dark">
+            By farmers and enthusiast for the people
+          </h2>
+          <p class="font-nunito text-mobileText text-dark">
+            We believe the best food doesn’t come from factories or warehouses
+            it comes from the land, tended by hands that care. That’s why we
+            work directly with small-scale farmers, ranchers, and producers who
+            prioritize sustainable, ethical practices.
+          </p>
+        </div>
+        <div>
+          <img
+            src="../images/field.jpg"
+            alt="Tractor that is harvesting the crops"
+            class="rounded-[20px] my-[20px]"
+          />
+          <h3 class="text-mobileSecondaryHeader text-dark">
+            Straight supply chain
+          </h3>
+          <p class="font-nunito text-mobileText text-dark">
+            By partnering directly with growers, we ensure you get the freshest,
+            most flavorful ingredients while supporting the hardworking farmers
+            behind them. From crisp veggies to juicy fruits, pasture-raised
+            meats to artisanal dairy, every bite tells a story of integrity and
+            taste.
+          </p>
+          <p class="my-[20px] font-nunito text-mobileText text-dark font-bold">
+            Join us in celebrating honest food, rooted in the earth and made for
+            you.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="p-[20px] md:p-[50px]">
+      <div class="w-full h-[3px] bg-green rounded-md"></div>
+      <section
+        class="flex flex-col gap-[20px] md:flex-row-reverse md:justify-between"
+      >
+        <section
+          class="flex flex-col mt-[20px] gap-[20px] md:flex-row md:justify-end md:gap-[30px] lg:gap-[70px] xl:gap-[100px]"
+        >
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
+            >
+              Company
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
+            >
+              Support
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <h6
+              class="text-mobileSecondaryHeader font-nunito font-bold mb-[5px] md:text-desktopButton"
+            >
+              Legal
+            </h6>
+            <nav>
+              <ul
+                class="text-mobileButton text-grey font-nunito flex flex-col gap-[10px] md:text-desktopText"
+              >
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Accessibility</a></li>
+                <li><a href="#">Copyright</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section class="md:flex md:items-start md:self-end">
+          <a
+            href="/index.html"
+            class="pt-[20px] pr-[20px] flex justify-end md:justify-start"
+          >
+            <img
+              src="/images/logo-mobile.png"
+              class="md:hidden"
+              alt="Logo of Farmersbid website"
+            />
+            <img
+              src="/images/logo-desktop.png"
+              class="hidden md:block"
+              alt="Logo of Farmersbid website"
+            />
+          </a>
+        </section>
+      </section>
+    </footer>
   </body>
 </html>

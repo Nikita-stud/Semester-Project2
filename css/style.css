@@ -860,6 +860,10 @@ video {
   margin-right: 20px;
 }
 
+.mt-\[110px\] {
+  margin-top: 110px;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -884,6 +888,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .grid {

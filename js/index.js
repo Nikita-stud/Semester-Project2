@@ -26,8 +26,6 @@ function pathEvents() {
     case "/auth/register":
       formHandler("#registerForm", pathName, "#submitRegister");
       break;
-    case "auth/register":
-      break;
     case "/index.html":
     case "/":
       displayFilterData();
@@ -57,8 +55,6 @@ function pathEvents() {
     case "/post/":
       if (checkIfLoggedIn()) {
         setupCommonPageEvents();
-      } else {
-        window.location.replace(`/auth/login.html`);
       }
       fetchSinglePost();
       break;
@@ -99,6 +95,18 @@ function pathEvents() {
         }
       };
       getProfileData();
+      break;
+    case "/about/index.html":
+      const getAboutProfileData = async () => {
+        try {
+          setupCommonPageEvents();
+          const profileJSON = await fetchProfile();
+          displayLoggedProfile(profileJSON.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getAboutProfileData();
       break;
   }
 }
