@@ -113,50 +113,68 @@
     </header>
 
     <main class="mt-[110px]">
-      <section class="px-[20px]">
-        <h1 class="font-garamond text-mobileMainHeader">About us</h1>
-        <p class="font-nunito text-mobileText">
+      <section class="px-[20px] md:px-[50px]">
+        <h1
+          class="font-garamond text-mobileMainHeader lg:text-desktopMainHeader"
+        >
+          About us
+        </h1>
+        <p class="font-nunito text-mobileText lg:text-desktopText">
           At <span class="font-bold">FarbersBid</span> were passionate about
           bringing farm-fresh goodness straight to your table. We believe in the
           power of real, wholesome food—grown with care by local farmers who
           share our commitment to quality and sustainability.
         </p>
-        <div>
+        <div class="sm:flex">
           <img
             src="../images/hands.jpg"
             alt="Hands that plant the seed in the ground"
-            class="rounded-[20px] my-[20px]"
+            class="rounded-[20px] object-cover my-[20px] sm:mr-[20px] sm:w-[300px] lg:w-[500px] lg:mt-[30px] xl:w-[680px] xl:h-[562px]"
           />
-          <h2 class="text-mobileSecondaryHeader text-dark">
-            By farmers and enthusiast for the people
-          </h2>
-          <p class="font-nunito text-mobileText text-dark">
-            We believe the best food doesn’t come from factories or warehouses
-            it comes from the land, tended by hands that care. That’s why we
-            work directly with small-scale farmers, ranchers, and producers who
-            prioritize sustainable, ethical practices.
-          </p>
+          <div class="flex flex-col justify-center">
+            <h2
+              class="text-mobileSecondaryHeader text-dark md:mb-[10px] lg:text-desktopSecondaryHeader"
+            >
+              By farmers and enthusiast for the people
+            </h2>
+            <p
+              class="font-nunito text-mobileText text-dark lg:text-desktopText"
+            >
+              We believe the best food doesn’t come from factories or warehouses
+              it comes from the land, tended by hands that care. That’s why we
+              work directly with small-scale farmers, ranchers, and producers
+              who prioritize sustainable, ethical practices.
+            </p>
+          </div>
         </div>
-        <div>
+        <div class="sm:flex sm:flex-row-reverse">
           <img
             src="../images/field.jpg"
             alt="Tractor that is harvesting the crops"
-            class="rounded-[20px] my-[20px]"
+            class="rounded-[20px] object-cover my-[20px] sm:mr-[20px] sm:w-[300px] lg:w-[500px] xl:w-[680px] xl:h-[562px]"
           />
-          <h3 class="text-mobileSecondaryHeader text-dark">
-            Straight supply chain
-          </h3>
-          <p class="font-nunito text-mobileText text-dark">
-            By partnering directly with growers, we ensure you get the freshest,
-            most flavorful ingredients while supporting the hardworking farmers
-            behind them. From crisp veggies to juicy fruits, pasture-raised
-            meats to artisanal dairy, every bite tells a story of integrity and
-            taste.
-          </p>
-          <p class="my-[20px] font-nunito text-mobileText text-dark font-bold">
-            Join us in celebrating honest food, rooted in the earth and made for
-            you.
-          </p>
+          <div class="flex flex-col justify-center mr-[20px]">
+            <h3
+              class="text-mobileSecondaryHeader text-dark md:mb-[10px] lg:text-desktopSecondaryHeader"
+            >
+              Straight supply chain
+            </h3>
+            <p
+              class="font-nunito text-mobileText text-dark lg:text-desktopText"
+            >
+              By partnering directly with growers, we ensure you get the
+              freshest, most flavorful ingredients while supporting the
+              hardworking farmers behind them. From crisp veggies to juicy
+              fruits, pasture-raised meats to artisanal dairy, every bite tells
+              a story of integrity and taste.
+            </p>
+            <p
+              class="my-[20px] font-nunito text-mobileText text-dark font-bold lg:text-desktopButton"
+            >
+              Join us in celebrating honest food, rooted in the earth and made
+              for you.
+            </p>
+          </div>
         </div>
       </section>
     </main>
