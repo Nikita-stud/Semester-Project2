@@ -12,6 +12,7 @@ import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
 import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
 import { filterPosts } from "./events/posts/filterPosts.mjs";
+import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -24,6 +25,7 @@ function pathEvents() {
       break;
     case "/auth/register.html":
     case "/auth/register":
+      displayErrorOnAuth("submitRegister");
       formHandler("#registerForm", pathName, "#submitRegister");
       break;
     case "/index.html":
