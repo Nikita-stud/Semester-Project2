@@ -885,6 +885,18 @@ video {
   margin-bottom: 45px;
 }
 
+.-mb-\[5px\] {
+  margin-bottom: -5px;
+}
+
+.-mb-\[15px\] {
+  margin-bottom: -15px;
+}
+
+.-mb-\[10px\] {
+  margin-bottom: -10px;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1212,6 +1224,11 @@ video {
 .border-grey {
   --tw-border-opacity: 1;
   border-color: rgb(117 117 117 / var(--tw-border-opacity, 1));
+}
+
+.border-redTime {
+  --tw-border-opacity: 1;
+  border-color: rgb(159 50 71 / var(--tw-border-opacity, 1));
 }
 
 .bg-black {

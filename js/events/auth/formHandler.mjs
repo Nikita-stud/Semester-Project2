@@ -12,9 +12,6 @@ export function formHandler(formID, pathName, buttonID) {
     const formFile = new FormData(formRegister);
     const entries = Object.fromEntries(formFile);
 
-    // const data = new FormData(e.target);
-    // const entries = Object.fromEntries(data.entries());
-
     console.log("Inputs from Form", entries);
 
     if (pathName === "/auth/register.html" || pathName === "auth/register") {
