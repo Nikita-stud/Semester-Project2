@@ -1791,6 +1791,18 @@ video {
     }
   }
 
+  .md\:mt-\[20px\] {
+    margin-top: 20px;
+  }
+
+  .md\:mt-\[10px\] {
+    margin-top: 10px;
+  }
+
+  .md\:mt-\[15px\] {
+    margin-top: 15px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1943,6 +1955,10 @@ video {
   }
 
   .md\:text-desktopText {
+    font-size: 21px;
+  }
+
+  .md\:text-mobileButton {
     font-size: 21px;
   }
 

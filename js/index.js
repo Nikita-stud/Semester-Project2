@@ -21,6 +21,7 @@ function pathEvents() {
   switch (pathName) {
     case "/auth/login.html":
     case "/auth/login":
+      displayErrorOnAuth("loginButton");
       formHandler("#loginForm", pathName, "#loginButton");
       break;
     case "/auth/register.html":

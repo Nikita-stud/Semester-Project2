@@ -4,6 +4,7 @@ import { clearError } from "../helpers/clearError.mjs";
 import { showError } from "../helpers/showError.mjs";
 
 export function displayErrorOnAuth(submitCta) {
+  const pathName = window.location.pathname;
   const submit = document.getElementById(`${submitCta}`);
   submit.classList.add("opacity-70");
 
@@ -13,42 +14,47 @@ export function displayErrorOnAuth(submitCta) {
 
   const updateSubmitButton = () => {
     const isValid = nameIf && emailIf && passwordIf;
+
     if (isValid) {
       submit.classList.remove("opacity-70");
-      submit.disabled = !isValid;
+      submit.disabled = false;
+    } else {
+      submit.classList.add("opacity-70");
+      submit.disabled = true;
     }
   };
 
-  const nameInput = document.getElementById("name");
-  nameIf = nameInput.addEventListener("input", (e) => {
-    const value = e.target.value.trim();
+  if (pathName === "/auth/login.html" || pathName === "/auth/login") {
+    nameIf = true;
+  } else {
+    const nameInput = document.getElementById("name");
+    nameInput.addEventListener("input", (e) => {
+      const value = e.target.value.trim();
 
-    if (!value) {
-      clearError("nameErrorText");
-      nameIf = false;
-      updateSubmitButton();
-      return;
-    }
-
-    switch (true) {
-      case value.length > 20:
-        showError("nameErrorText", `Name is too long`);
-        nameIf = false;
-        break;
-      case !validateName(value):
-        showError("nameErrorText", "No spaces allowed except _");
-        nameIf = false;
-        break;
-      case validateName(value) && value.length > 20:
-        nameIf = true;
-        break;
-      default:
+      if (!value) {
         clearError("nameErrorText");
-        nameIf = true;
-        break;
-    }
-    updateSubmitButton();
-  });
+        nameIf = false;
+        updateSubmitButton();
+        return;
+      }
+
+      switch (true) {
+        case value.length > 20:
+          showError("nameErrorText", `Name is too long`);
+          nameIf = false;
+          break;
+        case !validateName(value):
+          showError("nameErrorText", "No spaces allowed except _");
+          nameIf = false;
+          break;
+        default:
+          clearError("nameErrorText");
+          nameIf = true;
+          break;
+      }
+      updateSubmitButton();
+    });
+  }
 
   const emailInput = document.getElementById("email");
   emailInput.addEventListener("input", (e) => {
