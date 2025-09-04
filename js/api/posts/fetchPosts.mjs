@@ -3,6 +3,10 @@ import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function fetchPosts() {
+  const loadingContainer = document.getElementById("postsLoadingContainer");
+  const hottestLoadingContainer = document.getElementById(
+    "hottestLoadingContainer"
+  );
   let jsonValue = {};
   try {
     const fetchPosts = createAllowedRequest("GET");
@@ -15,8 +19,9 @@ export async function fetchPosts() {
     }
     return json;
   } catch (error) {
-    const loadingContainer = document.getElementById("postsLoadingContainer");
     loadingContainer.innerHTML = "";
+    hottestLoadingContainer.style.display = "none";
     catchAndDisplay("errorFetchingPosts", jsonValue, false);
+    catchAndDisplay("errorFetchingHottestPosts", jsonValue, false);
   }
 }
