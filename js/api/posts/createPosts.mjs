@@ -1,6 +1,11 @@
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPosts(posts) {
+  const postsLoadingContainer = document.getElementById(
+    "postsLoadingContainer"
+  );
+  postsLoadingContainer.classList.add("hidden");
+
   posts.sort((a, b) => new Date(b.created) - new Date(a.created));
   const filteredIfExpired = posts.filter(
     (post) => new Date(post.endsAt) > new Date()

@@ -1,7 +1,7 @@
 import { loadLocalStorage } from "../events/auth/loadLocalStorage.mjs";
 const yourProfile = loadLocalStorage(`UserName`);
 
-const API_BASE = "https://v2.api.noroff.dev";
+const API_BASE = "https://v2.api.norofwdwf.dev";
 export const API_REGISTER = `${API_BASE}/auth/register`;
 export const API_LOGIN = `${API_BASE}/auth/login`;
 export const API_POST = `${API_BASE}/auction/listings`;
