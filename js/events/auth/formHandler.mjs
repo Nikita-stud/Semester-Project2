@@ -14,16 +14,15 @@ export function formHandler(formID, pathName, buttonID) {
 
     console.log("Inputs from Form", entries);
 
-    if (pathName === "/auth/register.html" || pathName === "auth/register") {
+    if (pathName === "/auth/register.html" || pathName === "/auth/register") {
       cta.innerText = "Submitting...";
       registerUser(entries);
     }
-    if (pathName === "/auth/login.html" || pathName === "auth/login") {
+    if (pathName === "/auth/login.html" || pathName === "/auth/login") {
       loginUser(entries);
     }
     if (pathName === "/index.html" || pathName === "/") {
       cta.innerText = "Creating...";
-      console.log("entries", entries);
       postOwnPost(entries);
     }
     if (pathName === "/profile/edit/index.html") {

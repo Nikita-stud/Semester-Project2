@@ -3,7 +3,7 @@ import { createPostRequest } from "../../events/helpers/createPostRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function registerUser(user) {
-  const button = document.getElementById("submitRegister");
+  const button = document.getElementById("registerButton");
   const fieldset = document.getElementById("fieldset");
   fieldset.disabled = true;
 

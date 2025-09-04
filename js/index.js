@@ -26,8 +26,8 @@ function pathEvents() {
       break;
     case "/auth/register.html":
     case "/auth/register":
-      displayErrorOnAuth("submitRegister");
-      formHandler("#registerForm", pathName, "#submitRegister");
+      displayErrorOnAuth("registerButton");
+      formHandler("#registerForm", pathName, "#registerButton");
       break;
     case "/index.html":
     case "/":
