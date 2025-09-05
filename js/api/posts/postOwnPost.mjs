@@ -1,10 +1,14 @@
 import { API_POST } from "../../constants/constants.mjs";
 import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
-// import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
+import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function postOwnPost(postData) {
-  // let jsonValue = {};
+  const button = document.getElementById("postOwnCTA");
+  const fieldset = document.getElementById("fieldsetPost");
+  fieldset.disabled = true;
+  let jsonValue = {};
+
   try {
     const userName = loadLocalStorage("UserName");
     const {
@@ -38,14 +42,17 @@ export async function postOwnPost(postData) {
     const fetchPosts = createAllowedDataRequest("POST", bodyData);
     const response = await fetch(API_POST, fetchPosts);
     const json = await response.json();
-    // jsonValue = json;
+    jsonValue = json;
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
     } else {
+      catchAndDisplay("errorPosting", jsonValue, true);
       location.reload();
     }
   } catch (error) {
-    console.log(error);
-    // catchAndDisplay("#posts_container", jsonValue.errors?.[0]?.message)
+    catchAndDisplay("errorPosting", jsonValue, false);
+  } finally {
+    fieldset.disabled = false;
+    button.innerText = "Post";
   }
 }
