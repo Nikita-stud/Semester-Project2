@@ -27,7 +27,7 @@ export function formHandler(formID, pathName, buttonID) {
     }
     if (pathName === "/profile/edit/index.html") {
       cta.innerText = "Saving...";
-      sendUpdatedProfile(formFile);
+      sendUpdatedProfile(entries);
     }
   });
 }

@@ -3,7 +3,6 @@ import { fetchPosts } from "./api/posts/fetchPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
-import { displayLoggedProfile } from "./ui/auth/displayLoggedProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
 import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
@@ -13,6 +12,7 @@ import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
 import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
 import { filterPosts } from "./events/posts/filterPosts.mjs";
 import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
+import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -44,7 +44,7 @@ function pathEvents() {
           if (checkIfLoggedIn()) {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
-            displayLoggedProfile(profileJSON.data);
+            displayNavLoggedProfile(profileJSON.data);
             renderPostOwnPost();
           } else {
             checkToPostOwnList();
@@ -67,7 +67,7 @@ function pathEvents() {
           if (checkIfLoggedIn()) {
             setupCommonPageEvents();
             const profileJSON = await fetchProfile();
-            displayLoggedProfile(profileJSON.data);
+            displayNavLoggedProfile(profileJSON.data);
             displayProfilePage(profileJSON.data);
           } else {
             window.location.replace(`/auth/login.html`);
@@ -87,7 +87,7 @@ function pathEvents() {
           if (checkIfLoggedIn()) {
             setupCommonPageEvents();
             const profileJSON = await fetchProfile();
-            displayLoggedProfile(profileJSON.data);
+            displayNavLoggedProfile(profileJSON.data);
             formHandler("#editProfileForm", pathName, "#saveProfile");
             displayEditProfilePage(profileJSON.data);
           } else {
@@ -104,7 +104,7 @@ function pathEvents() {
         try {
           setupCommonPageEvents();
           const profileJSON = await fetchProfile();
-          displayLoggedProfile(profileJSON.data);
+          displayNavLoggedProfile(profileJSON.data);
         } catch (error) {
           console.log(error);
         }

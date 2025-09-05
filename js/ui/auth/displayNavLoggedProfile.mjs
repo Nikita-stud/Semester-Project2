@@ -3,7 +3,7 @@ const logButton = document.getElementById("ifLoggedIn");
 const profileContainer = document.getElementById("navLoggedProfile");
 const headerLine = document.getElementById("headerLine");
 
-export function displayLoggedProfile(profileObject) {
+export function displayNavLoggedProfile(profileObject) {
   profileContainer.classList.add(
     "flex",
     "flex-col",
