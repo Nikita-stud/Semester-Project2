@@ -4,10 +4,8 @@ export function checkIfImageValid(url) {
     `google.com/search`,
     `google.com/url?`,
     `google.com/images`,
-    `&q=`,
-    `&rlz=`,
-    `&udm=`,
-    `&fbs=`,
+    `&q=search`,
+    `?q=search`,
   ];
   return !invalidEnds.some((ends) => urlToUse.includes(ends));
 }
