@@ -6,8 +6,20 @@ const cancelCta = document.getElementById("cancel");
 const bio = document.getElementById("bio");
 
 export function displayEditProfilePage(profile) {
-  avatarImg.style.backgroundImage = `url(${profile.banner.url})`;
-  bannerImg.style.backgroundImage = `url(${profile.avatar.url})`;
+  const newAvatarImg = new Image();
+  const newBannerImg = new Image();
+  newAvatarImg.src = profile.avatar.url;
+  newBannerImg.src = profile.banner.url;
+
+  newAvatarImg.onerror = () => {
+    profilePageImage.style.backgroundImage = `url(../../images/img-on-error.png)`;
+  };
+  newBannerImg.onerror = () => {
+    profilePageBackground.style.backgroundImage = `url(../../images/img-on-error.png)`;
+  };
+
+  avatarImg.style.backgroundImage = `url(${profile.avatar.url})`;
+  bannerImg.style.backgroundImage = `url(${profile.banner.url})`;
 
   profileCredits.innerHTML = `Your Credits: CR <span class="underline text-underline">${profile.credits}</span>`;
   name.placeholder = `${profile.name}`;

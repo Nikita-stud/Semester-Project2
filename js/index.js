@@ -16,7 +16,6 @@ import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
-  console.log(pathName);
 
   switch (pathName) {
     case "/auth/login.html":
@@ -31,8 +30,8 @@ function pathEvents() {
       break;
     case "/index.html":
     case "/":
-      displayFilterData();
       setupCommonPageEvents();
+      displayFilterData();
 
       const fetchListings = async () => {
         try {
@@ -45,6 +44,8 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
+            setupCommonPageEvents("wait");
+
             renderPostOwnPost();
           } else {
             checkToPostOwnList();
@@ -56,16 +57,15 @@ function pathEvents() {
       fetchListings();
       break;
     case "/post/":
-      if (checkIfLoggedIn()) {
-        setupCommonPageEvents();
-      }
+      setupCommonPageEvents();
       fetchSinglePost();
       break;
     case "/profile/index.html":
+      setupCommonPageEvents();
+
       const fetchProfileData = async () => {
         try {
           if (checkIfLoggedIn()) {
-            setupCommonPageEvents();
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
             displayProfilePage(profileJSON.data);
@@ -82,10 +82,11 @@ function pathEvents() {
       fetchProfileData();
       break;
     case "/profile/edit/index.html":
+      setupCommonPageEvents();
+
       const getProfileData = async () => {
         try {
           if (checkIfLoggedIn()) {
-            setupCommonPageEvents();
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
             formHandler("#editProfileForm", pathName, "#saveProfile");
@@ -100,9 +101,10 @@ function pathEvents() {
       getProfileData();
       break;
     case "/about/index.html":
+      setupCommonPageEvents();
+
       const getAboutProfileData = async () => {
         try {
-          setupCommonPageEvents();
           const profileJSON = await fetchProfile();
           displayNavLoggedProfile(profileJSON.data);
         } catch (error) {

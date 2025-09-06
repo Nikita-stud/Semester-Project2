@@ -1,15 +1,16 @@
 import { checkIfLoggedIn } from "../auth/checkIfLoggedIn.mjs";
-const productsNavLink = document.getElementById("productsNavLink");
-const profileNavLink = document.getElementById("profileNavLink");
-const aboutNavLink = document.getElementById("aboutNavLink");
-
-const loginNav = document.getElementById("loginNav");
-const pathName = window.location.pathname;
 
 export function toggleNav() {
+  const loginNav = document.getElementById("loginNav");
   const hamburger = document.getElementById("hamburger");
   const darkBackground = document.getElementById("overlay");
   const menu = document.getElementById("toggleMenu");
+
+  const productsNavLink = document.getElementById("productsNavLink");
+  const profileNavLink = document.getElementById("profileNavLink");
+  const aboutNavLink = document.getElementById("aboutNavLink");
+
+  const pathName = window.location.pathname;
 
   loginNav.addEventListener("click", () => {
     window.location.replace("/auth/login.html");

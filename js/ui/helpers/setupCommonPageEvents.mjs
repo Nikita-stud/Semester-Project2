@@ -1,18 +1,20 @@
+import { displayNavLoggedProfile } from "../auth/displayNavLoggedProfile.mjs";
 import { handleNavOnScroll } from "./handleNavOnScroll.mjs";
-import { handleWidthStyles } from "./handleWidthStyles.mjs";
+import { handleNavWidthStyles } from "./handleNavWidthStyles.mjs";
 import { sendToHeaderUponReloading } from "./sendToHeaderUponReloading.mjs";
 import { toggleNav } from "./toggleNav.mjs";
 
-export function setupCommonPageEvents() {
-  let width = window.innerWidth;
-  toggleNav();
+export function setupCommonPageEvents(whatToDo) {
   window.addEventListener("load", sendToHeaderUponReloading);
   window.addEventListener("scroll", handleNavOnScroll);
-  // const loginNavIcon = document.getElementById("loginNavIcon");
-  // loginNavIcon.classList.remove("hidden");
+  window.addEventListener("resize", handleNavWidthStyles);
 
-  if (width >= 768) {
-    handleWidthStyles();
+  handleNavWidthStyles();
+  handleNavOnScroll();
+  toggleNav();
+
+  if (whatToDo === "wait") {
+    toggleNav();
+    displayNavLoggedProfile();
   }
-  window.addEventListener("resize", handleWidthStyles);
 }

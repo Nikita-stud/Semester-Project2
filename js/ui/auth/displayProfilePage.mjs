@@ -13,6 +13,19 @@ export async function displayProfilePage(profile) {
   console.log(listingsBids);
 
   profilePageName.innerText = profile.name;
+
+  const newAvatarImg = new Image();
+  const newBannerImg = new Image();
+  newAvatarImg.src = profile.avatar.url;
+  newBannerImg.src = profile.banner.url;
+
+  newAvatarImg.onerror = () => {
+    profilePageImage.style.backgroundImage = `url(../../images/img-on-error.png)`;
+  };
+  newBannerImg.onerror = () => {
+    profilePageBackground.style.backgroundImage = `url(../../images/img-on-error.png)`;
+  };
+
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
   profilePageEmail.innerText = profile.email;

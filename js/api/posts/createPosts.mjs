@@ -98,8 +98,8 @@ export function createPosts(posts) {
         img.alt = "The is no image available";
       }
       img.onerror = () => {
-        img.src = "../../images/no-img.png";
-        img.alt = "The image is not visible";
+        img.src = "../../images/img-on-error.png";
+        img.alt = "The image is not visible because of an error";
       };
 
       const icon = document.createElement("i");
