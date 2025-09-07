@@ -2,12 +2,13 @@ import { loginUser } from "../../api/auth/loginUser.mjs";
 import { registerUser } from "../../api/auth/registerUser.mjs";
 import { sendUpdatedProfile } from "../../api/helpers/sendUpdatedProfile.mjs";
 import { postOwnPost } from "../../api/posts/postOwnPost.mjs";
+import { displayErrorOnEditProfile } from "../../ui/auth/displayErrorOnEditProfile.mjs";
 
 export function formHandler(formID, pathName, buttonID) {
   const formRegister = document.querySelector(`${formID}`);
   const cta = document.querySelector(`${buttonID}`);
 
-  formRegister.addEventListener("submit", (e) => {
+  formRegister.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formFile = new FormData(formRegister);
     const entries = Object.fromEntries(formFile);
@@ -27,7 +28,13 @@ export function formHandler(formID, pathName, buttonID) {
     }
     if (pathName === "/profile/edit/index.html") {
       cta.innerText = "Saving...";
-      sendUpdatedProfile(entries);
+      const isValid = await displayErrorOnEditProfile(entries);
+      if (isValid) {
+        await sendUpdatedProfile(entries);
+      } else {
+        cta.innerText = "Save";
+        return;
+      }
     }
   });
 }

@@ -90,6 +90,7 @@ function pathEvents() {
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
             formHandler("#editProfileForm", pathName, "#saveProfile");
+
             displayEditProfilePage(profileJSON.data);
           } else {
             window.location.replace(`/auth/login.html`);

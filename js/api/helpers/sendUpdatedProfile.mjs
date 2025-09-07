@@ -1,5 +1,4 @@
 import { API_PROFILE } from "../../constants/constants.mjs";
-import { checkIfImageValid } from "../../events/helpers/checkIfImageValid.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
@@ -12,10 +11,10 @@ export async function sendUpdatedProfile(entries) {
     if (bio && bio.trim().length > 0) {
       bodyData.bio = bio;
     }
-    if (avatar && avatar.trim().length > 0 && checkIfImageValid(avatar)) {
+    if (avatar && avatar.trim().length > 0) {
       bodyData.avatar = { url: avatar };
     }
-    if (banner && banner.trim().length > 0 && checkIfImageValid(banner)) {
+    if (banner && banner.trim().length > 0) {
       bodyData.banner = { url: banner };
     }
 
@@ -25,7 +24,7 @@ export async function sendUpdatedProfile(entries) {
     jsonValue = json;
 
     if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
+      throw new Error(json.errors?.[0]?.message || "Editing Profile failed");
     } else {
       catchAndDisplay("errorEditProfile", jsonValue, true);
       location.reload();

@@ -2,8 +2,11 @@ export function catchAndDisplay(containerId, jsonValue, errorFalse) {
   const container = document.getElementById(`${containerId}`);
   const parent = container.parentElement;
   if (errorFalse === false) {
-    const errorMessage =
-      jsonValue.errors?.[0]?.message || "There has been an Error";
+    let errorMessage = jsonValue.errors?.[0]?.message;
+
+    if (!typeof jsonValue === "string") {
+      errorMessage = jsonValue;
+    }
     const isNotFound = errorMessage.toLowerCase().includes("not found");
     const errorStatus = jsonValue.statusCode;
     const clientError = errorStatus >= 400 && errorStatus <= 499;
