@@ -1,8 +1,8 @@
-const postOwnBidCta = document.getElementById("postOwnBidButton");
+export function checkToPostOwnList(buttonID, buttonText) {
+  const postOwnBidCta = document.getElementById(`${buttonID}`);
 
-export function checkToPostOwnList() {
-  postOwnBidCta.innerText = "Login to post";
+  postOwnBidCta.innerText = `Login to ${buttonText}`;
   postOwnBidCta.addEventListener("click", () => {
-    window.location.href = "/auth/login.html";
+    window.location.replace("/auth/login.html");
   });
 }

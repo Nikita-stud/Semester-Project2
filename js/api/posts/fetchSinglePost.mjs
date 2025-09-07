@@ -17,8 +17,7 @@ export async function fetchSinglePost() {
     );
     const json = await fetched.json();
     // jsonValue = json;
-    createPost(json.data);
-
+    return json;
     if (!fetched.ok) {
       throw new Error(json.errors?.[0]?.message || "Failed fetching the post");
     }

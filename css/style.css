@@ -724,6 +724,26 @@ video {
   top: 8px;
 }
 
+.right-\[-20px\] {
+  right: -20px;
+}
+
+.top-\[20px\] {
+  top: 20px;
+}
+
+.right-\[-30px\] {
+  right: -30px;
+}
+
+.right-\[30px\] {
+  right: 30px;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -780,6 +800,11 @@ video {
 .my-\[30px\] {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.my-\[10px\] {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .-mb-\[10px\] {
@@ -1024,6 +1049,22 @@ video {
   height: 300px;
 }
 
+.h-\[712px\] {
+  height: 712px;
+}
+
+.h-\[412px\] {
+  height: 412px;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.max-h-\[90vh\] {
+  max-height: 90vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1104,12 +1145,24 @@ video {
   width: calc(85% - 2.5rem);
 }
 
+.w-screen {
+  width: 100vw;
+}
+
+.w-auto {
+  width: auto;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
 
 .max-w-\[370px\] {
   max-width: 370px;
+}
+
+.max-w-md {
+  max-width: 28rem;
 }
 
 .flex-1 {
@@ -1141,6 +1194,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.cursor-auto {
+  cursor: auto;
 }
 
 .resize-none {
@@ -1213,6 +1270,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .truncate {
@@ -1310,6 +1371,16 @@ video {
 .bg-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 202 19 / var(--tw-bg-opacity, 1));
+}
+
+.bg-redTime {
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 50 71 / var(--tw-bg-opacity, 1));
+}
+
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 24 2 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -1493,6 +1564,14 @@ video {
   padding-right: 5rem;
 }
 
+.pl-\[50px\] {
+  padding-left: 50px;
+}
+
+.pl-\[100px\] {
+  padding-left: 100px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1543,6 +1622,10 @@ video {
 
 .text-mobileText {
   font-size: 16px;
+}
+
+.text-desktopSecondaryHeader {
+  font-size: 37px;
 }
 
 .font-bold {
@@ -1611,6 +1694,10 @@ video {
 
 .underline-offset-\[3px\] {
   text-underline-offset: 3px;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
 }
 
 .opacity-100 {

@@ -13,6 +13,7 @@ import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
 import { filterPosts } from "./events/posts/filterPosts.mjs";
 import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
 import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
+import { createPost } from "./api/posts/createPost.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -44,10 +45,11 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
+            console.log("I am logged in");
             renderPostOwnPost();
             setupCommonPageEvents("wait");
           } else {
-            checkToPostOwnList();
+            checkToPostOwnList("postOwnBidButton", "post");
           }
         } catch (error) {
           console.log("error in index", error);
@@ -57,7 +59,22 @@ function pathEvents() {
       break;
     case "/post/":
       setupCommonPageEvents();
-      fetchSinglePost();
+
+      const fetchSingle = async () => {
+        try {
+          if (checkIfLoggedIn()) {
+            const profileJSON = await fetchProfile();
+            displayNavLoggedProfile(profileJSON.data);
+            const json = await fetchSinglePost();
+            createPost(json.data, profileJSON.data);
+
+            setupCommonPageEvents("wait");
+          }
+        } catch (error) {
+          console.log("error in single posts", error);
+        }
+      };
+      fetchSingle();
       break;
     case "/profile/index.html":
       setupCommonPageEvents();

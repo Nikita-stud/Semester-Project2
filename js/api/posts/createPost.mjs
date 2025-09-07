@@ -1,8 +1,9 @@
 import { checkIfLoggedIn } from "../../ui/auth/checkIfLoggedIn.mjs";
+import { displayBidAndHistory } from "../../ui/auth/displayBidAndHistory.mjs";
 import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
-export function createPost(post) {
+export function createPost(post, profile) {
   const articleContainer = document.getElementById("articleContainer");
   console.log("THIS IS A SINGLE POST", post);
 
@@ -188,8 +189,8 @@ export function createPost(post) {
     "mt-[12px]"
   );
 
-  let buttonText = "";
   const button = document.createElement("button");
+  button.setAttribute("id", "bidNowId");
   button.classList.add(
     "h-[60px]",
     "w-[180px]",
@@ -206,12 +207,17 @@ export function createPost(post) {
     "place-content-center"
   );
 
-  if (checkIfLoggedIn) {
-    buttonText = "Bid Now";
+  if (checkIfLoggedIn()) {
+    button.innerText = "Bid Now";
+    button.addEventListener("click", () => {
+      displayBidAndHistory(post, profile);
+    });
   } else {
-    buttonText = "Login In";
+    button.innerText = "Login to Bid";
+    button.addEventListener("click", () => {
+      window.location.replace("/auth/login.html");
+    });
   }
-  button.innerText = buttonText;
 
   const profileImg = document.createElement("img");
   profileImg.classList.add(
