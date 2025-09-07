@@ -44,9 +44,8 @@ function pathEvents() {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
-            setupCommonPageEvents("wait");
-
             renderPostOwnPost();
+            setupCommonPageEvents("wait");
           } else {
             checkToPostOwnList();
           }

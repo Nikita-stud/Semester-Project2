@@ -20,6 +20,26 @@ export function createProfileListings(container, profileListings) {
     "flex-col",
     "gap-[20px]"
   );
+
+  if (profileListings.length < 1) {
+    const noPostsDiv = document.createElement("div");
+    noPostsDiv.classList.add(
+      "w-full",
+      "h-[200px]",
+      "p-[20px]",
+      "grid",
+      "place-content-center",
+      "text-dark",
+      "text-mobileButton",
+      "font-bold",
+      "rounded-[20px]",
+      "bg-formWhite",
+      "shadow-[0_1px_6px_rgba(0,0,0,0.25)]"
+    );
+    noPostsDiv.innerText = "No Posts here";
+    bidsContainer.append(noPostsDiv);
+  }
+
   profileListings.forEach((bid) => {
     const div = document.createElement("div");
     div.classList.add(

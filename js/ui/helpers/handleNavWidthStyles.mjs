@@ -8,6 +8,9 @@ export function handleNavWidthStyles() {
   const allIcons = document.querySelectorAll("div nav ul li  i");
   const cta = document.getElementById("ctaToggleScreen");
   const headerUnderline = document.getElementById("headerUnderline");
+  const hamburger = document.getElementById("hamburger");
+  const darkBackground = document.getElementById("overlay");
+  const menu = document.getElementById("toggleMenu");
 
   if (width >= 768) {
     headerContent.classList.remove("px-[20px]");
@@ -42,6 +45,10 @@ export function handleNavWidthStyles() {
     headerUnderline.classList.remove("px-[20px]");
     headerUnderline.classList.add("px-[50px]");
   } else if (width < 768) {
+    menu.classList.add("hidden");
+    darkBackground.classList.add("hidden");
+    hamburger.classList.remove("hidden");
+
     headerContent.classList.add("px-[20px]");
     headerContent.classList.remove("px-[50px]");
 
