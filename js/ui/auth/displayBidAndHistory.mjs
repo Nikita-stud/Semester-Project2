@@ -25,7 +25,7 @@ export function displayBidAndHistory(post, profile) {
 
   const container = document.createElement("div");
   container.classList.add(
-    "bg-formWhite",
+    "bg-white",
     "rounded-[20px]",
     "font-nunito",
     "p-[20px]",
@@ -99,6 +99,15 @@ export function displayBidAndHistory(post, profile) {
     );
     button.innerText = amount;
     button.setAttribute("id", `${amount}`);
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const onlyNumber = amount.split("-")[1];
+      const bidInput = document.getElementById("addBid");
+      bidInput.value = `${onlyNumber}`;
+    });
+
     buttonDiv.append(button);
   });
 
@@ -115,14 +124,15 @@ export function displayBidAndHistory(post, profile) {
   howMuchToBid.innerText = `Bid more than CR ${highestBid}`;
 
   const form = document.createElement("form");
+  form.classList.add("flex", "flex-col", "items-center", "w-full");
   form.setAttribute("id", "placeBidForm");
-  form.innerHTML = `<label class="hidden">Hidden</label>
+  form.innerHTML = `<label for="addBid" class="hidden">Hidden</label>
                     <input
                       type="text"
-                      id="search"
-                      name="search"
+                      id="addBid"
+                      name="addBid"
                       placeholder="CR..."
-                      class="pl-[20px] my-[10px] h-[47px] bg-formWhite rounded-full border border-dark font-light text-grey grid place-content-center no-clear-button"/>
+                      class="text-center pr-2 w-full my-[10px] h-[47px] bg-formWhite rounded-full border border-dark font-light text-grey no-clear-button"/>
                     <button
                       disabled="true"
                       type="submit"
