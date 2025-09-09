@@ -1,4 +1,5 @@
 import { formHandler } from "../../events/auth/formHandler.mjs";
+import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
 import { createUnderline } from "../helpers/createUnderline.mjs";
 import { transformTime } from "../helpers/transformTime.mjs";
 
@@ -85,7 +86,7 @@ export function displayBidAndHistory(post, profile) {
   const buttonDiv = document.createElement("div");
   buttonDiv.classList.add("flex", "flex-col", "gap-[20px]", "my-[20px]");
 
-  const bidAmount = ["Bid-100", "Bid-500", "Bid-1000"];
+  const bidAmount = ["100", "500", "1000"];
   bidAmount.forEach((amount) => {
     const button = document.createElement("button");
     button.classList.add(
@@ -106,9 +107,8 @@ export function displayBidAndHistory(post, profile) {
     button.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const onlyNumber = amount.split("-")[1];
       const bidInput = document.getElementById("addBid");
-      bidInput.value = `${onlyNumber}`;
+      bidInput.value = `${amount}`;
     });
 
     buttonDiv.append(button);
@@ -162,9 +162,23 @@ export function displayBidAndHistory(post, profile) {
                                         ></i>
                                     </p>`;
 
+  const allBids = post.bids;
+  const sortedBids = allBids.sort((a, b) => b.amount - a.amount);
+
+  const yourUser = loadLocalStorage("UserName");
+  const lastBid = sortedBids[0];
+  const isLastBidMine = lastBid && lastBid.bidder.name === yourUser;
+
+  if (isLastBidMine) {
+    bidTitle.innerText = "Your bid was";
+    upperUnderline.style.display = "none";
+    creditsAvailable.innerHTML = "";
+    buttonDiv.innerHTML = "";
+    howMuchToBid.innerText = "";
+    form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold"><span class="flex justify-center">CR ${lastBid.amount}</span></div>`;
+  }
+
   viewBiddingContainer.addEventListener("click", () => {
-    const allBids = post.bids;
-    const sortedBids = allBids.sort((a, b) => b.amount - a.amount);
     const closeBidDiv = document.getElementById("closeBidDiv");
 
     const isHistoryOpen = viewBiddingContainer.querySelector(".special-item");

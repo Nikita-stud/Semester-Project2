@@ -24,6 +24,9 @@ export async function sendBidToServer(entries) {
       throw new Error(json.errors?.[0]?.message || "Getting Posts failed");
     } else {
       catchAndDisplay("errorOnBid", jsonValue, true);
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     }
   } catch (error) {
     catchAndDisplay("errorOnBid", jsonValue, false);
