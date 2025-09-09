@@ -76,6 +76,7 @@ function pathEvents() {
       fetchSingle();
       break;
     case "/profile/index.html":
+    case "/profile/":
       setupCommonPageEvents();
 
       const fetchProfileData = async () => {
@@ -88,9 +89,6 @@ function pathEvents() {
           } else {
             window.location.replace(`/auth/login.html`);
           }
-          // const listingsObject = await fetchPosts();
-          // const listingDataObjects = listingsObject.data;
-          // createPosts(listingDataObjects);
         } catch (error) {
           console.log(error);
         }
@@ -98,6 +96,7 @@ function pathEvents() {
       fetchProfileData();
       break;
     case "/profile/edit/index.html":
+    case "/profile/edit/":
       setupCommonPageEvents();
 
       const getProfileData = async () => {
@@ -119,6 +118,7 @@ function pathEvents() {
       getProfileData();
       break;
     case "/about/index.html":
+    case "/about/":
       setupCommonPageEvents();
 
       const getAboutProfileData = async () => {
