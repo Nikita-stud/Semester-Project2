@@ -14,9 +14,11 @@ import { filterPosts } from "./events/posts/filterPosts.mjs";
 import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
 import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
 import { createPost } from "./api/posts/createPost.mjs";
+import { trackUserOnHotjar } from "./events/helpers/trackUserOnHotjar.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
+  trackUserOnHotjar();
 
   switch (pathName) {
     case "/auth/login.html":
