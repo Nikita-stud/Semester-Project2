@@ -248,7 +248,12 @@ export function createPost(post, profile) {
     "text-mobileText",
     "font-semibold"
   );
-  myDescription.innerHTML = `${post.seller.name} writes: <span class="font-normal">${post.seller.bio}</span>`;
+
+  let description = post.seller.bio;
+  if (!description) {
+    description = "FarmersBid";
+  }
+  myDescription.innerHTML = `${post.seller.name} writes: <span class="font-normal">${description}</span>`;
 
   sellerContainer.append(sellerProfileContainer);
   sellerProfileContainer.append(profileImg);

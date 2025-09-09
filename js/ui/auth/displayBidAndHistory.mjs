@@ -35,10 +35,11 @@ export function displayBidAndHistory(post, profile) {
     "max-w-[245px]",
     "min-w-0",
     "absolute",
-    "top-10",
+    "top-1/2",
     "left-1/2",
     "transform",
     "-translate-x-1/2",
+    "-translate-y-1/2",
     "max-h-[90vh]",
     "overflow-y-auto"
   );
@@ -177,61 +178,70 @@ export function displayBidAndHistory(post, profile) {
       const bidItem = viewBiddingContainer.querySelectorAll(".special-item");
       bidItem.forEach((item) => item.remove());
     } else {
-      closeBidDiv.innerHTML = `Close bidding history
+      if (sortedBids.length === 0) {
+        closeBidDiv.innerHTML = `<div class=" text-grey text-mobileText">No bidding history available</div>`;
+      } else {
+        closeBidDiv.innerHTML = `Close bidding history
                                         <i
                                           class="fa-solid fa-chevron-up text-mobileSecondaryHeader cursor-pointer text-black"
                                         ></i>`;
-      sortedBids.forEach((bid) => {
-        const mainDiv = document.createElement("div");
-        mainDiv.classList.add("special-item");
-        const div = document.createElement("div");
-        div.classList.add("mt-[10px]", "flex", "gap-[20px]", "align-middle");
+        sortedBids.forEach((bid) => {
+          const mainDiv = document.createElement("div");
+          mainDiv.classList.add("special-item");
+          const div = document.createElement("div");
+          div.classList.add("mt-[10px]", "flex", "gap-[20px]", "align-middle");
 
-        const img = document.createElement("img");
-        img.classList.add(
-          "rounded-full",
-          "w-[80px]",
-          "h-[80px]",
-          "object-cover",
-          "overflow-hidden"
-        );
-        const imgContent = bid.bidder.avatar.url
-          ? bid.bidder.avatar.url
-          : "../../images/no-img.png";
-        img.src = imgContent;
-        img.alt = bid.bidder.alt || "Profile image not described";
+          const img = document.createElement("img");
+          img.classList.add(
+            "rounded-full",
+            "w-[80px]",
+            "h-[80px]",
+            "object-cover",
+            "overflow-hidden"
+          );
+          const imgContent = bid.bidder.avatar.url
+            ? bid.bidder.avatar.url
+            : "../../images/no-img.png";
+          img.src = imgContent;
+          img.alt = bid.bidder.alt || "Profile image not described";
 
-        img.onerror = () => {
-          img.src = "../../images/img-on-error.png";
-          img.alt = "The image is not visible because of an error";
-        };
+          img.onerror = () => {
+            img.src = "../../images/img-on-error.png";
+            img.alt = "The image is not visible because of an error";
+          };
 
-        const textDiv = document.createElement("div");
-        textDiv.classList.add(
-          "flex",
-          "flex-col",
-          "justify-center",
-          "items-center"
-        );
+          const textDiv = document.createElement("div");
+          textDiv.classList.add(
+            "flex",
+            "flex-col",
+            "justify-center",
+            "items-center"
+          );
 
-        const name = document.createElement("p");
-        name.classList.add("truncate");
-        name.innerText = bid.bidder.name;
+          const name = document.createElement("p");
+          name.classList.add(
+            "overflow-hidden",
+            "whitespace-nowrap",
+            "text-ellipsis",
+            "max-w-[100px]"
+          );
+          name.innerText = bid.bidder.name;
 
-        const amount = document.createElement("p");
-        amount.classList.add("text-grey", "truncate");
-        amount.innerText = `Bid CR ${bid.amount}`;
+          const amount = document.createElement("p");
+          amount.classList.add("text-grey", "truncate");
+          amount.innerText = `Bid CR ${bid.amount}`;
 
-        const underline = createUnderline();
+          const underline = createUnderline();
 
-        mainDiv.append(div);
-        div.append(img);
-        div.append(textDiv);
-        textDiv.append(name);
-        textDiv.append(amount);
-        mainDiv.append(underline);
-        viewBiddingContainer.append(mainDiv);
-      });
+          mainDiv.append(div);
+          div.append(img);
+          div.append(textDiv);
+          textDiv.append(name);
+          textDiv.append(amount);
+          mainDiv.append(underline);
+          viewBiddingContainer.append(mainDiv);
+        });
+      }
     }
   });
 

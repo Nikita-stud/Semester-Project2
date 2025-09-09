@@ -5,7 +5,7 @@ const profilePageName = document.getElementById("profilePageName");
 const profilePageImage = document.getElementById("profilePageImage");
 const profilePageBackground = document.getElementById("profilePageBackground");
 const profilePageEmail = document.getElementById("profilePageEmail");
-const profileCredits = document.getElementById("profileCredits");
+const profileCredits = document.getElementById("editProfileCredits");
 const toggleContainer = document.getElementById("toggleContainer");
 
 export async function displayProfilePage(profile) {
@@ -29,7 +29,7 @@ export async function displayProfilePage(profile) {
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
   profilePageEmail.innerText = profile.email;
-  profileCredits.innerText = `Available Credits: CR ${profile.credits}`;
+  profileCredits.innerHTML = `Available Credits: CR ${profile.credits}`;
 
   const toggleItems = toggleContainer.children;
 

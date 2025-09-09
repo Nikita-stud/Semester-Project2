@@ -84,6 +84,7 @@ function pathEvents() {
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
             displayProfilePage(profileJSON.data);
+            setupCommonPageEvents("wait");
           } else {
             window.location.replace(`/auth/login.html`);
           }
@@ -107,6 +108,7 @@ function pathEvents() {
             formHandler("#editProfileForm", pathName, "#saveProfile");
 
             displayEditProfilePage(profileJSON.data);
+            setupCommonPageEvents("wait");
           } else {
             window.location.replace(`/auth/login.html`);
           }
@@ -123,6 +125,7 @@ function pathEvents() {
         try {
           const profileJSON = await fetchProfile();
           displayNavLoggedProfile(profileJSON.data);
+          setupCommonPageEvents("wait");
         } catch (error) {
           console.log(error);
         }
