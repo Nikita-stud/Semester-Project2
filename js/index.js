@@ -67,7 +67,6 @@ function pathEvents() {
             displayNavLoggedProfile(profileJSON.data);
             const json = await fetchSinglePost();
             createPost(json.data, profileJSON.data);
-
             setupCommonPageEvents("wait");
           }
         } catch (error) {

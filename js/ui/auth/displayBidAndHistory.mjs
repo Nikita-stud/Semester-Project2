@@ -1,8 +1,9 @@
+import { formHandler } from "../../events/auth/formHandler.mjs";
 import { createUnderline } from "../helpers/createUnderline.mjs";
 import { transformTime } from "../helpers/transformTime.mjs";
 
 export function displayBidAndHistory(post, profile) {
-  console.log("post", post);
+  console.log("postID", post.id);
   console.log("postSeller", profile);
 
   const articleContainer = document.getElementById("articleContainer");
@@ -31,7 +32,8 @@ export function displayBidAndHistory(post, profile) {
     "p-[20px]",
     "mx-[20px]",
     "h-auto",
-    "w-auto",
+    "max-w-[245px]",
+    "min-w-0",
     "absolute",
     "top-10",
     "left-1/2",
@@ -126,15 +128,19 @@ export function displayBidAndHistory(post, profile) {
   const form = document.createElement("form");
   form.classList.add("flex", "flex-col", "items-center", "w-full");
   form.setAttribute("id", "placeBidForm");
-  form.innerHTML = `<label for="addBid" class="hidden">Hidden</label>
+  form.innerHTML = `
+                    <div class="hidden p-[14px] bg-formWhite border mt-[10px] text-redTime border-redTime md:text-mobileButton w-full break-word overflow-wrap-anywhere" >
+                      <p id="errorOnBid" class="flex justify-center break-words">
+                      </p>
+                    </div>
+                    <label for="addBid" class="hidden">Hidden</label>
                     <input
-                      type="text"
+                      type="number"
                       id="addBid"
                       name="addBid"
                       placeholder="CR..."
-                      class="text-center pr-2 w-full my-[10px] h-[47px] bg-formWhite rounded-full border border-dark font-light text-grey no-clear-button"/>
+                      class="text-center pr-1 w-full my-[10px] h-[60px] bg-formWhite rounded-full border border-dark font-light text-grey no-clear-button"/>
                     <button
-                      disabled="true"
                       type="submit"
                       id="placeBidButton"
                       class="my-2 w-[208px] h-[47px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton md:text-desktopButton hover:border hover:text-opacity-90"
@@ -157,6 +163,7 @@ export function displayBidAndHistory(post, profile) {
 
   viewBiddingContainer.addEventListener("click", () => {
     const allBids = post.bids;
+    const sortedBids = allBids.sort((a, b) => b.amount - a.amount);
     const closeBidDiv = document.getElementById("closeBidDiv");
 
     const isHistoryOpen = viewBiddingContainer.querySelector(".special-item");
@@ -174,7 +181,7 @@ export function displayBidAndHistory(post, profile) {
                                         <i
                                           class="fa-solid fa-chevron-up text-mobileSecondaryHeader cursor-pointer text-black"
                                         ></i>`;
-      allBids.forEach((bid) => {
+      sortedBids.forEach((bid) => {
         const mainDiv = document.createElement("div");
         mainDiv.classList.add("special-item");
         const div = document.createElement("div");
@@ -242,4 +249,9 @@ export function displayBidAndHistory(post, profile) {
   lowerDiv.append(form);
   container.append(lowerUnderline);
   container.append(viewBiddingContainer);
+
+  if (form) {
+    const pathName = window.location.pathname;
+    formHandler("#placeBidForm", pathName, "#placeBidButton");
+  }
 }

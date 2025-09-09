@@ -4,9 +4,9 @@ import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createPost(post, profile) {
-  const articleContainer = document.getElementById("articleContainer");
-  console.log("THIS IS A SINGLE POST", post);
+  console.log("this is Post", post);
 
+  const articleContainer = document.getElementById("articleContainer");
   const headerAndIconContainer = document.createElement("div");
   headerAndIconContainer.classList.add("flex", "justify-between");
 
