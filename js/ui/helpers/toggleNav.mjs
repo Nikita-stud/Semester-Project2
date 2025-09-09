@@ -42,9 +42,12 @@ export function toggleNav() {
       break;
     case "/profile/index.html":
     case "/profile/edit/index.html":
+    case "/profile/":
+    case "/profile/edit/":
       profileNavLink.classList.add("font-bold");
       break;
     case "/about/index.html":
+    case "/about/":
       aboutNavLink.classList.add("font-bold");
       break;
   }
