@@ -1,4 +1,4 @@
-import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
+import { loadLocalStorage } from "../auth/loadLocalStorage.mjs";
 import { checkIfLoggedIn } from "../../ui/auth/checkIfLoggedIn.mjs";
 import { displayBidAndHistory } from "../../ui/auth/displayBidAndHistory.mjs";
 import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";

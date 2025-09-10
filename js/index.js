@@ -1,4 +1,4 @@
-import { createPosts } from "./api/posts/createPosts.mjs";
+import { createPosts } from "./events/posts/createPosts.mjs";
 import { fetchPosts } from "./api/posts/fetchPosts.mjs";
 import { formHandler } from "./events/auth/formHandler.mjs";
 import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
@@ -13,7 +13,7 @@ import { renderPostOwnPost } from "./ui/auth/renderPostOwnPost.mjs";
 import { filterPosts } from "./events/posts/filterPosts.mjs";
 import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
 import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
-import { createPost } from "./api/posts/createPost.mjs";
+import { createPost } from "./events/posts/createPost.mjs";
 import { trackUserOnHotjar } from "./events/helpers/trackUserOnHotjar.mjs";
 
 function pathEvents() {

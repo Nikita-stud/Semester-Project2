@@ -1,5 +1,4 @@
-import { generateUniqueId } from "../../events/helpers/generateUniqueID.mjs";
-import { transformTime } from "../helpers/transformTime.mjs";
+import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
 export function createProfileListings(container, profileListings) {
   const existingContainer = container.querySelector(".listings");
@@ -8,9 +7,7 @@ export function createProfileListings(container, profileListings) {
     return;
   }
   const bidsContainer = document.createElement("div");
-  const uniqueId = generateUniqueId();
   container.insertAdjacentElement("beforeend", bidsContainer);
-  bidsContainer.setAttribute("id", uniqueId);
   bidsContainer.classList.add(
     "listings",
     "mt-[20px]",
@@ -43,6 +40,7 @@ export function createProfileListings(container, profileListings) {
   profileListings.forEach((bid) => {
     const div = document.createElement("div");
     div.classList.add(
+      "pointer-cursor",
       "w-full",
       "h-[341px]",
       "p-[20px]",
@@ -52,6 +50,9 @@ export function createProfileListings(container, profileListings) {
       "bg-formWhite",
       "shadow-[0_1px_6px_rgba(0,0,0,0.25)]"
     );
+    div.addEventListener("click", () => {
+      window.location.replace(`/post/?id=${bid.id}`);
+    });
 
     const header = document.createElement("h2");
     header.innerText = bid.title;
@@ -144,9 +145,6 @@ export function createProfileListings(container, profileListings) {
       "font-nunito",
       "text-darkerYellow"
     );
-    cta.addEventListener("click", () => {
-      window.location.replace = `/post/?id=${bid.id}`;
-    });
 
     bidsContainer.append(div);
     div.append(header);

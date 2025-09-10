@@ -1,4 +1,3 @@
-import { createPost } from "./createPost.mjs";
 import { API_POST } from "../../constants/constants.mjs";
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 import { getQueryParam } from "../../events/helpers/getQueryParam.mjs";

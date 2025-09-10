@@ -1,5 +1,5 @@
 import { fetchProfileListings } from "../../api/posts/fetchProfileListings.mjs";
-import { createProfileListings } from "../posts/createProfileListings.mjs";
+import { createProfileListings } from "../../events/posts/createProfileListings.mjs";
 
 const profilePageName = document.getElementById("profilePageName");
 const profilePageImage = document.getElementById("profilePageImage");
@@ -35,9 +35,11 @@ export async function displayProfilePage(profile) {
 
   for (let i = 0; i < toggleItems.length; i++) {
     const item = toggleItems[i];
+
     item.addEventListener("click", () => {
       const itemID = item.id;
       const currentTime = new Date();
+
       switch (itemID) {
         case "editProfileContainer":
           document.location.href = "edit/index.html";

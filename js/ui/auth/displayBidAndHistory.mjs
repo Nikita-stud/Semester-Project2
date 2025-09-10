@@ -187,12 +187,18 @@ export function displayBidAndHistory(post, profile) {
     } else {
       bidTitle.innerText = "Your bid was";
     }
+    let bidAmt = "";
+    if (sortedBids.length === 0 || !lastBid.amount) {
+      bidAmt = "None";
+    } else {
+      bidAmt = lastBid.amount;
+    }
     upperUnderline.style.display = "none";
     creditsAvailable.innerText = "Good luck!";
     buttonDiv.innerHTML = "";
     buttonDiv.classList.remove("my-[20px]");
     howMuchToBid.innerText = "";
-    form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold"><span class="flex justify-center">CR ${lastBid.amount}</span></div>`;
+    form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold"><span class="flex justify-center">CR ${bidAmt}</span></div>`;
   }
 
   viewBiddingContainer.addEventListener("click", () => {
