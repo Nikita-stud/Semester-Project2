@@ -1,3 +1,4 @@
+import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
 import { checkIfLoggedIn } from "../../ui/auth/checkIfLoggedIn.mjs";
 import { displayBidAndHistory } from "../../ui/auth/displayBidAndHistory.mjs";
 import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
@@ -206,12 +207,16 @@ export function createPost(post, profile) {
     "grid",
     "place-content-center"
   );
-
   if (checkIfLoggedIn()) {
+    const myProfileName = loadLocalStorage("UserName");
+
     button.innerText = "Bid Now";
     button.addEventListener("click", () => {
       displayBidAndHistory(post, profile);
     });
+    if (post.seller.name === myProfileName) {
+      button.innerText = "Your List";
+    }
   } else {
     button.innerText = "Login to Bid";
     button.addEventListener("click", () => {

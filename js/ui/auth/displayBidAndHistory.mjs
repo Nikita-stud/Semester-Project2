@@ -27,14 +27,14 @@ export function displayBidAndHistory(post, profile) {
 
   const container = document.createElement("div");
   container.classList.add(
+    "min-w-[200px]",
     "bg-white",
     "rounded-[20px]",
     "font-nunito",
     "p-[20px]",
-    "mx-[20px]",
     "h-auto",
-    "max-w-[245px]",
-    "min-w-0",
+    "max-w-[280px]",
+    "xs:min-w-[240px]",
     "absolute",
     "top-1/2",
     "left-1/2",
@@ -46,16 +46,17 @@ export function displayBidAndHistory(post, profile) {
   );
   const bidTitle = document.createElement("h3");
   bidTitle.classList.add("text-mobileButton", "font-bold");
-  bidTitle.innerText = "Place your bid";
+  bidTitle.innerText = "Place bid";
 
   const icon = document.createElement("i");
   icon.classList.add(
     "cursor-pointer",
     "fa-solid",
     "fa-xmark",
+    "right-[15px]",
     "absolute",
-    "top-[20px]",
-    "right-[20px]",
+    "top-[18px]",
+    "xs:right-[20px]",
     "text-desktopSecondaryHeader",
     "text-grey"
   );
@@ -84,19 +85,28 @@ export function displayBidAndHistory(post, profile) {
   const lowerUnderline = createUnderline();
 
   const buttonDiv = document.createElement("div");
-  buttonDiv.classList.add("flex", "flex-col", "gap-[20px]", "my-[20px]");
+  buttonDiv.classList.add(
+    "flex",
+    "flex-col",
+    "justify-center",
+    "align-middle",
+    "items-center",
+    "gap-[20px]",
+    "my-[20px]"
+  );
 
   const bidAmount = ["100", "500", "1000"];
   bidAmount.forEach((amount) => {
     const button = document.createElement("button");
     button.classList.add(
-      "w-[208px]",
+      "w-[150px]",
       "h-[47px]",
       "font-bold",
       "rounded-full",
       "text-darkerYellow",
       "bg-yellow",
       "text-mobileButton",
+      "xs:w-[208px]",
       "md:text-desktopButton",
       "hover:border",
       "hover:text-opacity-90"
@@ -144,7 +154,7 @@ export function displayBidAndHistory(post, profile) {
                     <button
                       type="submit"
                       id="placeBidButton"
-                      class="my-2 w-[208px] h-[47px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton md:text-desktopButton hover:border hover:text-opacity-90"
+                      class="w-[150px] my-2 h-[47px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[208px] md:text-desktopButton hover:border hover:text-opacity-90"
                     >
                       Place bid
                     </button>`;
@@ -172,8 +182,9 @@ export function displayBidAndHistory(post, profile) {
   if (isLastBidMine) {
     bidTitle.innerText = "Your bid was";
     upperUnderline.style.display = "none";
-    creditsAvailable.innerHTML = "";
+    creditsAvailable.innerText = "Good luck!";
     buttonDiv.innerHTML = "";
+    buttonDiv.classList.remove("my-[20px]");
     howMuchToBid.innerText = "";
     form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold"><span class="flex justify-center">CR ${lastBid.amount}</span></div>`;
   }
@@ -208,10 +219,13 @@ export function displayBidAndHistory(post, profile) {
           const img = document.createElement("img");
           img.classList.add(
             "rounded-full",
-            "w-[80px]",
-            "h-[80px]",
+            "w-[40px]",
+            "h-[40px]",
             "object-cover",
-            "overflow-hidden"
+            "overflow-hidden",
+
+            "xs:w-[80px]",
+            "xs:h-[80px]"
           );
           const imgContent = bid.bidder.avatar.url
             ? bid.bidder.avatar.url
