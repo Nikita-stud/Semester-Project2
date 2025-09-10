@@ -209,14 +209,14 @@ export function createPost(post, profile) {
   );
   if (checkIfLoggedIn()) {
     const myProfileName = loadLocalStorage("UserName");
-
-    button.innerText = "Bid Now";
+    if (post.seller.name === myProfileName) {
+      button.innerText = "Your List";
+    } else {
+      button.innerText = "Bid Now";
+    }
     button.addEventListener("click", () => {
       displayBidAndHistory(post, profile);
     });
-    if (post.seller.name === myProfileName) {
-      button.innerText = "Your List";
-    }
   } else {
     button.innerText = "Login to Bid";
     button.addEventListener("click", () => {
