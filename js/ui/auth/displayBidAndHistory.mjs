@@ -178,9 +178,15 @@ export function displayBidAndHistory(post, profile) {
   const yourUser = loadLocalStorage("UserName");
   const lastBid = sortedBids[0];
   const isLastBidMine = lastBid && lastBid.bidder.name === yourUser;
+  const myProfileName = loadLocalStorage("UserName");
+  const isItMyPost = post.seller.name === myProfileName;
 
-  if (isLastBidMine) {
-    bidTitle.innerText = "Your bid was";
+  if (isLastBidMine || isItMyPost) {
+    if (isItMyPost) {
+      bidTitle.innerText = "Your listing";
+    } else {
+      bidTitle.innerText = "Your bid was";
+    }
     upperUnderline.style.display = "none";
     creditsAvailable.innerText = "Good luck!";
     buttonDiv.innerHTML = "";
