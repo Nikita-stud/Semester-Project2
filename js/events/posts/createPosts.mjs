@@ -23,7 +23,8 @@ export function createPosts(posts) {
     "gap-[20px]",
     "px-[20px]",
     "pt-[20px]",
-    "pb-[90px]"
+    "pb-[90px]",
+    "sm:px-[50px]"
   );
   postsContainer.innerHTML = "";
 
@@ -64,5 +65,30 @@ export function createPosts(posts) {
       }
     });
     postsContainer.append(loadMore);
+  }
+  if (posts.length === 0) {
+    const noPostsDiv = document.createElement("div");
+    noPostsDiv.classList.add(
+      "text-mobileButton",
+      "bg-formWhite",
+      "relative",
+      "w-full",
+      "h-[281px]",
+      "grid",
+      "place-content-center",
+      "border",
+      "rounded-[20px]",
+      "xs:text-mobileSecondaryHeader",
+      "overflow-hidden",
+      "shadow-[0_6px_10px_rgba(0,0,0,0.5)]",
+      "md:h-[281px]",
+      "md:text-desktopSecondaryHeader"
+    );
+    noPostsDiv.innerText = "No posts found";
+
+    postsContainer.classList.remove("pb-[90px]", "grid", "grid-flow-cols");
+    postsContainer.classList.add("pb-[20px]");
+
+    postsContainer.append(noPostsDiv);
   }
 }

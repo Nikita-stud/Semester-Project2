@@ -34,7 +34,6 @@ function pathEvents() {
     case "/index.html":
     case "/":
       setupCommonPageEvents();
-      displayFilterData();
 
       const fetchListings = async () => {
         try {
@@ -45,6 +44,7 @@ function pathEvents() {
           );
           createPosts(nonExpiredPosts);
           filterPosts(listingDataObjects);
+          displayFilterData();
 
           if (checkIfLoggedIn()) {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");

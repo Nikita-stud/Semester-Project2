@@ -4,9 +4,6 @@ import { createUnderline } from "../helpers/createUnderline.mjs";
 import { transformTime } from "../helpers/transformTime.mjs";
 
 export function displayBidAndHistory(post, profile) {
-  console.log("postID", post.id);
-  console.log("postSeller", profile);
-
   const articleContainer = document.getElementById("articleContainer");
   const overlayContainer = document.createElement("div");
   overlayContainer.classList.add(
