@@ -110,7 +110,7 @@ export function createPostsArticles(filtered) {
     cta.innerHTML = "View";
     cta.setAttribute("id", filtered[i].id);
     cta.addEventListener("click", () => {
-      document.location.href = `/post/?id=${article.id}`;
+      window.location.replace(`/post/?id=${article.id}`);
     });
     cta.classList.add(
       "w-[208px]",
