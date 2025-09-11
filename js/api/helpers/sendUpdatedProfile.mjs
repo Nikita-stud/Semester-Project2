@@ -24,7 +24,7 @@ export async function sendUpdatedProfile(entries) {
     jsonValue = json;
 
     if (!response.ok) {
-      throw new Error(json.errors?.[0]?.message || "Editing Profile failed");
+      throw new Error("Editing Profile failed");
     } else {
       catchAndDisplay("errorEditProfile", jsonValue, true);
       location.reload();

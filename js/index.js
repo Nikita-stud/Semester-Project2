@@ -5,7 +5,7 @@ import { fetchSinglePost } from "./api/posts/fetchSinglePost.mjs";
 import { fetchProfile } from "./api/posts/fetchProfile.mjs";
 import { checkIfLoggedIn } from "./ui/auth/checkIfLoggedIn.mjs";
 import { checkToPostOwnList } from "./ui/auth/checkToPostOwnList.mjs";
-import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
+// import { displayFilterData } from "./ui/helpers/displayFilterData.mjs";
 import { displayProfilePage } from "./ui/auth/displayProfilePage.mjs";
 import { setupCommonPageEvents } from "./ui/helpers/setupCommonPageEvents.mjs";
 import { displayEditProfilePage } from "./ui/auth/displayEditProfielPage.mjs";
@@ -44,7 +44,7 @@ function pathEvents() {
           );
           createPosts(nonExpiredPosts);
           filterPosts(listingDataObjects);
-          displayFilterData();
+          // displayFilterData();
 
           if (checkIfLoggedIn()) {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");

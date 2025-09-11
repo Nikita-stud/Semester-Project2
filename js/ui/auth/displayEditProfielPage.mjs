@@ -7,7 +7,13 @@ const saveCta = document.getElementById("saveProfile");
 const cancelCta = document.getElementById("cancel");
 const bio = document.getElementById("bio");
 
+const nameHidden = document.getElementById("editProfileName");
+const emailHidden = document.getElementById("editProfileEmail");
+
 export function displayEditProfilePage(profile) {
+  nameHidden.innerText = `${profile.name}`;
+  emailHidden.innerText = `${profile.email}`;
+
   const newAvatarImg = new Image();
   const newBannerImg = new Image();
   newAvatarImg.src = profile.avatar.url;

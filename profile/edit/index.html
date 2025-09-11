@@ -118,31 +118,48 @@
       </div>
     </header>
 
-    <main class="pt-[110px]">
-      <section>
+    <main class="pt-[110px] md:pt-[140px]">
+      <section
+        class="relative md:mx-[50px] md:border md:rounded-[20px] md:border-green md:bg-formWhite"
+      >
         <form id="editProfileForm">
           <div
             id="profilePageBackground"
-            class="relative bg-cover bg-no-repeat w-full h-[174px] shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            class="relative bg-cover bg-no-repeat w-full h-[174px] shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:rounded-t-[20px]"
           >
             <div
               id="profilePageImage"
-              class="absolute bg-cover bg-no-repeat opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+              class="absolute bg-cover bg-no-repeat opacity-100 top-[180px] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[130px] h-[130px] object-cover overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:left-[150px] md:bottom-none md:right-auto md:mx-0 md:w-[180px] md:h-[180px]"
             ></div>
+            <div
+              class="hidden md:absolute md:block md:top-[160px] md:left-[350px]"
+            >
+              <p
+                id="editProfileName"
+                class="font-garamond -mb-4 text-dark text-desktopMainHeader break-text break-all"
+              ></p>
+              <p
+                id="editProfileEmail"
+                class="font-nunito text-grey text-desktopText break-text break-all"
+              ></p>
+            </div>
           </div>
-          <div class="mt-[80px] flex flex-col gap-[5px]">
+
+          <div
+            class="mt-[80px] flex flex-col gap-[5px] md:mt-[120px] xl:grid xl:place-content-center xl:grid-cols-3 xl:grid-rows-3 xl:grid-flow-row xl:gap-8 xl:mx-[150px]"
+          >
             <h1
               id="profileCredits"
-              class="text-mobileSecondaryHeader pt-[0px] m-auto font-garamond font-bold text-dark"
+              class="text-mobileSecondaryHeader pt-[0px] m-auto font-garamond font-bold text-dark xl:absolute xl:top-[180px] xl:right-[180px] xl:font-nunito"
             ></h1>
             <div
-              class="hidden p-[20px] mx-[20px] my-[30px] bg-formWhite border text-redTime border-redTime md:text-mobileButton lg:text-desktopButton"
+              class="hidden p-[20px] mx-[20px] my-[30px] bg-formWhite border text-redTime border-redTime md:text-mobileButton lg:text-desktopButton md:mx-[150px] xl:mx-[0px] xl:my-[0px] xl:absolute xl:right-[0px] xl:py-[10px] xl:top-[230px] xl:px-[40px] 2xl:px-[80px] xl:mr-[150px] xl:text-desktopButton"
             >
               <p id="errorEditProfile" class="flex justify-center"></p>
             </div>
-            <div class="grid grid-flow-col place-content-center">
+            <div class="grid grid-flow-col place-content-center xl:contents">
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px] xl:w-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -157,9 +174,11 @@
                 />
               </fieldset>
             </div>
-            <div class="grid grid-flow-col place-content-center">
+            <div
+              class="grid grid-flow-col place-content-center xl:place-content-stretch"
+            >
               <fieldset
-                class="relative overflow-hidden bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px] xl:w-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -174,9 +193,11 @@
                 />
               </fieldset>
             </div>
-            <div class="grid grid-flow-col place-content-center">
+            <div
+              class="grid grid-flow-col place-content-center xl:place-content-stretch"
+            >
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px] xl:w-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -192,9 +213,11 @@
                 />
               </fieldset>
             </div>
-            <div class="grid grid-flow-col place-content-center">
+            <div
+              class="grid grid-flow-col place-content-center xl:place-content-stretch"
+            >
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px] xl:w-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -208,17 +231,19 @@
                   name="banner"
                   maxlength="300"
                   placeholder="https:/..."
-                  class="ml-10 min-w-0 w-[calc(85%-2.5rem)] focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                  class="ml-10 min-w-0 w-[calc(85%-2.5rem)] focus:outline-none focus:border-none md:text-desktopText md:ml-[72px] xl:w-[calc(100%-140px)]"
                 />
               </fieldset>
             </div>
             <p
               id="bannerErrorText"
-              class="hidden text-mobileText mt-[0px] m-auto text-redTime justify-end md:text-mobileButton"
+              class="hidden text-mobileText mt-[0px] m-auto text-redTime justify-end md:text-mobileButton xl:absolute xl:left-1/2 xl:top-[510px] xl:-translate-x-1/2 xl:-translate-y-1/2 xl:text-desktopButton"
             ></p>
-            <div class="grid grid-flow-col place-content-center">
+            <div
+              class="grid grid-flow-col place-content-center xl:place-content-stretch"
+            >
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[60px] rounded-full xs:w-[280px] md:w-[530px] md:h-[81px] xl:w-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -232,17 +257,19 @@
                   name="avatar"
                   maxlength="300"
                   placeholder="https:/..."
-                  class="ml-10 min-w-0 w-[calc(85%-2.5rem)] none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                  class="ml-10 min-w-0 w-[calc(85%-2.5rem)] none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px] xl:w-[calc(100%-140px)]"
                 />
               </fieldset>
             </div>
             <p
               id="avatarErrorText"
-              class="hidden text-mobileText mt-[0px] m-auto text-redTime justify-end md:text-mobileButton"
+              class="hidden text-mobileText mt-[0px] m-auto text-redTime justify-end md:text-mobileButton xl:absolute xl:left-[24%] xl:text-desktopButton 2xl:left-[20%] xl:top-[620px] xl:-translate-x-1/2 xl:-translate-y-1/2"
             ></p>
-            <div class="grid grid-flow-col place-content-center">
+            <div
+              class="grid grid-flow-col place-content-center xl:place-content-stretch xl:row-span-3 xl:col-start-3 xl:row-start-1"
+            >
               <fieldset
-                class="relative bg-formWhite border border-grey w-[240px] h-[180px] rounded-[20px] xs:w-[280px] md:w-[530px] md:h-[81px]"
+                class="relative bg-formWhite border border-grey w-[240px] h-[180px] rounded-[20px] xs:w-[280px] md:w-[530px] md:h-[231px] xl:w-full xl:h-full"
               >
                 <legend
                   class="ml-10 font-bold text-dark px-2 xs:text-grey md:text-desktopText md:ml-14 md:px-4"
@@ -258,24 +285,26 @@
                   maxlength="160"
                   cols="20"
                   rows="6"
-                  class="ml-10 resize-none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px]"
+                  class="ml-10 resize-none focus:outline-none focus:border-none md:text-desktopText md:ml-[72px] md:w-[390px] xl:xl:w-[calc(100%-140px)]"
                 ></textarea>
               </fieldset>
             </div>
           </div>
-          <div class="flex flex-col items-center mt-[10px]">
+          <div
+            class="flex flex-col items-center mt-[10px] xl:items-center xl:px-[150px] xl:flex-row-reverse xl:justify-start xl:gap-[20px] xl:mb-[50px] xl:mt-[40px]"
+          >
             <button
               disabled
               type="submit"
               id="saveProfile"
-              class="opacity-50 my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+              class="opacity-50 my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] xl:w-[299px] xl:m-0 md:text-desktopButton hover:border hover:text-opacity-90"
             >
               Save
             </button>
             <button
               id="cancel"
               type="button"
-              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+              class="my-2 w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton xl:w-[299px] xl:m-0 hover:border hover:text-opacity-90 md:mb-[50px]"
             >
               Cancel
             </button>

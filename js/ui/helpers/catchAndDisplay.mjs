@@ -2,12 +2,14 @@ export function catchAndDisplay(containerId, jsonValue, errorFalse) {
   const container = document.getElementById(`${containerId}`);
   const parent = container.parentElement;
   if (errorFalse === false) {
-    let errorMessage = jsonValue.errors?.[0]?.message;
+    let errorMessage =
+      jsonValue.errors?.[0]?.message || "Unknown error, try again later";
 
-    if (!typeof jsonValue === "string") {
+    if (typeof jsonValue === "string") {
       errorMessage = jsonValue;
     }
-    const isNotFound = errorMessage.toLowerCase().includes("not found");
+    const itsErrorString = String(errorMessage || "Unknown error");
+    const isNotFound = itsErrorString.toLowerCase().includes("not found");
     const errorStatus = jsonValue.statusCode;
     const clientError = errorStatus >= 400 && errorStatus <= 499;
     const serverError = errorStatus >= 500 && errorStatus <= 599;

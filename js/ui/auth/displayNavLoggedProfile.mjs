@@ -45,13 +45,13 @@ export function displayNavLoggedProfile(profileObject) {
   profileContainer.append(name);
   profileContainer.append(email);
 
-  logButton.innerHTML = `<a href="auth/login.html" class="font-nunito">
+  logButton.innerHTML = `<a class="font-nunito">
                               <i id="loginNavIcon" class="fa-solid fa-door-open  text-mobileText text-green"></i>
                               <span class="ml-[35px] font-nunito">Logout
                               </span>
                             </a>`;
   logButton.addEventListener("click", () => {
     localStorage.removeItem("UserName");
-    window.location.replace(`/auth/login.html`);
+    window.location.href = "/auth/login.html";
   });
 }
