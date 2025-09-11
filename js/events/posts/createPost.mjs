@@ -27,28 +27,6 @@ export function createPost(post, profile) {
     "font-garamond"
   );
 
-  const icon = document.createElement("i");
-  icon.classList.add(
-    "fa-regular",
-    "fa-heart",
-    "cursor-pointer",
-    "w-[47px]",
-    "h-[47px]",
-    "flex",
-    "justify-center",
-    "place-items-center",
-    "align-middle",
-    "p-[20px]",
-    "bg-formWhite",
-    "border",
-    "rounded-md"
-  );
-  icon.addEventListener("click", () => {
-    icon.classList.toggle("fa-regular");
-    icon.classList.toggle("fa-solid");
-    icon.classList.toggle("text-redTime");
-  });
-
   const time = document.createElement("p");
   time.classList.add(
     "text-mobileText",
@@ -269,7 +247,6 @@ export function createPost(post, profile) {
 
   articleContainer.append(headerAndIconContainer);
   headerAndIconContainer.append(h1);
-  headerAndIconContainer.append(icon);
   articleContainer.append(time);
   articleContainer.append(priceAndBidsContainer);
   priceAndBidsContainer.append(price);

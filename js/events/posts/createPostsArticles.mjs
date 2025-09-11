@@ -43,25 +43,6 @@ export function createPostsArticles(filtered) {
       img.alt = "The image is not visible because of an error";
     };
 
-    const icon = document.createElement("i");
-    icon.classList.add(
-      "fa-regular",
-      "fa-heart",
-      "absolute",
-      "top-[15px]",
-      "right-[15px]",
-      "cursor-pointer",
-      "p-[10px]",
-      "bg-formWhite",
-      "text-mobileButton",
-      "rounded-md"
-    );
-    icon.addEventListener("click", () => {
-      icon.classList.toggle("fa-regular");
-      icon.classList.toggle("fa-solid");
-      icon.classList.toggle("text-redTime");
-    });
-
     const textDiv = document.createElement("div");
     textDiv.classList.add(
       "h-[101px]",
@@ -129,7 +110,7 @@ export function createPostsArticles(filtered) {
     cta.innerHTML = "View";
     cta.setAttribute("id", filtered[i].id);
     cta.addEventListener("click", () => {
-      window.location.href = `/post/?id=${article.id}`;
+      document.location.href = `/post/?id=${article.id}`;
     });
     cta.classList.add(
       "w-[208px]",
@@ -145,7 +126,6 @@ export function createPostsArticles(filtered) {
     postsContainer.append(article);
     article.append(imgContainer);
     imgContainer.append(img);
-    imgContainer.append(icon);
     article.append(textDiv);
     textDiv.append(insideTitlePriceDiv);
     insideTitlePriceDiv.append(title);

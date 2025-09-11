@@ -10,9 +10,10 @@ export function displayNavLoggedProfile(profileObject) {
     "px-[20px]",
     "pt-[20px]"
   );
+  profileContainer.innerHTML = "";
 
-  headerLine.classList.toggle("mt-[87px]");
-  headerLine.classList.toggle("mt-[20px]");
+  headerLine.classList.remove("mt-[87px]");
+  headerLine.classList.add("mt-[20px]");
 
   const img = document.createElement("img");
   img.classList.add(
@@ -22,11 +23,11 @@ export function displayNavLoggedProfile(profileObject) {
     "object-cover",
     "overflow-hidden"
   );
-  const imgContent = profileObject.avatar.url
+  const imgContent = profileObject?.avatar?.url
     ? profileObject.avatar.url
     : "../../images/no-img.png";
   img.src = imgContent;
-  img.alt = profileObject.avatar.alt || "Profile image not described";
+  img.alt = profileObject?.avatar?.alt || "Profile image not described";
 
   img.onerror = () => {
     img.src = "../../images/img-on-error.png";
@@ -35,11 +36,11 @@ export function displayNavLoggedProfile(profileObject) {
 
   const name = document.createElement("p");
   name.classList.add("truncate");
-  name.innerText = profileObject.name;
+  name.innerText = profileObject?.name;
 
   const email = document.createElement("p");
   email.classList.add("text-grey", "truncate");
-  email.innerText = profileObject.email;
+  email.innerText = profileObject?.email;
 
   profileContainer.append(img);
   profileContainer.append(name);

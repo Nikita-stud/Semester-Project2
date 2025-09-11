@@ -6,7 +6,6 @@ export function handleNavWidthStyles() {
   const loggedNav = document.getElementById("navLoggedProfile");
   const headerLine = document.getElementById("headerLine");
   const allIcons = document.querySelectorAll("div nav ul li  i");
-  const cta = document.getElementById("ctaToggleScreen");
   const headerUnderline = document.getElementById("headerUnderline");
   const hamburger = document.getElementById("hamburger");
   const darkBackground = document.getElementById("overlay");
@@ -40,7 +39,6 @@ export function handleNavWidthStyles() {
     allIcons.forEach((li) => {
       li.style.display = "none";
     });
-    cta.classList.add("hidden");
 
     headerUnderline.classList.remove("px-[20px]");
     headerUnderline.classList.add("px-[50px]");
@@ -75,7 +73,6 @@ export function handleNavWidthStyles() {
     allIcons.forEach((li) => {
       li.style.display = "inline";
     });
-    cta.classList.remove("hidden");
 
     headerUnderline.classList.add("px-[20px]");
     headerUnderline.classList.remove("px-[50px]");
