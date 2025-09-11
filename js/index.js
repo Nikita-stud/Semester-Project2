@@ -40,14 +40,16 @@ function pathEvents() {
         try {
           const listingsObject = await fetchPosts();
           const listingDataObjects = listingsObject.data;
-          createPosts(listingDataObjects);
+          const nonExpiredPosts = listingDataObjects.filter(
+            (post) => new Date(post.endsAt) > new Date()
+          );
+          createPosts(nonExpiredPosts);
           filterPosts(listingDataObjects);
 
           if (checkIfLoggedIn()) {
             formHandler("#postOwnForm", pathName, "#postOwnCTA");
             const profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
-            console.log("I am logged in");
             renderPostOwnPost();
             setupCommonPageEvents("wait");
           } else {

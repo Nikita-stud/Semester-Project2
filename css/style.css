@@ -1896,6 +1896,11 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .sm\:mr-\[20px\] {
     margin-right: 20px;
   }
@@ -1906,6 +1911,10 @@ video {
 
   .sm\:w-\[300px\] {
     width: 300px;
+  }
+
+  .sm\:w-\[280px\] {
+    width: 280px;
   }
 
   .sm\:min-w-\[220px\] {
@@ -1920,9 +1929,22 @@ video {
     flex-direction: row-reverse;
   }
 
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
   .sm\:object-cover {
     -o-object-fit: cover;
        object-fit: cover;
+  }
+
+  .sm\:px-\[50px\] {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .sm\:align-middle {
+    vertical-align: middle;
   }
 
   .sm\:text-mobileButton {
@@ -2062,6 +2084,10 @@ video {
     width: auto;
   }
 
+  .md\:w-\[280px\] {
+    width: 280px;
+  }
+
   .md\:max-w-max {
     max-width: -moz-max-content;
     max-width: max-content;
@@ -2151,6 +2177,10 @@ video {
 
   .md\:pt-\[50px\] {
     padding-top: 50px;
+  }
+
+  .md\:align-middle {
+    vertical-align: middle;
   }
 
   .md\:text-desktopButton {
