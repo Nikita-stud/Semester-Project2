@@ -14,8 +14,6 @@ export function formHandler(formID, pathName, buttonID) {
     const formFile = new FormData(formRegister);
     const entries = Object.fromEntries(formFile);
 
-    console.log("Inputs from Form", entries);
-
     switch (true) {
       case pathName === "/auth/register.html" || pathName === "/auth/register":
         cta.innerText = "Submitting...";
