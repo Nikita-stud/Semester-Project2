@@ -1,13 +1,14 @@
 import { API_POST } from "../../constants/constants.mjs";
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 import { getQueryParam } from "../../events/helpers/getQueryParam.mjs";
+import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function fetchSinglePost() {
   const postID = getQueryParam("id");
   if (!postID) {
     window.location.href = "/";
   }
-  // let jsonValue = {};
+  let jsonValue = {};
   try {
     const post = createAllowedRequest("GET");
     const fetched = await fetch(
@@ -15,13 +16,12 @@ export async function fetchSinglePost() {
       post
     );
     const json = await fetched.json();
-    // jsonValue = json;
-    return json;
+    jsonValue = json;
     if (!fetched.ok) {
       throw new Error(json.errors?.[0]?.message || "Failed fetching the post");
     }
+    return json;
   } catch (error) {
-    console.log(error);
-    // catchAndDisplay("#postContainer", jsonValue.errors?.[0]?.message);
+    catchAndDisplay("errorSinglePost", jsonValue, false);
   }
 }

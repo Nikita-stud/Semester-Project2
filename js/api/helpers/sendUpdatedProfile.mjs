@@ -3,6 +3,7 @@ import { createAllowedDataRequest } from "../../events/helpers/createAlloweddata
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function sendUpdatedProfile(entries) {
+  const saveButton = document.getElementById("saveProfile");
   let jsonValue = {};
   try {
     const { avatar, banner, bio } = entries;
@@ -32,5 +33,9 @@ export async function sendUpdatedProfile(entries) {
     return json;
   } catch (error) {
     catchAndDisplay("errorEditProfile", jsonValue, false);
+  } finally {
+    saveButton.innerText = "Save";
+    saveButton.disabled = true;
+    saveButton.classList.add("opacity-50");
   }
 }

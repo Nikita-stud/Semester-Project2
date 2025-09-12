@@ -1437,6 +1437,14 @@ video {
   padding: 50px;
 }
 
+.p-\[150px\] {
+  padding: 150px;
+}
+
+.p-\[y50px\] {
+  padding: y50px;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1465,6 +1473,11 @@ video {
 .py-\[20px\] {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.py-\[150px\] {
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .pb-\[15px\] {
@@ -2016,6 +2029,11 @@ video {
   .md\:mx-\[50px\] {
     margin-left: 50px;
     margin-right: 50px;
+  }
+
+  .md\:mx-\[30px\] {
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .md\:-ml-6 {
