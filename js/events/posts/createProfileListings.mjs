@@ -1,6 +1,6 @@
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
 
-export function createProfileListings(container, profileListings) {
+export function createProfileListings(container, profileListings, isBid) {
   const existingContainer = container.querySelector(".listings");
   if (existingContainer) {
     existingContainer.remove();
@@ -20,6 +20,7 @@ export function createProfileListings(container, profileListings) {
 
   if (profileListings.length < 1) {
     const noPostsDiv = document.createElement("div");
+    noPostsDiv.setAttribute("id", "noPostsContainer");
     noPostsDiv.classList.add(
       "w-full",
       "h-[200px]",
@@ -36,8 +37,30 @@ export function createProfileListings(container, profileListings) {
     noPostsDiv.innerText = "No Posts here";
     bidsContainer.append(noPostsDiv);
   }
+  console.log("HEre are all lists ", profileListings);
 
   profileListings.forEach((bid) => {
+    let id;
+    let title;
+    let endsAt;
+    let bids;
+    let media;
+
+    if (isBid) {
+      id = bid.listing?.id;
+      title = bid.listing?.title;
+      endsAt = bid.listing?.endsAt;
+      bids = bid.amount;
+      media = bid.listing?.media[0];
+    } else {
+      id = bid.id;
+      title = bid.title;
+      endsAt = bid.endsAt;
+      bids = bid.bids;
+      media = bid?.media[0];
+    }
+
+    console.log("HEre I am ", bid.listing);
     const div = document.createElement("div");
     div.classList.add(
       "pointer-cursor",
@@ -50,12 +73,13 @@ export function createProfileListings(container, profileListings) {
       "bg-formWhite",
       "shadow-[0_1px_6px_rgba(0,0,0,0.25)]"
     );
+
     div.addEventListener("click", () => {
-      window.location.replace(`/post/?id=${bid.id}`);
+      window.location.replace(`/post/?id=${id}`);
     });
 
     const header = document.createElement("h2");
-    header.innerText = bid.title;
+    header.innerText = title;
     header.classList.add(
       "text-mobileSecondaryHeader",
       "w-[180px]",
@@ -73,9 +97,9 @@ export function createProfileListings(container, profileListings) {
       "pt-[5px]",
       "font-bold"
     );
-    const apiDate = new Date(bid.endsAt);
+    const apiDate = new Date(endsAt);
     const date = transformTime(apiDate);
-    const isExpired = new Date(bid.endsAt) < new Date();
+    const isExpired = new Date(endsAt) < new Date();
     const { day, month, year, hours, min } = date;
     if (!isExpired) {
       time.innerText = `Ends on: ${day}/${month}/${year}, ${hours}:${min}`;
@@ -94,34 +118,42 @@ export function createProfileListings(container, profileListings) {
       "flex",
       "items-center"
     );
-    const highestBid =
-      bid.bids && bid.bids.length > 0
-        ? Math.max(...bid.bids.map((bid) => bid.amount))
-        : "None";
-    price.innerText = `Current bid CR ${highestBid}`;
+
+    let highestBid;
+    let currentOrLast = "Current";
+    let final = "Winning";
+    if (bids && Array.isArray(bids) && bids.length > 0) {
+      highestBid = Math.max(...bids.map((bid) => bid.amount));
+    } else if (bid.amount && bid.amount > 0) {
+      currentOrLast = "Your";
+      final = "Your";
+      highestBid = bid.amount;
+    } else {
+      highestBid = "None";
+    }
+
     if (!isExpired) {
-      price.innerText = `Current bid CR ${highestBid}`;
+      price.innerText = `${currentOrLast} bid CR ${highestBid}`;
     } else if (highestBid === "None") {
       price.innerText = `No one placed a bid`;
     } else {
-      price.innerText = `Final bid was CR ${highestBid}`;
+      price.innerText = `${final} bid was CR ${highestBid}`;
     }
 
     const img = document.createElement("img");
     img.classList.add(
-      "rounded-t-md",
       "object-content",
       "w-[150px]",
       "h-[150px]",
-      "my-[5px]",
+      "my-[15px]",
       "m-auto",
       "overflow-hidden"
     );
-    if (bid.media.url) {
+    if (media?.url) {
       img.classList.add("object-cover");
       img.classList.remove("object-content");
-      img.src = bid.media.url;
-      img.alt = bid.media.alt || "Post image which is not described";
+      img.src = media.url;
+      img.alt = media.alt || "Post image which is not described";
     } else {
       img.src = "../../images/no-img.png";
       img.alt = "The is no image available";

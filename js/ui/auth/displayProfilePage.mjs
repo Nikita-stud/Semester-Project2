@@ -1,4 +1,9 @@
+import { fetchBidsMade } from "../../api/posts/fetchBidsMade.mjs";
 import { fetchProfileListings } from "../../api/posts/fetchProfileListings.mjs";
+import {
+  API_PROFILE_BIDS,
+  API_PROFILE_WINS,
+} from "../../constants/constants.mjs";
 import { createProfileListings } from "../../events/posts/createProfileListings.mjs";
 
 const profilePageName = document.getElementById("profilePageName");
@@ -10,7 +15,8 @@ const toggleContainer = document.getElementById("toggleContainer");
 
 export async function displayProfilePage(profile) {
   const listingsBids = await fetchProfileListings(profile.listings);
-  console.log(listingsBids);
+  const allBidsMade = await fetchBidsMade(API_PROFILE_BIDS);
+  const winningBids = await fetchBidsMade(API_PROFILE_WINS);
 
   profilePageName.innerText = profile.name;
 
@@ -57,13 +63,25 @@ export async function displayProfilePage(profile) {
           createProfileListings(item, expiredListings);
           break;
         case "activeBidsContainer":
-          // createProfileListings(item, listingsBids);
+          const activeBids = allBidsMade.filter(
+            (bid) => new Date(bid.listing.endsAt) > currentTime
+          );
+          createProfileListings(item, activeBids, true);
           break;
         case "winningsContainer":
-          // createProfileListings(item, listingsBids);
+          createProfileListings(item, winningBids, false);
           break;
         case "expiredBidsContainer":
-          // createProfileListings(item, listingsBids);
+          const expiredBids = allBidsMade.filter(
+            (bid) => new Date(bid.listing.endsAt) < currentTime
+          );
+          const winningListingsId = winningBids.map((bid) => bid.id);
+
+          const lostAndExpiredBids = expiredBids.filter((bid) => {
+            const expiredListingId = bid.listing?.id;
+            return !winningListingsId.includes(expiredListingId);
+          });
+          createProfileListings(item, lostAndExpiredBids, true);
           break;
       }
     });
