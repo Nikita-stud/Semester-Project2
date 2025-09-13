@@ -166,7 +166,9 @@
                   <i
                     class="fa-solid fa-user flex items-center text-mobileButton text-green md:hidden md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Edit profile
                   </h3>
                   <i
@@ -197,7 +199,7 @@
                 <div class="flex justify-end">
                   <a
                     href="/profile/edit/index.html"
-                    class="w-[208px] h-[47px] text-desktopButton text-darkerYellow bg-yellow rounded-full grid place-content-center place-items-end mt-[20px] cursor-pointer"
+                    class="w-[208px] h-[47px] font-bold text-desktopButton text-darkerYellow bg-yellow rounded-full grid place-content-center place-items-end mt-[20px] cursor-pointer hover:opacity-90"
                     >Edit</a
                   >
                 </div>
@@ -208,16 +210,21 @@
             class="md:flex md:flex-col md:pb-[20px] md:w-full md:min-h-[350px] md:px-[20px] md:rounded-[20px] md:bg-formWhite md:shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           >
             <div class="md:flex md:flex-col md:gap-[20px] md:justify-evenly">
-              <div id="myListingContainer" class="mt-[20px] cursor-pointer">
+              <div
+                id="myListingContainer"
+                class="mt-[20px] cursor-pointer hover:text-grey"
+              >
                 <div class="flex justify-between">
                   <i
-                    class="fa-solid fa-list flex items-center text-mobileButton text-green"
+                    class="fa-solid fa-list flex items-center text-mobileButton text-green md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Active listing
                   </h3>
                   <i
-                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black md:text-desktopSecondaryHeader"
                   ></i>
                 </div>
               </div>
@@ -226,65 +233,82 @@
               ></div>
               <div
                 id="expiredListingContainer"
-                class="mt-[20px] cursor-pointer"
+                class="mt-[20px] cursor-pointer hover:text-grey"
               >
                 <div class="flex justify-between">
                   <i
-                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
+                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Expired listing
                   </h3>
                   <i
-                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black md:text-desktopSecondaryHeader"
                   ></i>
                 </div>
               </div>
               <div
                 class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
               ></div>
-              <div id="activeBidsContainer" class="mt-[20px] cursor-pointer">
+              <div
+                id="activeBidsContainer"
+                class="mt-[20px] cursor-pointer hover:text-grey"
+              >
                 <div class="flex justify-between">
                   <i
-                    class="fa-solid fa-cart-shopping flex items-center text-mobileButton text-green"
+                    class="fa-solid fa-cart-shopping flex items-center text-mobileButton text-green md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Placed bids
                   </h3>
                   <i
-                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black md:text-desktopSecondaryHeader"
                   ></i>
                 </div>
               </div>
               <div
                 class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
               ></div>
-              <div id="winningsContainer" class="mt-[20px] cursor-pointer">
+              <div
+                id="winningsContainer"
+                class="mt-[20px] cursor-pointer hover:text-grey"
+              >
                 <div class="flex justify-between">
                   <i
-                    class="fa-solid fa-trophy flex items-center text-mobileButton text-green"
+                    class="fa-solid fa-trophy flex items-center text-mobileButton text-green md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Winning bids
                   </h3>
                   <i
-                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black md:text-desktopSecondaryHeader"
                   ></i>
                 </div>
               </div>
               <div
                 class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
               ></div>
-              <div id="expiredBidsContainer" class="mt-[20px] cursor-pointer">
+              <div
+                id="expiredBidsContainer"
+                class="mt-[20px] cursor-pointer hover:text-grey"
+              >
                 <div class="flex justify-between">
                   <i
-                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
+                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green md:text-desktopButton"
                   ></i>
-                  <h3 class="text-mobileButton font-bold font-nunito">
+                  <h3
+                    class="text-mobileButton font-bold font-nunito md:text-desktopButton"
+                  >
                     Expired bids
                   </h3>
                   <i
-                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black md:text-desktopSecondaryHeader"
                   ></i>
                 </div>
               </div>

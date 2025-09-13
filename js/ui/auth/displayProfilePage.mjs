@@ -41,10 +41,10 @@ export async function displayProfilePage(profile) {
   profilePageEmail.innerText = profile.email;
   profileCredits.innerHTML = `Available Credits: CR  <span class="underline"> ${profile.credits}</span>`;
 
-  profileEditName.innerHTML = `<i class="fa-solid fa-user text-green"></i> <span class="inline truncate">${profile.name}</span>`;
-  profileEditListings.innerHTML = `<i class="fa-solid fa-list text-green"></i> <span class="inline">${profile.listings.length}</span>`;
-  profileEditWins.innerHTML = `<i class="fa-solid fa-trophy text-green"></i> <span class="inline">${profile.wins.length}</span>`;
-  profileEditBio.innerHTML = `<i class="fa-solid fa-circle-info text-green"></i> <span class="inline truncate">${profile.bio}</span>`;
+  profileEditName.innerHTML = `<i class="fa-solid fa-user text-green md:text-desktopButton"></i> <span class="inline truncate">${profile.name}</span>`;
+  profileEditListings.innerHTML = `<i class="fa-solid fa-list text-green md:text-desktopButton"></i> <span class="inline">${profile.listings.length}</span>`;
+  profileEditWins.innerHTML = `<i class="fa-solid fa-trophy text-green md:text-desktopButton"></i> <span class="inline">${profile.wins.length}</span>`;
+  profileEditBio.innerHTML = `<i class="fa-solid fa-circle-info text-green md:text-desktopButton"></i> <span class="inline truncate">${profile.bio}</span>`;
 
   const clickableContainers = [
     document.getElementById("editProfileContainer"),
