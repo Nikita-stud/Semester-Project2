@@ -4,9 +4,12 @@ import { getQueryParam } from "../../events/helpers/getQueryParam.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
 export async function fetchSinglePost() {
+  const loadingSinglePost = document.getElementById("loadingSinglePost");
+
   const postID = getQueryParam("id");
   if (!postID) {
     window.location.href = "/";
+    return;
   }
   let jsonValue = {};
   try {
@@ -23,5 +26,8 @@ export async function fetchSinglePost() {
     return json;
   } catch (error) {
     catchAndDisplay("errorSinglePost", jsonValue, false);
+    throw error;
+  } finally {
+    loadingSinglePost.classList.add("hidden");
   }
 }

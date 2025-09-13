@@ -19,9 +19,14 @@ export async function fetchProfile() {
   } catch (error) {
     catchAndDisplay("errorDispAbout", jsonValue, false);
     catchAndDisplay("errorDispProfile", jsonValue, false);
+    throw error;
   } finally {
-    loadingProfile.classList.add("hidden");
-    loadingDispAbout.classList.remove("md:grid");
-    loadingDispAbout.classList.add("hidden");
+    if (loadingProfile) {
+      loadingProfile.classList.add("hidden");
+    }
+    if (loadingDispAbout) {
+      loadingDispAbout.classList.remove("md:grid");
+      loadingDispAbout.classList.add("hidden");
+    }
   }
 }
