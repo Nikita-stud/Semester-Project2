@@ -110,37 +110,37 @@
       </div>
     </header>
 
-    <main class="pt-[110px]">
-      <section>
+    <main class="pt-[110px] md:pt-[140px]">
+      <section class="md:mx-[50px] rounded-t-[20px]">
         <div
           id="profilePageBackground"
-          class="relative object-cover w-full h-[174px]"
+          class="relative bg-cover bg-center w-full h-[174px] md:rounded-t-[20px] md:h-[150px]"
         >
           <div
-            class="absolute bg-formWhite rounded-[20px] mx-[20px] mt-[120px] h-[174px] m-auto left-0 right-0 bottom-0 top-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            class="absolute bg-formWhite rounded-[20px] mx-[20px] mt-[120px] h-[174px] m-auto left-0 right-0 bottom-0 top-0 shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:rounded-t-[0px] md:rounded-b-[20px] md:mt-[150px] md:mx-[0px] md:h-[150px]"
           >
-            <div class="relative">
+            <div class="relative md:absolute md:left-[150px]">
               <div
                 id="profilePageImage"
-                class="absolute bg-cover top-[0] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[100px] h-[100px] overflow-hidden"
+                class="absolute bg-cover top-[0] left-0 right-0 bottom-0 bg-slate-600 m-auto rounded-full w-[100px] h-[100px] overflow-hidden md:w-[160px] md:h-[160px]"
               ></div>
               <div
-                class="absolute top-[80px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center"
+                class="absolute top-[80px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center md:top-[0px] md:left-0 md:transform-none md:-translate-x-0 md:-translate-y-0"
               >
                 <h1
                   id="profilePageName"
-                  class="text-mobileText truncate pt-[20px] m-auto font-garamond font-bold text-dark xs:text-mobileSecondaryHeader md:text-mobileMainHeader"
+                  class="text-mobileText truncate pt-[20px] m-auto font-garamond font-bold text-dark xs:text-mobileSecondaryHeader md:pt-0 md:pl-[85px] md:text-mobileMainHeader"
                 ></h1>
                 <p
                   id="profilePageEmail"
-                  class="text-mobileText text-grey font-nunito break-all sm:text-mobileButton"
+                  class="text-mobileText text-grey font-nunito break-all sm:text-mobileButton md:pl-[190px] md:break-keep"
                 ></p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="toggleContainer" class="pt-[140px] px-[20px]">
+      <section id="toggleContainer" class="relative pt-[140px] px-[20px]">
         <div
           class="hidden p-[10px] bg-formWhite border -mb-[10px] mt-[10px] text-redTime border-redTime md:text-mobileButton"
         >
@@ -148,7 +148,7 @@
         </div>
         <h2
           id="editProfileCredits"
-          class="text-mobileButton grid place-content-center font-bold font-nunito"
+          class="text-mobileButton flex justify-center gap-2 font-bold font-nunito md:absolute md:left-[390px] md:top-[90px] xl:left-[60%] xl:top-[20px] 2xl:left-[70%]"
         ></h2>
         <div id="editProfileContainer" class="mt-[20px]">
           <div class="flex justify-between">

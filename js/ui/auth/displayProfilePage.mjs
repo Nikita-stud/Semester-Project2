@@ -35,7 +35,7 @@ export async function displayProfilePage(profile) {
   profilePageBackground.style.backgroundImage = `url(${profile.banner.url})`;
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
   profilePageEmail.innerText = profile.email;
-  profileCredits.innerHTML = `Available Credits: CR ${profile.credits}`;
+  profileCredits.innerHTML = `Available Credits: CR  <span class="underline"> ${profile.credits}</span>`;
 
   const toggleItems = toggleContainer.children;
 
