@@ -14,6 +14,7 @@ import { displayErrorOnAuth } from "./ui/auth/displayErrorOnAuth.mjs";
 import { displayNavLoggedProfile } from "./ui/auth/displayNavLoggedProfile.mjs";
 import { createPost } from "./events/posts/createPost.mjs";
 import { trackUserOnHotjar } from "./events/helpers/trackUserOnHotjar.mjs";
+import { catchAndDisplay } from "./ui/helpers/catchAndDisplay.mjs";
 
 function pathEvents() {
   const pathName = window.location.pathname;
@@ -61,18 +62,25 @@ function pathEvents() {
       break;
     case "/post/":
       setupCommonPageEvents();
+      const loadingSinglePost = document.getElementById("loadingSinglePost");
+      let jsonValue = {};
 
       const fetchSingle = async () => {
         try {
+          let profileJSON = "";
+
           if (checkIfLoggedIn()) {
-            const profileJSON = await fetchProfile();
+            profileJSON = await fetchProfile();
             displayNavLoggedProfile(profileJSON.data);
-            const json = await fetchSinglePost();
-            createPost(json.data, profileJSON.data);
             setupCommonPageEvents("wait");
           }
+          const json = await fetchSinglePost();
+          jsonValue = json;
+          createPost(json.data, profileJSON.data);
         } catch (error) {
-          console.log("error in single posts", error);
+          catchAndDisplay("errorSinglePost", jsonValue, false);
+        } finally {
+          loadingSinglePost.classList.add("hidden");
         }
       };
       fetchSingle();

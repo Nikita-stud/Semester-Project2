@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
 
-  <body class="bg-white">
+  <body class="bg-white grid grid-rows-[1fr_1fr_1] min-h-screen">
     <header
       id="headerContainer"
       class="fixed z-20 top-0 left-0 w-full transition-[1s] pt-[20px]"
@@ -105,10 +105,20 @@
       </div>
     </header>
 
-    <main class="pt-[110px]">
-      <article id="articleContainer" class="px-[20px]">
+    <main class="pt-[110px] md:pt-[140px]">
+      <article id="articleContainer" class="px-[20px] md:px-[50px]">
         <div
-          class="hidden py-[150px] bg-formWhite border -mb-[10px] mt-[10px] text-redTime border-redTime md:text-mobileButton md:mx-[30px]"
+          id="loadingSinglePost"
+          class="text-mobileSecondaryHeader overflow-hidden h-[400px] md:h-[700px] relative border-2 rounded-[20px] bg-formWhite grid place-content-center break-words break-all items-center mob:text-mobileSecondaryHeader lg:text-desktopSecondaryHeader before:absolute before:inset-0 before:m-[-2px] before:rounded-[-22px] before:bg-gradient-to-r before:from-[#FFFFFF] before:via-[#FFFFFF] before:to-[#757575] before:opacity-10 before:animate-[shimmer_8s_infinite] md:text-desktopSecondaryHeader before:bg-[length:200%_100%]"
+        >
+          <p
+            class="loader bg-gradient-to-r from-[#757575] via-[#757575] to-[#101802] bg-clip-text text-transparent animate-[shimmer_3s_infinite] bg-[length:200%_100%]"
+          >
+            Post is loading...
+          </p>
+        </div>
+        <div
+          class="hidden py-[150px] bg-formWhite border -mb-[10px] mt-[10px] text-redTime border-redTime md:text-desktopSecondaryHeader md:mx-[30px]"
         >
           <p id="errorSinglePost" class="flex justify-center"></p>
         </div>
