@@ -140,6 +140,7 @@
           </div>
         </div>
       </section>
+
       <section
         id="toggleContainer"
         class="relative pt-[140px] px-[20px] md:px-[50px] md:pt-[180px]"
@@ -153,121 +154,146 @@
           id="editProfileCredits"
           class="text-mobileButton flex justify-center gap-2 font-bold font-nunito md:absolute md:left-[390px] md:top-[90px] xl:left-[60%] xl:top-[20px] 2xl:left-[70%]"
         ></h2>
-        <div
-          id="editProfileContainer"
-          class="md:w-[200px] xl:w-[382px] md:h-full md:p-[20px] md:rounded-[20px] md:bg-formWhite md:shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-        >
-          <div class="mt-[20px] md:mt-0">
-            <div class="flex justify-between">
-              <i
-                class="fa-solid fa-user flex items-center text-mobileButton text-green md:hidden md:text-desktopButton"
-              ></i>
-              <h3 class="text-mobileButton font-bold font-nunito">
-                Edit profile
-              </h3>
-              <i
-                class="fa-solid fa-angle-right flex items-center mr-[6px] text-mobileSecondaryHeader cursor-pointer text-black md:hidden"
-              ></i>
-            </div>
-          </div>
-          <div
-            class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[10px]"
-          ></div>
-          <div class="hidden md:flex md:flex-col md:gap-[10px]">
-            <p
-              id="profileEditName"
-              class="font-bold text-grey text-desktopText font-nunito mt-[10px] flex md:gap-[20px] xl:gap-[110px] items-center"
-            ></p>
-            <p
-              id="profileEditWins"
-              class="font-bold text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
-            ></p>
-            <p
-              id="profileEditListings"
-              class="font-bold text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
-            ></p>
-            <p
-              id="profileEditBio"
-              class="font-bold truncate w-full text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
-            ></p>
-            <div class="flex justify-end">
-              <a
-                href="/profile/edit/index.html"
-                class="w-[208px] h-[47px] text-desktopButton text-darkerYellow bg-yellow rounded-full grid place-content-center place-items-end mt-[20px] cursor-pointer"
-                >Edit</a
-              >
-            </div>
-          </div>
-        </div>
 
-        <div id="myListingContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-list flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Active listing
-            </h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-        </div>
-        <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        <div id="expiredListingContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Expired listing
-            </h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-        </div>
-        <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        <div id="activeBidsContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-cart-shopping flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">Placed bids</h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-        </div>
-        <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        <div id="winningsContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-trophy flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Winning bids
-            </h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-        </div>
-        <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
-        <div id="expiredBidsContainer" class="mt-[20px]">
-          <div class="flex justify-between">
-            <i
-              class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
-            ></i>
-            <h3 class="text-mobileButton font-bold font-nunito">
-              Expired bids
-            </h3>
-            <i
-              class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
-            ></i>
-          </div>
-        </div>
-        <div class="w-full h-[3px] mt-[20px] bg-green rounded-md"></div>
+        <section class="md:flex md:gap-[40px]">
+          <section>
+            <div
+              id="editProfileContainer"
+              class="md:w-[200px] xl:w-[382px] md:h-[330px] md:p-[20px] md:rounded-[20px] md:bg-formWhite md:shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            >
+              <div class="mt-[20px] md:mt-0">
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-user flex items-center text-mobileButton text-green md:hidden md:text-desktopButton"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Edit profile
+                  </h3>
+                  <i
+                    class="fa-solid fa-angle-right flex items-center mr-[6px] text-mobileSecondaryHeader cursor-pointer text-black md:hidden"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[10px]"
+              ></div>
+              <div class="hidden md:flex md:flex-col md:gap-[10px]">
+                <p
+                  id="profileEditName"
+                  class="font-bold text-grey text-desktopText font-nunito mt-[10px] flex md:gap-[20px] xl:gap-[110px] items-center"
+                ></p>
+                <p
+                  id="profileEditWins"
+                  class="font-bold text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
+                ></p>
+                <p
+                  id="profileEditListings"
+                  class="font-bold text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
+                ></p>
+                <p
+                  id="profileEditBio"
+                  class="font-bold truncate w-full text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
+                ></p>
+                <div class="flex justify-end">
+                  <a
+                    href="/profile/edit/index.html"
+                    class="w-[208px] h-[47px] text-desktopButton text-darkerYellow bg-yellow rounded-full grid place-content-center place-items-end mt-[20px] cursor-pointer"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="md:flex md:flex-col md:pb-[20px] md:w-full md:min-h-[350px] md:px-[20px] md:rounded-[20px] md:bg-formWhite md:shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          >
+            <div class="md:flex md:flex-col md:gap-[20px] md:justify-evenly">
+              <div id="myListingContainer" class="mt-[20px] cursor-pointer">
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-list flex items-center text-mobileButton text-green"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Active listing
+                  </h3>
+                  <i
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
+              ></div>
+              <div
+                id="expiredListingContainer"
+                class="mt-[20px] cursor-pointer"
+              >
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Expired listing
+                  </h3>
+                  <i
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
+              ></div>
+              <div id="activeBidsContainer" class="mt-[20px] cursor-pointer">
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-cart-shopping flex items-center text-mobileButton text-green"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Placed bids
+                  </h3>
+                  <i
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
+              ></div>
+              <div id="winningsContainer" class="mt-[20px] cursor-pointer">
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-trophy flex items-center text-mobileButton text-green"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Winning bids
+                  </h3>
+                  <i
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:mt-[-10px]"
+              ></div>
+              <div id="expiredBidsContainer" class="mt-[20px] cursor-pointer">
+                <div class="flex justify-between">
+                  <i
+                    class="fa-solid fa-circle-xmark flex items-center text-mobileButton text-green"
+                  ></i>
+                  <h3 class="text-mobileButton font-bold font-nunito">
+                    Expired bids
+                  </h3>
+                  <i
+                    class="fa-solid fa-chevron-down flex items-center text-mobileSecondaryHeader cursor-pointer text-black"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="w-full h-[3px] mt-[20px] bg-green rounded-md md:hidden"
+              ></div>
+            </div>
+          </section>
+        </section>
       </section>
     </main>
 

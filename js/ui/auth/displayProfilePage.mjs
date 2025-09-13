@@ -11,7 +11,6 @@ const profilePageImage = document.getElementById("profilePageImage");
 const profilePageBackground = document.getElementById("profilePageBackground");
 const profilePageEmail = document.getElementById("profilePageEmail");
 const profileCredits = document.getElementById("editProfileCredits");
-const toggleContainer = document.getElementById("toggleContainer");
 
 const profileEditName = document.getElementById("profileEditName");
 const profileEditListings = document.getElementById("profileEditListings");
@@ -24,7 +23,6 @@ export async function displayProfilePage(profile) {
   const winningBids = await fetchBidsMade(API_PROFILE_WINS);
 
   profilePageName.innerText = profile.name;
-  console.log(profile);
 
   const newAvatarImg = new Image();
   const newBannerImg = new Image();
@@ -48,11 +46,16 @@ export async function displayProfilePage(profile) {
   profileEditWins.innerHTML = `<i class="fa-solid fa-trophy text-green"></i> <span class="inline">${profile.wins.length}</span>`;
   profileEditBio.innerHTML = `<i class="fa-solid fa-circle-info text-green"></i> <span class="inline truncate">${profile.bio}</span>`;
 
-  const toggleItems = toggleContainer.children;
+  const clickableContainers = [
+    document.getElementById("editProfileContainer"),
+    document.getElementById("myListingContainer"),
+    document.getElementById("expiredListingContainer"),
+    document.getElementById("activeBidsContainer"),
+    document.getElementById("winningsContainer"),
+    document.getElementById("expiredBidsContainer"),
+  ];
 
-  for (let i = 0; i < toggleItems.length; i++) {
-    const item = toggleItems[i];
-
+  clickableContainers.forEach((item) => {
     item.addEventListener("click", () => {
       const itemID = item.id;
       const currentTime = new Date();
@@ -96,5 +99,5 @@ export async function displayProfilePage(profile) {
           break;
       }
     });
-  }
+  });
 }
