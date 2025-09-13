@@ -13,12 +13,18 @@ const profilePageEmail = document.getElementById("profilePageEmail");
 const profileCredits = document.getElementById("editProfileCredits");
 const toggleContainer = document.getElementById("toggleContainer");
 
+const profileEditName = document.getElementById("profileEditName");
+const profileEditListings = document.getElementById("profileEditListings");
+const profileEditWins = document.getElementById("profileEditWins");
+const profileEditBio = document.getElementById("profileEditBio");
+
 export async function displayProfilePage(profile) {
   const listingsBids = await fetchProfileListings(profile.listings);
   const allBidsMade = await fetchBidsMade(API_PROFILE_BIDS);
   const winningBids = await fetchBidsMade(API_PROFILE_WINS);
 
   profilePageName.innerText = profile.name;
+  console.log(profile);
 
   const newAvatarImg = new Image();
   const newBannerImg = new Image();
@@ -36,6 +42,11 @@ export async function displayProfilePage(profile) {
   profilePageImage.style.backgroundImage = `url(${profile.avatar.url})`;
   profilePageEmail.innerText = profile.email;
   profileCredits.innerHTML = `Available Credits: CR  <span class="underline"> ${profile.credits}</span>`;
+
+  profileEditName.innerHTML = `<i class="fa-solid fa-user text-green"></i> <span class="inline">${profile.name}</span>`;
+  profileEditListings.innerHTML = `<i class="fa-solid fa-list text-green"></i> <span class="inline">${profile.listings.length}</span>`;
+  profileEditWins.innerHTML = `<i class="fa-solid fa-trophy text-green"></i> <span class="inline">${profile.wins.length}</span>`;
+  profileEditBio.innerHTML = `<i class="fa-solid fa-circle-info text-green"></i> <span class="inline">${profile.bio}</span>`;
 
   const toggleItems = toggleContainer.children;
 
