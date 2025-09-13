@@ -135,6 +135,17 @@
                   id="profilePageEmail"
                   class="text-mobileText truncate md:w-[480px] text-grey font-nunito break-all sm:text-mobileButton md:pl-[190px] md:mt-[10px] md:break-keep"
                 ></p>
+
+                <div
+                  id="loadingProfile"
+                  class="text-mobileText relative mt-[50px] w-[220px] overflow-hidden my-[20px] h-[100px] xs:w-[250px]n md:absolute md:top-[-30px] lg:w-[400px] lg:right-[-200px] md:right-0 border-2 rounded-[20px] bg-formWhite grid place-content-center break-words break-all items-center mob:text-mobileSecondaryHeader lg:text-desktopSecondaryHeader before:absolute before:inset-0 before:m-[-2px] before:rounded-[-22px] before:bg-gradient-to-r before:from-[#FFFFFF] before:via-[#FFFFFF] before:to-[#757575] before:opacity-10 before:animate-[shimmer_8s_infinite] before:bg-[length:200%_100%] xl:right-[-400px] 2xl:right-[-800px]"
+                >
+                  <p
+                    class="loader bg-gradient-to-r from-[#757575] via-[#757575] to-[#101802] bg-clip-text text-transparent animate-[shimmer_3s_infinite] bg-[length:200%_100%]"
+                  >
+                    Profile is loading...
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +157,7 @@
         class="relative pt-[140px] px-[20px] md:px-[50px] md:pt-[180px]"
       >
         <div
-          class="hidden p-[10px] bg-formWhite border -mb-[10px] mt-[10px] text-redTime border-redTime md:text-mobileButton"
+          class="hidden p-[20px] bg-formWhite border mb-[10px] mt-[10px] text-redTime border-redTime md:z-1 md:text-desktopText md:absolute md:top-[15px] md:mx-[0px] md:right-[80px] lg:right-[200px] xl:right-[300px] 2xl:right-[600px] md:w-90vh"
         >
           <p id="errorDispProfile" class="flex justify-center"></p>
         </div>
@@ -196,6 +207,21 @@
                   id="profileEditBio"
                   class="font-bold truncate w-full text-grey text-desktopText font-nunito flex md:gap-[20px] xl:gap-[110px] items-center"
                 ></p>
+                <div
+                  id="loadingDispAbout"
+                  class="hidden text-mobileText overflow-hidden h-[100px] md:relative border-2 rounded-[20px] bg-formWhite md:grid place-content-center break-words break-all items-center mob:text-mobileSecondaryHeader lg:text-desktopSecondaryHeader before:absolute before:inset-0 before:m-[-2px] before:rounded-[-22px] before:bg-gradient-to-r before:from-[#FFFFFF] before:via-[#FFFFFF] before:to-[#757575] before:opacity-10 before:animate-[shimmer_8s_infinite] before:bg-[length:200%_100%]"
+                >
+                  <p
+                    class="loader bg-gradient-to-r from-[#757575] via-[#757575] to-[#101802] bg-clip-text text-transparent animate-[shimmer_3s_infinite] bg-[length:200%_100%]"
+                  >
+                    Profile is loading...
+                  </p>
+                </div>
+                <div
+                  class="hidden p-[20px] bg-formWhite border mb-[10px] mt-[10px] text-redTime border-redTime xl:py-[30px] xl:text-desktopText"
+                >
+                  <p id="errorDispAbout" class="flex justify-center"></p>
+                </div>
                 <div class="flex justify-end">
                   <a
                     href="/profile/edit/index.html"
