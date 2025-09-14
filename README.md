@@ -71,6 +71,7 @@ npm run start
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/style.css --watch",
     "build": "npx tailwindcss -i ./css/input.css -o ./css/style.css --minify"
   },
+```
 
 ## Contact
 
@@ -79,4 +80,7 @@ You can always contact me though email or my phone number.
 nikita151998@gmail.com
 <br>
 +4745588474
+
+```
+
 ```
