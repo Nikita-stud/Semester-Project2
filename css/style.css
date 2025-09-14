@@ -1780,6 +1780,26 @@ video {
   font-size: 24px;
 }
 
+.text-\[4rem\] {
+  font-size: 4rem;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
+}
+
+.text-\[3rem\] {
+  font-size: 3rem;
+}
+
+.text-\[2\.4rem\] {
+  font-size: 2.4rem;
+}
+
+.text-\[2\.5rem\] {
+  font-size: 2.5rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1977,6 +1997,11 @@ video {
 .before\:bg-black\/10::before {
   content: var(--tw-content);
   background-color: rgb(0 0 0 / 0.1);
+}
+
+.before\:bg-black\/30::before {
+  content: var(--tw-content);
+  background-color: rgb(0 0 0 / 0.3);
 }
 
 .before\:bg-gradient-to-r::before {
