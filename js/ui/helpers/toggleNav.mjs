@@ -38,17 +38,29 @@ export function toggleNav() {
   switch (pathName) {
     case "/index.html":
     case "/":
-      productsNavLink.classList.add("font-bold");
+      productsNavLink.classList.add(
+        "font-bold",
+        "underline",
+        "underline-offset-2"
+      );
       break;
     case "/profile/index.html":
     case "/profile/edit/index.html":
     case "/profile/":
     case "/profile/edit/":
-      profileNavLink.classList.add("font-bold");
+      profileNavLink.classList.add(
+        "font-bold",
+        "underline",
+        "underline-offset-2"
+      );
       break;
     case "/about/index.html":
     case "/about/":
-      aboutNavLink.classList.add("font-bold");
+      aboutNavLink.classList.add(
+        "font-bold",
+        "underline",
+        "underline-offset-2"
+      );
       break;
   }
 }
