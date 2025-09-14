@@ -1808,6 +1808,11 @@ video {
   color: rgb(255 202 19 / var(--tw-text-opacity, 1));
 }
 
+.text-formWhite {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
 .underline {
   text-decoration-line: underline;
 }
