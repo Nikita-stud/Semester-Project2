@@ -1,4 +1,4 @@
-export function checkIfImageValid(url, imgName) {
+export function checkIfImageValid(url) {
   return new Promise((result) => {
     const img = new Image();
     img.onload = () => result(true);

@@ -69,37 +69,46 @@ export async function displayProfilePage(profile) {
           document.location.href = "edit/index.html";
           break;
         case "myListingContainer":
-          const activeListing = listingsBids.filter(
-            (listing) => new Date(listing.endsAt) > currentTime
-          );
-          createProfileListings(item, activeListing);
+          {
+            const activeListing = listingsBids.filter(
+              (listing) => new Date(listing.endsAt) > currentTime
+            );
+            createProfileListings(item, activeListing);
+          }
           break;
         case "expiredListingContainer":
-          const expiredListings = listingsBids.filter(
-            (listing) => new Date(listing.endsAt) < currentTime
-          );
-          createProfileListings(item, expiredListings);
+          {
+            const expiredListings = listingsBids.filter(
+              (listing) => new Date(listing.endsAt) < currentTime
+            );
+            createProfileListings(item, expiredListings);
+          }
+
           break;
         case "activeBidsContainer":
-          const activeBids = allBidsMade.filter(
-            (bid) => new Date(bid.listing.endsAt) > currentTime
-          );
-          createProfileListings(item, activeBids, true);
+          {
+            const activeBids = allBidsMade.filter(
+              (bid) => new Date(bid.listing.endsAt) > currentTime
+            );
+            createProfileListings(item, activeBids, true);
+          }
           break;
         case "winningsContainer":
           createProfileListings(item, winningBids, false);
           break;
         case "expiredBidsContainer":
-          const expiredBids = allBidsMade.filter(
-            (bid) => new Date(bid.listing.endsAt) < currentTime
-          );
-          const winningListingsId = winningBids.map((bid) => bid.id);
+          {
+            const expiredBids = allBidsMade.filter(
+              (bid) => new Date(bid.listing.endsAt) < currentTime
+            );
+            const winningListingsId = winningBids.map((bid) => bid.id);
 
-          const lostAndExpiredBids = expiredBids.filter((bid) => {
-            const expiredListingId = bid.listing?.id;
-            return !winningListingsId.includes(expiredListingId);
-          });
-          createProfileListings(item, lostAndExpiredBids, true);
+            const lostAndExpiredBids = expiredBids.filter((bid) => {
+              const expiredListingId = bid.listing?.id;
+              return !winningListingsId.includes(expiredListingId);
+            });
+            createProfileListings(item, lostAndExpiredBids, true);
+          }
           break;
       }
     });

@@ -31,12 +31,14 @@ export function formHandler(formID, pathName, buttonID) {
         sendBidToServer(entries);
         break;
       case pathName === "/profile/edit/index.html":
-        cta.innerText = "Saving...";
-        const isValid = await displayErrorOnEditProfile(entries);
-        if (isValid) {
-          await sendUpdatedProfile(entries);
-        } else {
-          cta.innerText = "Save";
+        {
+          cta.innerText = "Saving...";
+          const isValid = await displayErrorOnEditProfile(entries);
+          if (isValid) {
+            await sendUpdatedProfile(entries);
+          } else {
+            cta.innerText = "Save";
+          }
         }
         break;
     }

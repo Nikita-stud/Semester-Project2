@@ -1,5 +1,7 @@
 const avatarImg = document.getElementById("profilePageImage");
 const bannerImg = document.getElementById("profilePageBackground");
+const profileCredits = document.getElementById("profileCredits");
+
 const form = document.getElementById("editProfileForm");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
@@ -20,10 +22,10 @@ export function displayEditProfilePage(profile) {
   newBannerImg.src = profile.banner.url;
 
   newAvatarImg.onerror = () => {
-    profilePageImage.style.backgroundImage = `url(../../images/img-on-error.png)`;
+    avatarImg.style.backgroundImage = `url(../../images/img-on-error.png)`;
   };
   newBannerImg.onerror = () => {
-    profilePageBackground.style.backgroundImage = `url(../../images/img-on-error.png)`;
+    bannerImg.style.backgroundImage = `url(../../images/img-on-error.png)`;
   };
 
   avatarImg.style.backgroundImage = `url(${profile.avatar.url})`;

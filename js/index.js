@@ -32,106 +32,114 @@ function pathEvents() {
       break;
     case "/index.html":
     case "/":
-      setupCommonPageEvents();
+      {
+        setupCommonPageEvents();
 
-      const fetchListings = async () => {
-        try {
-          const listingsObject = await fetchPosts();
-          const listingDataObjects = listingsObject.data;
-          const nonExpiredPosts = listingDataObjects.filter(
-            (post) => new Date(post.endsAt) > new Date()
-          );
-          createPosts(nonExpiredPosts);
-          filterPosts(listingDataObjects);
+        const fetchListings = async () => {
+          try {
+            const listingsObject = await fetchPosts();
+            const listingDataObjects = listingsObject.data;
+            const nonExpiredPosts = listingDataObjects.filter(
+              (post) => new Date(post.endsAt) > new Date()
+            );
+            createPosts(nonExpiredPosts);
+            filterPosts(listingDataObjects);
 
-          if (checkIfLoggedIn()) {
-            formHandler("#postOwnForm", pathName, "#postOwnCTA");
-            const profileJSON = await fetchProfile();
-            displayNavLoggedProfile(profileJSON.data);
-            renderPostOwnPost();
-            setupCommonPageEvents("wait");
-          } else {
-            checkToPostOwnList("postOwnBidButton", "post");
+            if (checkIfLoggedIn()) {
+              formHandler("#postOwnForm", pathName, "#postOwnCTA");
+              const profileJSON = await fetchProfile();
+              displayNavLoggedProfile(profileJSON.data);
+              renderPostOwnPost();
+              setupCommonPageEvents("wait");
+            } else {
+              checkToPostOwnList("postOwnBidButton", "post");
+            }
+          } catch (error) {
+            console.log("error in index", error);
           }
-        } catch (error) {
-          console.log("error in index", error);
-        }
-      };
-      fetchListings();
+        };
+        fetchListings();
+      }
       break;
     case "/post/":
-      setupCommonPageEvents();
-      const fetchSingle = async () => {
-        let profileData = null;
+      {
+        setupCommonPageEvents();
+        const fetchSingle = async () => {
+          let profileData = null;
 
-        if (checkIfLoggedIn()) {
-          try {
-            const profileJSON = await fetchProfile();
-            console.log("Profile success1", profileJSON);
+          if (checkIfLoggedIn()) {
+            try {
+              const profileJSON = await fetchProfile();
+              console.log("Profile success1", profileJSON);
 
-            profileData = profileJSON.data;
-            displayNavLoggedProfile(profileJSON.data);
-            setupCommonPageEvents("wait");
-            console.log("Profile success2", profileData);
-          } catch (error) {
-            console.log(error);
+              profileData = profileJSON.data;
+              displayNavLoggedProfile(profileJSON.data);
+              setupCommonPageEvents("wait");
+              console.log("Profile success2", profileData);
+            } catch (error) {
+              console.log(error);
+            }
           }
-        }
-        try {
-          const json = await fetchSinglePost();
-          console.log("Post success", json.data);
+          try {
+            const json = await fetchSinglePost();
+            console.log("Post success", json.data);
 
-          createPost(json.data, profileData);
-        } catch (error) {
-          console.log("Error loading profile", error);
-        }
-      };
-      fetchSingle();
+            createPost(json.data, profileData);
+          } catch (error) {
+            console.log("Error loading profile", error);
+          }
+        };
+        fetchSingle();
+      }
       break;
     case "/profile/index.html":
     case "/profile/":
-      setupCommonPageEvents();
+      {
+        setupCommonPageEvents();
 
-      const fetchProfileData = async () => {
-        try {
-          if (checkIfLoggedIn()) {
-            const profileJSON = await fetchProfile();
-            displayNavLoggedProfile(profileJSON.data);
-            displayProfilePage(profileJSON.data);
-            setupCommonPageEvents("wait");
-          } else {
-            window.location.replace(`/auth/login.html`);
+        const fetchProfileData = async () => {
+          try {
+            if (checkIfLoggedIn()) {
+              const profileJSON = await fetchProfile();
+              displayNavLoggedProfile(profileJSON.data);
+              displayProfilePage(profileJSON.data);
+              setupCommonPageEvents("wait");
+            } else {
+              window.location.replace(`/auth/login.html`);
+            }
+          } catch (error) {
+            console.log(error);
           }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      fetchProfileData();
+        };
+        fetchProfileData();
+      }
       break;
     case "/profile/edit/index.html":
     case "/profile/edit/":
-      setupCommonPageEvents();
+      {
+        setupCommonPageEvents();
 
-      const getProfileData = async () => {
-        try {
-          if (checkIfLoggedIn()) {
-            const profileJSON = await fetchProfile();
-            displayNavLoggedProfile(profileJSON.data);
-            formHandler("#editProfileForm", pathName, "#saveProfile");
+        const getProfileData = async () => {
+          try {
+            if (checkIfLoggedIn()) {
+              const profileJSON = await fetchProfile();
+              displayNavLoggedProfile(profileJSON.data);
+              formHandler("#editProfileForm", pathName, "#saveProfile");
 
-            displayEditProfilePage(profileJSON.data);
-            setupCommonPageEvents("wait");
-          } else {
-            window.location.replace(`/auth/login.html`);
+              displayEditProfilePage(profileJSON.data);
+              setupCommonPageEvents("wait");
+            } else {
+              window.location.replace(`/auth/login.html`);
+            }
+          } catch (error) {
+            console.log(error);
           }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      getProfileData();
+        };
+        getProfileData();
+      }
       break;
     case "/about/index.html":
-    case "/about/":
+    case "/about/": {
       setupCommonPageEvents();
 
       const getAboutProfileData = async () => {
@@ -145,6 +153,7 @@ function pathEvents() {
       };
       getAboutProfileData();
       break;
+    }
   }
 }
 pathEvents();
