@@ -3,6 +3,12 @@ import { loadLocalStorage } from "../../events/auth/loadLocalStorage.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ * Posts your own Post by sending an Object with Postdata to the server
+ *  * @param {Object} postData -Post data  (product/time/description/image/image2/image3/image4,/image5)
+ * @throws {Error}
+ */
+
 export async function postOwnPost(postData) {
   const button = document.getElementById("postOwnCTA");
   const fieldset = document.getElementById("fieldsetPost");

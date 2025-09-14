@@ -2,6 +2,12 @@ import { API_PROFILE } from "../../constants/constants.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ *  Updates your Profile by sending data
+ * from a form to the server
+ * @param {Object} entries -User Data (avatar/banner/bio)
+ */
+
 export async function sendUpdatedProfile(entries) {
   const saveButton = document.getElementById("saveProfile");
   let jsonValue = {};

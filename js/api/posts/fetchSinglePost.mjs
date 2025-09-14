@@ -3,6 +3,12 @@ import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.
 import { getQueryParam } from "../../events/helpers/getQueryParam.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ * Fetches a single post by ID from URL and include bids and seller info
+ * @returns {Object} JSON response containing single Post
+ * @throws {Error}
+ */
+
 export async function fetchSinglePost() {
   const loadingSinglePost = document.getElementById("loadingSinglePost");
 
@@ -16,7 +22,7 @@ export async function fetchSinglePost() {
     const post = createAllowedRequest("GET");
     const fetched = await fetch(
       `${API_POST}/${postID}?&_bids=true&_seller=true`,
-      post,
+      post
     );
     const json = await fetched.json();
     jsonValue = json;

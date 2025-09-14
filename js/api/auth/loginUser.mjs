@@ -3,6 +3,12 @@ import { saveLocalStorage } from "../../events/auth/saveLocalStorage.mjs";
 import { createPostRequest } from "../../events/helpers/createPostRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ * Authenticates a user by sending data
+ * from a form to the server
+ * @param {Object} user -User credentials (email/password)
+ */
+
 export async function loginUser(user) {
   const button = document.getElementById("loginButton");
   const fieldset = document.getElementById("fieldset");

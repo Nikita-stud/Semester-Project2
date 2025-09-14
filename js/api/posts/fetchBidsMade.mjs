@@ -1,5 +1,11 @@
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
+/**
+ *  Fetches your Bids placed by getting data
+ * from the server with the posts
+ * @param {Array} api -Array of Objects
+ * @returns {Object} JSON response containing Objects of bids made
+ */
 
 export async function fetchBidsMade(api) {
   let jsonValue = {};
@@ -14,7 +20,6 @@ export async function fetchBidsMade(api) {
     }
     return json.data;
   } catch (error) {
-    console.log(error);
     catchAndDisplay(`noPostsContainer`, jsonValue, false);
   }
 }

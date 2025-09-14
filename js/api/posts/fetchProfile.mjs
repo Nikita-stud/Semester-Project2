@@ -2,6 +2,13 @@ import { API_PROFILE } from "../../constants/constants.mjs";
 import { createAllowedRequest } from "../../events/helpers/createAllowedRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ *  Fetches your Profile
+ * from server
+ * @returns {Object} JSON response containing profile data
+ * @throws {Error} Throws caught errors
+ */
+
 export async function fetchProfile() {
   const loadingProfile = document.getElementById("loadingProfile");
   const loadingDispAbout = document.getElementById("loadingDispAbout");

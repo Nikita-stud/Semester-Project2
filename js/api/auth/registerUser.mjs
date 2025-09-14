@@ -2,6 +2,12 @@ import { API_REGISTER } from "../../constants/constants.mjs";
 import { createPostRequest } from "../../events/helpers/createPostRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ * Registers a user by sending data
+ * from a form to the server
+ * @param {Object} user -User credentials (userName/email/password)
+ */
+
 export async function registerUser(user) {
   const button = document.getElementById("registerButton");
   const fieldset = document.getElementById("fieldset");

@@ -2,6 +2,12 @@ import { API_POST_TO_BID } from "../../constants/constants.mjs";
 import { createAllowedDataRequest } from "../../events/helpers/createAlloweddataRequest.mjs";
 import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 
+/**
+ *  Sends your bid to server by sending data
+ * from a form to the server
+ * @param {Object} entries -User Credit (addBid)
+ */
+
 export async function sendBidToServer(entries) {
   const placeBidButton = document.getElementById("placeBidButton");
   let jsonValue = {};
