@@ -39,10 +39,16 @@ export function displayBidAndHistory(post, profile) {
     "-translate-x-1/2",
     "-translate-y-1/2",
     "max-h-[90vh]",
-    "overflow-y-auto"
+    "overflow-y-auto",
+    "lg:max-w-[600px]",
+    "lg:min-w-[506px]"
   );
   const bidTitle = document.createElement("h3");
-  bidTitle.classList.add("text-mobileButton", "font-bold");
+  bidTitle.classList.add(
+    "text-mobileButton",
+    "font-bold",
+    "lg:text-desktopButton"
+  );
   bidTitle.innerText = "Place bid";
 
   const icon = document.createElement("i");
@@ -66,7 +72,8 @@ export function displayBidAndHistory(post, profile) {
     "text-mobileText",
     "text-redTime",
     "pt-[5px]",
-    "font-bold"
+    "font-bold",
+    "lg:text-desktopText"
   );
   const apiDate = new Date(post.endsAt);
   const date = transformTime(apiDate);
@@ -74,7 +81,12 @@ export function displayBidAndHistory(post, profile) {
   time.innerText = `Ends on: ${day}/${month}/${year}, ${hours}:${min}`;
 
   const creditsAvailable = document.createElement("p");
-  creditsAvailable.classList.add("text-mobileText", "text-dark", "pt-[5px]");
+  creditsAvailable.classList.add(
+    "text-mobileText",
+    "text-dark",
+    "pt-[5px]",
+    "lg:text-desktopText"
+  );
   creditsAvailable.innerHTML = `Available credits: <span class="font-bold underline underline-offset-1">CR ${profile.credits}</span>`;
 
   const upperUnderline = createUnderline();
@@ -89,7 +101,8 @@ export function displayBidAndHistory(post, profile) {
     "align-middle",
     "items-center",
     "gap-[20px]",
-    "my-[20px]"
+    "my-[20px]",
+    "lg:flex-row"
   );
 
   const bidAmount = ["100", "500", "1000"];
@@ -122,10 +135,21 @@ export function displayBidAndHistory(post, profile) {
   });
 
   const lowerDiv = document.createElement("div");
-  lowerDiv.classList.add("flex", "flex-col", "items-center", "justify-center");
+  lowerDiv.classList.add(
+    "flex",
+    "flex-col",
+    "items-center",
+    "justify-center",
+    "lg:justify-start"
+  );
 
   const howMuchToBid = document.createElement("p");
-  howMuchToBid.classList.add("text-mobileText", "text-grey", "pt-[5px]");
+  howMuchToBid.classList.add(
+    "text-mobileText",
+    "text-grey",
+    "pt-[5px]",
+    "lg:text-desktopText"
+  );
 
   const highestBid =
     post.bids.length > 0
@@ -137,7 +161,7 @@ export function displayBidAndHistory(post, profile) {
   form.classList.add("flex", "flex-col", "items-center", "w-full");
   form.setAttribute("id", "placeBidForm");
   form.innerHTML = `
-                    <div class="hidden p-[14px] bg-formWhite border mt-[10px] text-redTime border-redTime md:text-mobileButton w-full break-word overflow-wrap-anywhere" >
+                    <div class="hidden p-[14px] bg-formWhite border mt-[10px] text-redTime border-redTime md:text-mobileButton w-full break-word overflow-wrap-anywhere lg:text-desktopText" >
                       <p id="errorOnBid" class="flex justify-center break-words">
                       </p>
                     </div>
@@ -147,11 +171,11 @@ export function displayBidAndHistory(post, profile) {
                       id="addBid"
                       name="addBid"
                       placeholder="CR..."
-                      class="text-center pr-1 w-full my-[10px] h-[60px] bg-formWhite rounded-full border border-dark font-light text-grey no-clear-button"/>
+                      class="text-center pr-1 w-full my-[10px] h-[60px] bg-formWhite rounded-full border border-dark font-light text-grey no-clear-button lg:text-desktopText"/>
                     <button
                       type="submit"
                       id="placeBidButton"
-                      class="w-[150px] my-2 h-[47px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[208px] md:text-desktopButton hover:border hover:text-opacity-90"
+                      class="w-[150px] my-2 h-[47px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[208px] md:text-desktopButton hover:border hover:text-opacity-90 lg:h-[60px]"
                     >
                       Place bid
                     </button>`;
@@ -195,7 +219,7 @@ export function displayBidAndHistory(post, profile) {
     buttonDiv.innerHTML = "";
     buttonDiv.classList.remove("my-[20px]");
     howMuchToBid.innerText = "";
-    form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold"><span class="flex justify-center">CR ${bidAmt}</span></div>`;
+    form.innerHTML = `<div class="mt-[20px] py-[20px] text-mobileButton grid grid-flow-rows place-content-center border border-green w-full text-green font-bold lg:text-desktopText"><span class="flex justify-center">CR ${bidAmt}</span></div>`;
   }
 
   viewBiddingContainer.addEventListener("click", () => {
@@ -204,7 +228,7 @@ export function displayBidAndHistory(post, profile) {
     const isHistoryOpen = viewBiddingContainer.querySelector(".special-item");
 
     if (isHistoryOpen) {
-      closeBidDiv.innerHTML = `<p id="closeBidDiv" class="flex justify-end gap-[20px]">View bidding history
+      closeBidDiv.innerHTML = `<p id="closeBidDiv" class="flex justify-end gap-[20px] lg:text-desktopText">View bidding history
                                         <i
                                           class="fa-solid fa-chevron-down text-mobileSecondaryHeader cursor-pointer text-black"
                                         ></i>
@@ -213,7 +237,7 @@ export function displayBidAndHistory(post, profile) {
       bidItem.forEach((item) => item.remove());
     } else {
       if (sortedBids.length === 0) {
-        closeBidDiv.innerHTML = `<div class=" text-grey text-mobileText">No bidding history available</div>`;
+        closeBidDiv.innerHTML = `<div class=" text-grey text-mobileText lg:text-desktopText">No bidding history available</div>`;
       } else {
         closeBidDiv.innerHTML = `Close bidding history
                                         <i
@@ -223,7 +247,13 @@ export function displayBidAndHistory(post, profile) {
           const mainDiv = document.createElement("div");
           mainDiv.classList.add("special-item");
           const div = document.createElement("div");
-          div.classList.add("mt-[10px]", "flex", "gap-[20px]", "align-middle");
+          div.classList.add(
+            "mt-[10px]",
+            "flex",
+            "gap-[20px]",
+            "align-middle",
+            "lg:justify-center"
+          );
 
           const img = document.createElement("img");
           img.classList.add(
@@ -232,7 +262,6 @@ export function displayBidAndHistory(post, profile) {
             "h-[40px]",
             "object-cover",
             "overflow-hidden",
-
             "xs:w-[80px]",
             "xs:h-[80px]"
           );
@@ -260,12 +289,19 @@ export function displayBidAndHistory(post, profile) {
             "overflow-hidden",
             "whitespace-nowrap",
             "text-ellipsis",
-            "max-w-[100px]"
+            "max-w-[100px]",
+            "lg:text-desktopText",
+            "lg:max-w-[150px]"
           );
           name.innerText = bid.bidder.name;
 
           const amount = document.createElement("p");
-          amount.classList.add("text-grey", "truncate");
+          amount.classList.add(
+            "text-grey",
+            "truncate",
+            "lg:text-desktopText",
+            "lg:max-w-[150px]"
+          );
           amount.innerText = `Bid CR ${bid.amount}`;
 
           const underline = createUnderline();
