@@ -5,7 +5,7 @@ import { catchAndDisplay } from "../../ui/helpers/catchAndDisplay.mjs";
 export async function fetchPosts() {
   const loadingContainer = document.getElementById("postsLoadingContainer");
   const hottestLoadingContainer = document.getElementById(
-    "hottestLoadingContainer"
+    "hottestLoadingContainer",
   );
   let jsonValue = {};
   try {

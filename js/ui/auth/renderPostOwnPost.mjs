@@ -58,7 +58,7 @@ export function renderPostOwnPost() {
       "flex-col",
       "font-nunito",
       "px-[20px]",
-      "mt-[5px]"
+      "mt-[5px]",
     );
     newImgDiv.innerHTML = ` <label
                               for="image${count}"
@@ -99,7 +99,7 @@ export function renderPostOwnPost() {
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
-      "h-[477px]"
+      "h-[477px]",
     );
     landingContainer.classList.add("mx-[20px]", "bg-green", "rounded-[20px]");
   });
@@ -117,12 +117,12 @@ export function renderPostOwnPost() {
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
-      "h-[477px]"
+      "h-[477px]",
     );
     landingContainer.classList.remove(
       "mx-[20px]",
       "bg-green",
-      "rounded-[20px]"
+      "rounded-[20px]",
     );
     const renderPostError = document.getElementById("renderPostError");
     renderPostError.classList.add("hidden");

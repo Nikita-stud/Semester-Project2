@@ -8,7 +8,7 @@ export function displayNavLoggedProfile(profileObject) {
     "flex-col",
     "text-mobileText",
     "px-[20px]",
-    "pt-[20px]"
+    "pt-[20px]",
   );
   profileContainer.innerHTML = "";
 
@@ -21,7 +21,7 @@ export function displayNavLoggedProfile(profileObject) {
     "w-[80px]",
     "h-[80px]",
     "object-cover",
-    "overflow-hidden"
+    "overflow-hidden",
   );
   const imgContent = profileObject?.avatar?.url
     ? profileObject.avatar.url

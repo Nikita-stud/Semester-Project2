@@ -42,7 +42,7 @@ Explore the website by visiting the link - [FarmersBid](https://semester-project
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/Nikita-stud/Portfolio](https://github.com/Nikita-stud/Semester-Project2
+git clone https://github.com/Nikita-stud/Semester-Project2
 ```
 
 2. Install the dependencies:
@@ -63,6 +63,8 @@ npm run start
 
 - `npm run dev` - Watches for changes and puts Tailwind in development mode
 - `npm run build` - Minifies Tailwind CSS after production
+- `npx eslint` - Displays any error in JS
+- `npx prettier . --write` - Automatically fix code according to .prettierrc rules
 
 ### Script Details
 
@@ -80,7 +82,3 @@ You can always contact me though email or my phone number.
 nikita151998@gmail.com
 <br>
 +4745588474
-
-```
-
-```

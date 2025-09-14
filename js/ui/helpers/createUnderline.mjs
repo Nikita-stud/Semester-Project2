@@ -5,7 +5,7 @@ export function createUnderline() {
     "h-[3px]",
     "mt-[20px]",
     "bg-green",
-    "rounded-md"
+    "rounded-md",
   );
   return underline;
 }

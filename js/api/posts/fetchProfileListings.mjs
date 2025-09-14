@@ -9,7 +9,7 @@ export async function fetchProfileListings(listings) {
       const fetchProfile = createAllowedRequest("GET");
       const response = await fetch(
         `${API_POST}/${listing.id}?&_bids=true&_seller=true`,
-        fetchProfile
+        fetchProfile,
       );
       const json = await response.json();
       jsonValue = json;

@@ -16,7 +16,7 @@ export function createPostsArticles(filtered) {
       "overflow-hidden",
       "shadow-[0_6px_10px_rgba(0,0,0,0.25)]",
       "sm:w-[281px]",
-      "sm:h-[402px]"
+      "sm:h-[402px]",
     );
     article.setAttribute("id", filtered[i].id);
 
@@ -29,7 +29,7 @@ export function createPostsArticles(filtered) {
       "object-content",
       "w-full",
       "h-full",
-      "overflow-hidden"
+      "overflow-hidden",
     );
     if (filtered[i].media?.[0]?.url) {
       img.classList.add("object-cover");
@@ -51,7 +51,7 @@ export function createPostsArticles(filtered) {
       "px-[10px]",
       "py-[15px]",
       "flex",
-      "flex-col"
+      "flex-col",
     );
 
     const insideTitlePriceDiv = document.createElement("div");
@@ -65,7 +65,7 @@ export function createPostsArticles(filtered) {
       "text-grey",
       "line-clamp-1",
       "overflow-hidden",
-      "text-ellipsis"
+      "text-ellipsis",
     );
     const capitalTitle = filtered[i].title.toUpperCase();
     title.innerText = capitalTitle;
@@ -79,7 +79,7 @@ export function createPostsArticles(filtered) {
       "text-ellipsis",
       "font-bold",
       "flex",
-      "items-center"
+      "items-center",
     );
     const highestBid =
       filtered[i].bids.length > 0
@@ -92,7 +92,7 @@ export function createPostsArticles(filtered) {
       "text-mobileText",
       "text-redTime",
       "pt-[5px]",
-      "font-bold"
+      "font-bold",
     );
     const apiDate = new Date(filtered[i].endsAt);
     const date = transformTime(apiDate);
@@ -105,7 +105,7 @@ export function createPostsArticles(filtered) {
       "w-full",
       "pb-[15px]",
       "grid",
-      "place-items-center"
+      "place-items-center",
     );
 
     const cta = document.createElement("button");
@@ -122,7 +122,7 @@ export function createPostsArticles(filtered) {
       "text-mobileButton",
       "rounded-full",
       "hover:border",
-      "hover:text-opacity-90"
+      "hover:text-opacity-90",
     );
 
     postsContainer.append(article);

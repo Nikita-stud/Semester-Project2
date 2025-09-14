@@ -71,7 +71,7 @@ export async function displayProfilePage(profile) {
         case "myListingContainer":
           {
             const activeListing = listingsBids.filter(
-              (listing) => new Date(listing.endsAt) > currentTime
+              (listing) => new Date(listing.endsAt) > currentTime,
             );
             createProfileListings(item, activeListing);
           }
@@ -79,7 +79,7 @@ export async function displayProfilePage(profile) {
         case "expiredListingContainer":
           {
             const expiredListings = listingsBids.filter(
-              (listing) => new Date(listing.endsAt) < currentTime
+              (listing) => new Date(listing.endsAt) < currentTime,
             );
             createProfileListings(item, expiredListings);
           }
@@ -88,7 +88,7 @@ export async function displayProfilePage(profile) {
         case "activeBidsContainer":
           {
             const activeBids = allBidsMade.filter(
-              (bid) => new Date(bid.listing.endsAt) > currentTime
+              (bid) => new Date(bid.listing.endsAt) > currentTime,
             );
             createProfileListings(item, activeBids, true);
           }
@@ -99,7 +99,7 @@ export async function displayProfilePage(profile) {
         case "expiredBidsContainer":
           {
             const expiredBids = allBidsMade.filter(
-              (bid) => new Date(bid.listing.endsAt) < currentTime
+              (bid) => new Date(bid.listing.endsAt) < currentTime,
             );
             const winningListingsId = winningBids.map((bid) => bid.id);
 

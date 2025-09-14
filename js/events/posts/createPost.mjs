@@ -13,7 +13,7 @@ export function createPost(post, profile) {
     "flex-col-reverse",
     "md:flex-row",
     "md:justify-start",
-    "md:gap-[20px]"
+    "md:gap-[20px]",
   );
 
   const upperTextContainer = document.createElement("div");
@@ -33,7 +33,7 @@ export function createPost(post, profile) {
     "xs:text-mobileSecondaryHeader",
     "mob:text-mobileMainHeader",
     "font-garamond",
-    "lg:text-desktopMainHeader"
+    "lg:text-desktopMainHeader",
   );
 
   const time = document.createElement("p");
@@ -42,7 +42,7 @@ export function createPost(post, profile) {
     "text-redTime",
     "pt-[5px]",
     "font-bold",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
   const apiDate = new Date(post.endsAt);
   const date = transformTime(apiDate);
@@ -67,7 +67,7 @@ export function createPost(post, profile) {
     "font-bold",
     "flex",
     "items-center",
-    "lg:text-desktopButton"
+    "lg:text-desktopButton",
   );
   const highestBid =
     post.bids.length > 0
@@ -84,7 +84,7 @@ export function createPost(post, profile) {
     "text-ellipsis",
     "flex",
     "items-center",
-    "lg:text-desktopButton"
+    "lg:text-desktopButton",
   );
   bids.innerHTML = `<i class="fa-solid fa-chevron-left text-mobileText"></i>${post.bids.length} bids<i class="fa-solid fa-chevron-right text-mobileText"></i>`;
 
@@ -97,7 +97,7 @@ export function createPost(post, profile) {
     "md:w-auto",
     "md:grid-cols-[300px_90px]",
     "md:grid-rows-[auto_auto_auto_auto]",
-    "xl:md:grid-cols-[677px_145px]"
+    "xl:md:grid-cols-[677px_145px]",
   );
 
   const mainImg = document.createElement("img");
@@ -117,7 +117,7 @@ export function createPost(post, profile) {
     "md:max-w-[667px]",
     "md:row-span-4",
     "md:col-span-1",
-    "xl:h-[667px]"
+    "xl:h-[667px]",
   );
   const mainImgContent = post.media[0]?.url
     ? post.media[0].url
@@ -141,7 +141,7 @@ export function createPost(post, profile) {
       "md:h-[80px]",
       "md:w-[80px]",
       "xl:h-[140px]",
-      "xl:w-[140px]"
+      "xl:w-[140px]",
     );
 
     const imgContent =
@@ -183,7 +183,7 @@ export function createPost(post, profile) {
     "bg-formWhite",
     "w-full",
     "h-full",
-    "lg:p-[20px]"
+    "lg:p-[20px]",
   );
   const sellerProfileContainer = document.createElement("div");
   sellerProfileContainer.classList.add(
@@ -192,7 +192,7 @@ export function createPost(post, profile) {
     "place-items-center",
     "mob:place-items-start",
     "mob:flex-row",
-    "gap-[10px]"
+    "gap-[10px]",
   );
 
   const sellerProfileTextContainer = document.createElement("div");
@@ -202,7 +202,7 @@ export function createPost(post, profile) {
     "place-items-center",
     "mob:place-items-start",
     "mt-[12px]",
-    "lg:mt-[20px]"
+    "lg:mt-[20px]",
   );
 
   const button = document.createElement("button");
@@ -230,7 +230,7 @@ export function createPost(post, profile) {
     "lg:right-[250px]",
     "xl:top-[400px]",
     "xl:right-[50px]",
-    "2xl:top-[350px]"
+    "2xl:top-[350px]",
   );
   const underline = createUnderline();
   underline.classList.add("hidden", "md:block");
@@ -260,7 +260,7 @@ export function createPost(post, profile) {
     "object-cover",
     "overflow-hidden",
     "lg:w-[120px]",
-    "lg:h-[120px]"
+    "lg:h-[120px]",
   );
   const profileDispImg = post.seller.avatar.url
     ? post.seller.avatar.url
@@ -277,7 +277,7 @@ export function createPost(post, profile) {
     "text-grey",
     "break-words",
     "break-all",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
   email.innerText = post.seller.email;
 
@@ -288,7 +288,7 @@ export function createPost(post, profile) {
     "font-nunito",
     "text-mobileText",
     "font-semibold",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
 
   let description = post.seller.bio;

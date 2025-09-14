@@ -40,7 +40,7 @@ function pathEvents() {
             const listingsObject = await fetchPosts();
             const listingDataObjects = listingsObject.data;
             const nonExpiredPosts = listingDataObjects.filter(
-              (post) => new Date(post.endsAt) > new Date()
+              (post) => new Date(post.endsAt) > new Date(),
             );
             createPosts(nonExpiredPosts);
             filterPosts(listingDataObjects);

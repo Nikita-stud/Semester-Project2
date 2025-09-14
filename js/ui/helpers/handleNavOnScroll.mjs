@@ -10,7 +10,7 @@ export function handleNavOnScroll() {
       "pb-[20px]",
       "ease-in",
       "border-b-[3px]",
-      "border-green"
+      "border-green",
     );
     headerUnderline.classList.add("hidden");
   } else {
@@ -20,7 +20,7 @@ export function handleNavOnScroll() {
       "pb-[20px]",
       "ease-in",
       "border-b-[3px]",
-      "border-green"
+      "border-green",
     );
     headerUnderline.classList.remove("hidden");
   }

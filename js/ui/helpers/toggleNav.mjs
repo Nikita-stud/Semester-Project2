@@ -41,7 +41,7 @@ export function toggleNav() {
       productsNavLink.classList.add(
         "font-bold",
         "underline",
-        "underline-offset-2"
+        "underline-offset-2",
       );
       break;
     case "/profile/index.html":
@@ -51,7 +51,7 @@ export function toggleNav() {
       profileNavLink.classList.add(
         "font-bold",
         "underline",
-        "underline-offset-2"
+        "underline-offset-2",
       );
       break;
     case "/about/index.html":
@@ -59,7 +59,7 @@ export function toggleNav() {
       aboutNavLink.classList.add(
         "font-bold",
         "underline",
-        "underline-offset-2"
+        "underline-offset-2",
       );
       break;
   }

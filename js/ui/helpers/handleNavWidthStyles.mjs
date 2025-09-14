@@ -21,7 +21,7 @@ export function handleNavWidthStyles() {
       "fixed",
       "w-[246px]",
       "h-screen",
-      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]",
     );
     hiddenNav.classList.add("relative", "z-100", "h-full", "mt-[13px]");
 
@@ -29,7 +29,7 @@ export function handleNavWidthStyles() {
       "pl-[20px]",
       "flex-col",
       "gap-[20px]",
-      "text-mobileButton"
+      "text-mobileButton",
     );
     headerNavUl.classList.add("text-desktopText");
 
@@ -56,7 +56,7 @@ export function handleNavWidthStyles() {
       "fixed",
       "w-[246px]",
       "h-screen",
-      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]",
     );
     hiddenNav.classList.remove("relative", "z-100", "h-full", "mt-[13px]");
 
@@ -64,7 +64,7 @@ export function handleNavWidthStyles() {
       "pl-[20px]",
       "flex-col",
       "gap-[20px]",
-      "text-mobileButton"
+      "text-mobileButton",
     );
     headerNavUl.classList.remove("text-desktopText");
 

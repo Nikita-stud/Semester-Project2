@@ -3,7 +3,7 @@ import { createPostsArticles } from "./createPostsArticles.mjs";
 export function createPosts(posts) {
   console.log("prior", posts);
   const postsLoadingContainer = document.getElementById(
-    "postsLoadingContainer"
+    "postsLoadingContainer",
   );
   if (postsLoadingContainer) {
     postsLoadingContainer.classList.add("hidden");
@@ -27,7 +27,7 @@ export function createPosts(posts) {
     "pt-[20px]",
     "pb-[90px]",
     "md:px-[50px]",
-    "md:gap-[50px]"
+    "md:gap-[50px]",
   );
   postsContainer.innerHTML = "";
 
@@ -53,7 +53,7 @@ export function createPosts(posts) {
       "text-mobileButton",
       "rounded-full",
       "hover:border",
-      "hover:text-opacity-90"
+      "hover:text-opacity-90",
     );
     loadMore.addEventListener("click", () => {
       currentLimit += plusTen;
@@ -85,7 +85,7 @@ export function createPosts(posts) {
       "overflow-hidden",
       "shadow-[0_6px_10px_rgba(0,0,0,0.5)]",
       "md:h-[281px]",
-      "md:text-desktopSecondaryHeader"
+      "md:text-desktopSecondaryHeader",
     );
     noPostsDiv.innerText = "No posts found";
 

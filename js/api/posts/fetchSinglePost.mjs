@@ -16,7 +16,7 @@ export async function fetchSinglePost() {
     const post = createAllowedRequest("GET");
     const fetched = await fetch(
       `${API_POST}/${postID}?&_bids=true&_seller=true`,
-      post
+      post,
     );
     const json = await fetched.json();
     jsonValue = json;

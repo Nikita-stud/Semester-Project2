@@ -14,7 +14,7 @@ export function displayBidAndHistory(post, profile) {
     "w-screen",
     "h-screen",
     "z-20",
-    "bg-dark"
+    "bg-dark",
   );
   overlayContainer.addEventListener("click", (e) => {
     if (e.target === overlayContainer) {
@@ -41,13 +41,13 @@ export function displayBidAndHistory(post, profile) {
     "max-h-[90vh]",
     "overflow-y-auto",
     "lg:max-w-[600px]",
-    "lg:min-w-[506px]"
+    "lg:min-w-[506px]",
   );
   const bidTitle = document.createElement("h3");
   bidTitle.classList.add(
     "text-mobileButton",
     "font-bold",
-    "lg:text-desktopButton"
+    "lg:text-desktopButton",
   );
   bidTitle.innerText = "Place bid";
 
@@ -61,7 +61,7 @@ export function displayBidAndHistory(post, profile) {
     "top-[18px]",
     "xs:right-[20px]",
     "text-desktopSecondaryHeader",
-    "text-grey"
+    "text-grey",
   );
   icon.addEventListener("click", () => {
     articleContainer.removeChild(overlayContainer);
@@ -73,7 +73,7 @@ export function displayBidAndHistory(post, profile) {
     "text-redTime",
     "pt-[5px]",
     "font-bold",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
   const apiDate = new Date(post.endsAt);
   const date = transformTime(apiDate);
@@ -85,7 +85,7 @@ export function displayBidAndHistory(post, profile) {
     "text-mobileText",
     "text-dark",
     "pt-[5px]",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
   creditsAvailable.innerHTML = `Available credits: <span class="font-bold underline underline-offset-1">CR ${profile.credits}</span>`;
 
@@ -102,7 +102,7 @@ export function displayBidAndHistory(post, profile) {
     "items-center",
     "gap-[20px]",
     "my-[20px]",
-    "lg:flex-row"
+    "lg:flex-row",
   );
 
   const bidAmount = ["100", "500", "1000"];
@@ -119,7 +119,7 @@ export function displayBidAndHistory(post, profile) {
       "xs:w-[208px]",
       "md:text-desktopButton",
       "hover:border",
-      "hover:text-opacity-90"
+      "hover:text-opacity-90",
     );
     button.innerText = amount;
     button.setAttribute("id", `${amount}`);
@@ -140,7 +140,7 @@ export function displayBidAndHistory(post, profile) {
     "flex-col",
     "items-center",
     "justify-center",
-    "lg:justify-start"
+    "lg:justify-start",
   );
 
   const howMuchToBid = document.createElement("p");
@@ -148,7 +148,7 @@ export function displayBidAndHistory(post, profile) {
     "text-mobileText",
     "text-grey",
     "pt-[5px]",
-    "lg:text-desktopText"
+    "lg:text-desktopText",
   );
 
   const highestBid =
@@ -184,7 +184,7 @@ export function displayBidAndHistory(post, profile) {
   viewBiddingContainer.classList.add(
     "text-mobileText",
     "text-dark",
-    "pt-[20px]"
+    "pt-[20px]",
   );
 
   viewBiddingContainer.innerHTML = `<p id="closeBidDiv" class="flex justify-end gap-[20px]">View bidding history
@@ -252,7 +252,7 @@ export function displayBidAndHistory(post, profile) {
             "flex",
             "gap-[20px]",
             "align-middle",
-            "lg:justify-center"
+            "lg:justify-center",
           );
 
           const img = document.createElement("img");
@@ -263,7 +263,7 @@ export function displayBidAndHistory(post, profile) {
             "object-cover",
             "overflow-hidden",
             "xs:w-[80px]",
-            "xs:h-[80px]"
+            "xs:h-[80px]",
           );
           const imgContent = bid.bidder.avatar.url
             ? bid.bidder.avatar.url
@@ -281,7 +281,7 @@ export function displayBidAndHistory(post, profile) {
             "flex",
             "flex-col",
             "justify-center",
-            "items-center"
+            "items-center",
           );
 
           const name = document.createElement("p");
@@ -291,7 +291,7 @@ export function displayBidAndHistory(post, profile) {
             "text-ellipsis",
             "max-w-[100px]",
             "lg:text-desktopText",
-            "lg:max-w-[150px]"
+            "lg:max-w-[150px]",
           );
           name.innerText = bid.bidder.name;
 
@@ -300,7 +300,7 @@ export function displayBidAndHistory(post, profile) {
             "text-grey",
             "truncate",
             "lg:text-desktopText",
-            "lg:max-w-[150px]"
+            "lg:max-w-[150px]",
           );
           amount.innerText = `Bid CR ${bid.amount}`;
 
