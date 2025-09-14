@@ -3,13 +3,21 @@ import { checkIfLoggedIn } from "../../ui/auth/checkIfLoggedIn.mjs";
 import { displayBidAndHistory } from "../../ui/auth/displayBidAndHistory.mjs";
 import { cleanApiTitle } from "../../ui/helpers/cleanApiTitle.mjs";
 import { transformTime } from "../../ui/helpers/transformTime.mjs";
+import { createUnderline } from "../../ui/helpers/createUnderline.mjs";
 
 export function createPost(post, profile) {
-  console.log("this is Post", post);
-
   const articleContainer = document.getElementById("articleContainer");
-  const headerAndIconContainer = document.createElement("div");
-  headerAndIconContainer.classList.add("flex", "justify-between");
+  const upperDesktopContainer = document.createElement("div");
+  upperDesktopContainer.classList.add(
+    "flex",
+    "flex-col-reverse",
+    "md:flex-row",
+    "md:justify-start",
+    "md:gap-[20px]"
+  );
+
+  const upperTextContainer = document.createElement("div");
+  upperTextContainer.classList.add("flex", "flex-col", "md:flex-1");
 
   const h1 = document.createElement("h1");
   const cleanTitle = cleanApiTitle(post.title);
@@ -24,7 +32,8 @@ export function createPost(post, profile) {
     "text-ellipsis",
     "xs:text-mobileSecondaryHeader",
     "mob:text-mobileMainHeader",
-    "font-garamond"
+    "font-garamond",
+    "lg:text-desktopMainHeader"
   );
 
   const time = document.createElement("p");
@@ -32,7 +41,8 @@ export function createPost(post, profile) {
     "text-mobileText",
     "text-redTime",
     "pt-[5px]",
-    "font-bold"
+    "font-bold",
+    "lg:text-desktopText"
   );
   const apiDate = new Date(post.endsAt);
   const date = transformTime(apiDate);
@@ -56,7 +66,8 @@ export function createPost(post, profile) {
     "text-ellipsis",
     "font-bold",
     "flex",
-    "items-center"
+    "items-center",
+    "lg:text-desktopButton"
   );
   const highestBid =
     post.bids.length > 0
@@ -72,12 +83,22 @@ export function createPost(post, profile) {
     "overflow-hidden",
     "text-ellipsis",
     "flex",
-    "items-center"
+    "items-center",
+    "lg:text-desktopButton"
   );
   bids.innerHTML = `<i class="fa-solid fa-chevron-left text-mobileText"></i>${post.bids.length} bids<i class="fa-solid fa-chevron-right text-mobileText"></i>`;
 
   const imgContainer = document.createElement("div");
-  imgContainer.classList.add("grid", "grid-cols-2", "gap-[20px]", "w-full");
+  imgContainer.classList.add(
+    "grid",
+    "grid-cols-2",
+    "gap-[20px]",
+    "w-full",
+    "md:w-auto",
+    "md:grid-cols-[300px_90px]",
+    "md:grid-rows-[auto_auto_auto_auto]",
+    "xl:md:grid-cols-[677px_145px]"
+  );
 
   const mainImg = document.createElement("img");
   mainImg.classList.add(
@@ -85,11 +106,18 @@ export function createPost(post, profile) {
     "rounded-md",
     "w-full",
     "h-[276px]",
-    "object-contain",
     "object-center",
-    "sm:object-cover",
+    "object-cover",
     "overflow-hidden",
-    "col-span-2"
+    "col-span-2",
+    "md:border",
+    "md:mt-[0px]",
+    "md:rounded-[16px]",
+    "md:h-full",
+    "md:max-w-[667px]",
+    "md:row-span-4",
+    "md:col-span-1",
+    "xl:h-[667px]"
   );
   const mainImgContent = post.media[0]?.url
     ? post.media[0].url
@@ -98,21 +126,28 @@ export function createPost(post, profile) {
   mainImg.alt = post.media[0]?.alt || "Post image which is not described";
   imgContainer.append(mainImg);
 
-  for (let i = 1; i < post.media.length; i++) {
+  for (let i = 1; i < 5; i++) {
     const img = document.createElement("img");
 
     img.classList.add(
       "rounded-md",
       "w-full",
       "h-[132px]",
+      "border",
       "object-cover",
-      "overflow-hidden"
+      "object-center",
+      "overflow-hidden",
+      "md:rounded-[16px]",
+      "md:h-[80px]",
+      "md:w-[80px]",
+      "xl:h-[140px]",
+      "xl:w-[140px]"
     );
 
     const imgContent =
       post.media[i] && post.media[i]?.url
         ? post.media[i].url
-        : "../../images/no-img.png";
+        : "../../images/img-on-error.png";
     img.src = imgContent;
     img.alt = post.media[i]?.alt || "Post image which is not described";
 
@@ -131,8 +166,8 @@ export function createPost(post, profile) {
   if (post.tags.length > 0) {
     tags = post.tags;
   }
-  descriptionContainer.innerHTML = `<p class="font-bold text-mobileButton">Description: <span class="font-light text-mobileText">${descriptionOfPost}</span></p>
-                                    <p class="font-bold text-mobileButton">Tags: <span class="font-light text-mobileText break-words">${tags}</span></p>`;
+  descriptionContainer.innerHTML = `<p class="font-bold text-mobileButton lg:text-desktopSecondaryHeader">Description: <span class="font-light text-mobileText lg:text-desktopText">${descriptionOfPost}</span></p>
+                                    <p class="font-bold text-mobileButton lg:text-desktopSecondaryHeader">Tags: <span class="font-light text-mobileText break-words lg:text-desktopText">${tags}</span></p>`;
   descriptionContainer.classList.add("mt-[20px]", "text-dark", "font-nunito");
 
   const sellerContainer = document.createElement("div");
@@ -147,7 +182,8 @@ export function createPost(post, profile) {
     "border-grey",
     "bg-formWhite",
     "w-full",
-    "h-full"
+    "h-full",
+    "lg:p-[20px]"
   );
   const sellerProfileContainer = document.createElement("div");
   sellerProfileContainer.classList.add(
@@ -165,7 +201,8 @@ export function createPost(post, profile) {
     "grid-cols",
     "place-items-center",
     "mob:place-items-start",
-    "mt-[12px]"
+    "mt-[12px]",
+    "lg:mt-[20px]"
   );
 
   const button = document.createElement("button");
@@ -174,7 +211,7 @@ export function createPost(post, profile) {
     "h-[60px]",
     "w-[180px]",
     "xs:w-[240px]",
-    "mob:w-[280px]",
+    "mob:w-[260px]",
     "m-auto",
     "my-[20px]",
     "rounded-full",
@@ -183,8 +220,21 @@ export function createPost(post, profile) {
     "text-mobileButton",
     "font-bold",
     "grid",
-    "place-content-center"
+    "place-content-center",
+    "md:w-[240px]",
+    "md:absolute",
+    "md:top-[400px]",
+    "lg:top-[400px]",
+    "md:right-[50px]",
+    "lg:text-desktopButton",
+    "lg:right-[250px]",
+    "xl:top-[400px]",
+    "xl:right-[50px]",
+    "2xl:top-[350px]"
   );
+  const underline = createUnderline();
+  underline.classList.add("hidden", "md:block");
+
   if (checkIfLoggedIn()) {
     const myProfileName = loadLocalStorage("UserName");
     if (post.seller.name === myProfileName) {
@@ -208,7 +258,9 @@ export function createPost(post, profile) {
     "w-[80px]",
     "h-[80px]",
     "object-cover",
-    "overflow-hidden"
+    "overflow-hidden",
+    "lg:w-[120px]",
+    "lg:h-[120px]"
   );
   const profileDispImg = post.seller.avatar.url
     ? post.seller.avatar.url
@@ -217,10 +269,16 @@ export function createPost(post, profile) {
   profileImg.alt = post.seller.avatar.alt || "Profile image not described";
 
   const name = document.createElement("p");
+  name.classList.add("lg:text-desktopButton");
   name.innerText = post.seller.name;
 
   const email = document.createElement("p");
-  email.classList.add("text-grey", "break-words", "break-all");
+  email.classList.add(
+    "text-grey",
+    "break-words",
+    "break-all",
+    "lg:text-desktopText"
+  );
   email.innerText = post.seller.email;
 
   const myDescription = document.createElement("p");
@@ -229,14 +287,15 @@ export function createPost(post, profile) {
     "text-dark",
     "font-nunito",
     "text-mobileText",
-    "font-semibold"
+    "font-semibold",
+    "lg:text-desktopText"
   );
 
   let description = post.seller.bio;
   if (!description) {
     description = "FarmersBid";
   }
-  myDescription.innerHTML = `${post.seller.name} writes: <span class="font-normal">${description}</span>`;
+  myDescription.innerHTML = `${post.seller.name} writes: <span class="font-normal lg:text-desktopText">${description}</span>`;
 
   sellerContainer.append(sellerProfileContainer);
   sellerProfileContainer.append(profileImg);
@@ -245,13 +304,15 @@ export function createPost(post, profile) {
   sellerProfileTextContainer.append(email);
   sellerContainer.append(myDescription);
 
-  articleContainer.append(headerAndIconContainer);
-  headerAndIconContainer.append(h1);
-  articleContainer.append(time);
-  articleContainer.append(priceAndBidsContainer);
+  articleContainer.append(upperDesktopContainer);
+  upperDesktopContainer.append(imgContainer);
+  upperDesktopContainer.append(upperTextContainer);
+  upperTextContainer.append(h1);
+  upperTextContainer.append(time);
+  upperTextContainer.append(priceAndBidsContainer);
   priceAndBidsContainer.append(price);
   priceAndBidsContainer.append(bids);
-  articleContainer.append(imgContainer);
+  upperTextContainer.append(underline);
   articleContainer.append(descriptionContainer);
   articleContainer.append(button);
   articleContainer.append(sellerContainer);
