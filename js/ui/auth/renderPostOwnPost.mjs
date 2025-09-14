@@ -95,7 +95,7 @@ export function renderPostOwnPost() {
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
     landingContainer.classList.remove(
-      "before:bg-black/10",
+      "before:bg-black/30",
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
@@ -113,7 +113,7 @@ export function renderPostOwnPost() {
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
     landingContainer.classList.add(
-      "before:bg-black/10",
+      "before:bg-black/30",
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
