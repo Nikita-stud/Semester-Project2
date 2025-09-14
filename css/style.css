@@ -3326,6 +3326,10 @@ video {
     vertical-align: bottom;
   }
 
+  .md\:font-garamond {
+    font-family: EB Garamond;
+  }
+
   .md\:text-desktopButton {
     font-size: 24px;
   }
