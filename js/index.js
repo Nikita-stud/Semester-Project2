@@ -36,26 +36,22 @@ function pathEvents() {
         setupCommonPageEvents();
 
         const fetchListings = async () => {
-          try {
-            const listingsObject = await fetchPosts();
-            const listingDataObjects = listingsObject.data;
-            const nonExpiredPosts = listingDataObjects.filter(
-              (post) => new Date(post.endsAt) > new Date(),
-            );
-            createPosts(nonExpiredPosts);
-            filterPosts(listingDataObjects);
+          const listingsObject = await fetchPosts();
+          const listingDataObjects = listingsObject.data;
+          const nonExpiredPosts = listingDataObjects.filter(
+            (post) => new Date(post.endsAt) > new Date()
+          );
+          createPosts(nonExpiredPosts);
+          filterPosts(listingDataObjects);
 
-            if (checkIfLoggedIn()) {
-              formHandler("#postOwnForm", pathName, "#postOwnCTA");
-              const profileJSON = await fetchProfile();
-              displayNavLoggedProfile(profileJSON.data);
-              renderPostOwnPost();
-              setupCommonPageEvents("wait");
-            } else {
-              checkToPostOwnList("postOwnBidButton", "post");
-            }
-          } catch (error) {
-            console.log("error in index", error);
+          if (checkIfLoggedIn()) {
+            formHandler("#postOwnForm", pathName, "#postOwnCTA");
+            const profileJSON = await fetchProfile();
+            displayNavLoggedProfile(profileJSON.data);
+            renderPostOwnPost();
+            setupCommonPageEvents("wait");
+          } else {
+            checkToPostOwnList("postOwnBidButton", "post");
           }
         };
         fetchListings();
@@ -70,24 +66,17 @@ function pathEvents() {
           if (checkIfLoggedIn()) {
             try {
               const profileJSON = await fetchProfile();
-              console.log("Profile success1", profileJSON);
 
               profileData = profileJSON.data;
               displayNavLoggedProfile(profileJSON.data);
               setupCommonPageEvents("wait");
-              console.log("Profile success2", profileData);
             } catch (error) {
               console.log(error);
             }
           }
-          try {
-            const json = await fetchSinglePost();
-            console.log("Post success", json.data);
 
-            createPost(json.data, profileData);
-          } catch (error) {
-            console.log("Error loading profile", error);
-          }
+          const json = await fetchSinglePost();
+          createPost(json.data, profileData);
         };
         fetchSingle();
       }
@@ -98,17 +87,13 @@ function pathEvents() {
         setupCommonPageEvents();
 
         const fetchProfileData = async () => {
-          try {
-            if (checkIfLoggedIn()) {
-              const profileJSON = await fetchProfile();
-              displayNavLoggedProfile(profileJSON.data);
-              displayProfilePage(profileJSON.data);
-              setupCommonPageEvents("wait");
-            } else {
-              window.location.replace(`/auth/login.html`);
-            }
-          } catch (error) {
-            console.log(error);
+          if (checkIfLoggedIn()) {
+            const profileJSON = await fetchProfile();
+            displayNavLoggedProfile(profileJSON.data);
+            displayProfilePage(profileJSON.data);
+            setupCommonPageEvents("wait");
+          } else {
+            window.location.replace(`/auth/login.html`);
           }
         };
         fetchProfileData();
@@ -120,19 +105,15 @@ function pathEvents() {
         setupCommonPageEvents();
 
         const getProfileData = async () => {
-          try {
-            if (checkIfLoggedIn()) {
-              const profileJSON = await fetchProfile();
-              displayNavLoggedProfile(profileJSON.data);
-              formHandler("#editProfileForm", pathName, "#saveProfile");
+          if (checkIfLoggedIn()) {
+            const profileJSON = await fetchProfile();
+            displayNavLoggedProfile(profileJSON.data);
+            formHandler("#editProfileForm", pathName, "#saveProfile");
 
-              displayEditProfilePage(profileJSON.data);
-              setupCommonPageEvents("wait");
-            } else {
-              window.location.replace(`/auth/login.html`);
-            }
-          } catch (error) {
-            console.log(error);
+            displayEditProfilePage(profileJSON.data);
+            setupCommonPageEvents("wait");
+          } else {
+            window.location.replace(`/auth/login.html`);
           }
         };
         getProfileData();
@@ -143,13 +124,9 @@ function pathEvents() {
       setupCommonPageEvents();
 
       const getAboutProfileData = async () => {
-        try {
-          const profileJSON = await fetchProfile();
-          displayNavLoggedProfile(profileJSON.data);
-          setupCommonPageEvents("wait");
-        } catch (error) {
-          console.log(error);
-        }
+        const profileJSON = await fetchProfile();
+        displayNavLoggedProfile(profileJSON.data);
+        setupCommonPageEvents("wait");
       };
       getAboutProfileData();
       break;

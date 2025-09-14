@@ -15,7 +15,7 @@ export function createProfileListings(container, profileListings, isBid) {
     "h-full",
     "flex",
     "flex-col",
-    "gap-[20px]",
+    "gap-[20px]"
   );
 
   if (profileListings.length < 1) {
@@ -32,12 +32,11 @@ export function createProfileListings(container, profileListings, isBid) {
       "font-bold",
       "rounded-[20px]",
       "bg-formWhite",
-      "shadow-[0_1px_6px_rgba(0,0,0,0.25)]",
+      "shadow-[0_1px_6px_rgba(0,0,0,0.25)]"
     );
     noPostsDiv.innerText = "No Posts here";
     bidsContainer.append(noPostsDiv);
   }
-  console.log("HEre are all lists ", profileListings);
 
   profileListings.forEach((bid) => {
     let id;
@@ -60,7 +59,6 @@ export function createProfileListings(container, profileListings, isBid) {
       media = bid?.media[0];
     }
 
-    console.log("HEre I am ", bid.listing);
     const div = document.createElement("div");
     div.classList.add(
       "pointer-cursor",
@@ -71,7 +69,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "flex-col",
       "rounded-[20px]",
       "bg-formWhite",
-      "shadow-[0_1px_6px_rgba(0,0,0,0.25)]",
+      "shadow-[0_1px_6px_rgba(0,0,0,0.25)]"
     );
 
     div.addEventListener("click", () => {
@@ -87,7 +85,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "text-dark",
       "line-clamp-1",
       "overflow-hidden",
-      "text-ellipsis",
+      "text-ellipsis"
     );
 
     const time = document.createElement("p");
@@ -95,7 +93,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "text-mobileText",
       "text-redTime",
       "pt-[5px]",
-      "font-bold",
+      "font-bold"
     );
     const apiDate = new Date(endsAt);
     const date = transformTime(apiDate);
@@ -116,7 +114,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "text-ellipsis",
       "font-bold",
       "flex",
-      "items-center",
+      "items-center"
     );
 
     let highestBid;
@@ -147,7 +145,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "h-[150px]",
       "my-[15px]",
       "m-auto",
-      "overflow-hidden",
+      "overflow-hidden"
     );
     if (media?.url) {
       img.classList.add("object-cover");
@@ -175,7 +173,7 @@ export function createProfileListings(container, profileListings, isBid) {
       "bg-yellow",
       "text-mobileButton",
       "font-nunito",
-      "text-darkerYellow",
+      "text-darkerYellow"
     );
 
     bidsContainer.append(div);
