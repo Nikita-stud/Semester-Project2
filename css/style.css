@@ -2107,6 +2107,10 @@ video {
 }
 
 @media (min-width: 470px) {
+  .mob\:h-\[402px\] {
+    height: 402px;
+  }
+
   .mob\:w-\[280px\] {
     width: 280px;
   }
@@ -2117,6 +2121,10 @@ video {
 
   .mob\:w-\[240px\] {
     width: 240px;
+  }
+
+  .mob\:w-\[281px\] {
+    width: 281px;
   }
 
   .mob\:flex-row {
@@ -2145,12 +2153,20 @@ video {
     display: flex;
   }
 
+  .sm\:h-\[402px\] {
+    height: 402px;
+  }
+
   .sm\:w-\[280px\] {
     width: 280px;
   }
 
   .sm\:w-\[300px\] {
     width: 300px;
+  }
+
+  .sm\:w-\[281px\] {
+    width: 281px;
   }
 
   .sm\:grid-cols-2 {

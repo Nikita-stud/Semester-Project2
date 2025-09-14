@@ -7,14 +7,16 @@ export function createPostsArticles(filtered) {
     const article = document.createElement("article");
     article.classList.add(
       "relative",
-      "w-[281px]",
+      "w-full",
       "h-[402px]",
       "flex",
       "flex-col",
       "border",
       "rounded-[20px]",
       "overflow-hidden",
-      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]"
+      "shadow-[0_6px_10px_rgba(0,0,0,0.25)]",
+      "sm:w-[281px]",
+      "sm:h-[402px]"
     );
     article.setAttribute("id", filtered[i].id);
 
