@@ -1,28 +1,48 @@
-# Semester-Project2 
+# Semester-Project2 - Auction Website
 
-My own portfolio website is for you to look through my progress and maybe eventually decide to get me onboard of whatever cool idea or project you have going on. The website focuses on the academic progress of my acquired skills.
+This is a semester project, which is part of my front-end development studies at Noroff. The task was to create an auction website with the possibility to create an account and bid with credits provided during the registration. Using all knowledge from last 3 semsters and creating a working prototype. 
+
 
 ![Image of the upper part of the website](./images/readMe-img.jpg)
 
-Explore the website by visiting the link - [My Portfolio](https://nikitas-portfolio.netlify.app/)
+Explore the website by visiting the link - [FarmersBid](https://semester-project-two.netlify.app/)
 
 ## Key Features
 
-- Home Page displaying every aspect needed, being the only page available.
-- Page build using JS, HTML and CSS with no all code being my own
+- User can register with a stud.noroff.no email account 
+- User can login with registered account and password
+- User can view the listings without having to login
+- User can search through listings
+- Logged in user can view profile
+- Logged in user can edit profile data
+- Logged in user can view their credit amount
+- Logged in user can place a bid on another users listing
+- Logged in user can view their expired, won, active bid and their listings
+- Logged in user can loggout
 
 ## Built With
 
 - Visual Studio Code
+  
+## Tech Stack
+- HTML5 (HTML)
+- Tailwind (CSS)
+- JavaScript (Language)
+- Netlify (Hosting)
+- Hotjar (User tracking)
 
 ## Getting Started
+
+### Prerequisites
+
+- npm
 
 ### Installing:
 
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/Nikita-stud/Portfolio
+git clone https://github.com/Nikita-stud/Portfolio](https://github.com/Nikita-stud/Semester-Project2
 ```
 
 2. Install the dependencies:
@@ -39,11 +59,12 @@ To run the app, run the following commands:
 npm run start
 ```
 
-## Future Improvements
+## Available Scripts
 
-- Changing the images and how the react in the Selected Projects part in the middle of the page
-- Make the website respond better on mobile phones
-- Change the margins and sizes of some of the areas
+- `npm run dev` - Run Tailwind when building
+- `npm run build` - Run when finished with Tailwind
+- `npm run test` - Run tests
+
 
 ## Contact
 
@@ -52,7 +73,3 @@ You can always contact me though email or my phone number.
 nikita151998@gmail.com
 <br>
 +4745588474
-
-### Acknowledgments
-
-I would like to thank my mentor Connor Obrien for giving me ideas on how to make the frame and images in the frame move together without using javascript.
