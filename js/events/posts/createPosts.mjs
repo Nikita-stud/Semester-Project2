@@ -1,6 +1,7 @@
 import { createPostsArticles } from "./createPostsArticles.mjs";
 
 export function createPosts(posts) {
+  console.log("prior", posts);
   const postsLoadingContainer = document.getElementById(
     "postsLoadingContainer"
   );

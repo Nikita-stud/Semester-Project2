@@ -71,7 +71,7 @@
           <nav>
             <ul
               id="headerNavUl"
-              class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey"
+              class="pl-[20px] flex flex-col gap-[20px] text-mobileButton text-grey lg:text-desktopButton"
             >
               <li id="productsNavLink">
                 <a href="/" class="font-nunito"
@@ -333,30 +333,6 @@
           so be fast and register already now to never miss a bid. All high
           quality food in one place for you to enjoy.
         </p>
-        <div class="w-full h-[3px] bg-green rounded-md"></div>
-      </section>
-
-      <section class="px-[20px] md:px-[50px]">
-        <h4
-          class="py-[20px] text-mobileSecondaryHeader font-bold text-dark md:text-desktopSecondaryHeader"
-        >
-          Hottest products today
-        </h4>
-        <div
-          id="hottestLoadingContainer"
-          class="text-mobileButton overflow-hidden relative my-[20px] h-[200px] border-2 rounded-[20px] bg-formWhite grid place-content-center break-words break-all items-center mob:text-mobileSecondaryHeader lg:text-desktopSecondaryHeader before:absolute before:inset-0 before:m-[-2px] before:rounded-[-22px] before:bg-gradient-to-r before:from-[#FFFFFF] before:via-[#FFFFFF] before:to-[#757575] before:opacity-10 before:animate-[shimmer_10s_infinite] before:bg-[length:200%_100%]"
-        >
-          <p
-            class="loader bg-gradient-to-r from-[#757575] via-[#757575] to-[#101802] bg-clip-text text-transparent animate-[shimmer_3s_infinite] bg-[length:200%_100%]"
-          >
-            Posts are loading...
-          </p>
-        </div>
-        <div
-          class="hidden p-[50px] mx-[20px] my-[30px] bg-formWhite border text-redTime border-redTime md:text-mobileButton lg:text-desktopButton"
-        >
-          <p id="errorFetchingHottestPosts" class="flex justify-center"></p>
-        </div>
       </section>
     </main>
 
