@@ -94,7 +94,12 @@ export function renderPostOwnPost() {
   postButton.addEventListener("click", () => {
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
-    landingContainer.classList.remove("bg-mobileSheep", "w-full", "h-[477px]");
+    landingContainer.classList.remove(
+      "bg-mobileSheep",
+      "md:bg-desktopSheep",
+      "w-full",
+      "h-[477px]"
+    );
     landingContainer.classList.add("mx-[20px]", "bg-green", "rounded-[20px]");
   });
   cancelOwnCTA.addEventListener("click", () => {
@@ -106,7 +111,12 @@ export function renderPostOwnPost() {
     addImgCta.style.display = "block";
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
-    landingContainer.classList.add("bg-mobileSheep", "w-full", "h-[477px]");
+    landingContainer.classList.add(
+      "bg-mobileSheep",
+      "md:bg-desktopSheep",
+      "w-full",
+      "h-[477px]"
+    );
     landingContainer.classList.remove(
       "mx-[20px]",
       "bg-green",

@@ -136,7 +136,7 @@
 
         <div class="hidden" id="postOwnPostContainer">
           <h1
-            class="text-mobileMainHeader font-garamond font-bold text-white p-[20px]"
+            class="text-mobileMainHeader font-garamond font-bold text-white p-[20px] lg:text-desktopMainHeader"
           >
             Fill in the basic information about your item
           </h1>
@@ -145,14 +145,14 @@
           >
             <p id="errorPosting" class="flex justify-center"></p>
           </div>
-          <div class="mt-[20px]">
+          <div class="mt-[20px] lg:px-[150px] xl:px-[300px]">
             <form id="postOwnForm">
               <fieldset id="fieldsetPost" class="flex flex-col gap-[20px]">
                 <div id="postOwnInputContainer">
                   <div class="flex flex-col font-nunito px-[20px] mt-[5px]">
                     <label
                       for="product"
-                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white"
+                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white lg:text-desktopText"
                     >
                       Product name
                       <i
@@ -167,14 +167,17 @@
                       maxlength="10"
                       class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"
                     />
-                    <p id="textCount" class="text-mobileText text-yellow">
+                    <p
+                      id="textCount"
+                      class="text-mobileText text-yellow lg:text-desktopText"
+                    >
                       0/10
                     </p>
                   </div>
                   <div class="flex flex-col font-nunito px-[20px] mt-[5px]">
                     <label
                       for="description"
-                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white"
+                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white lg:text-desktopText"
                     >
                       Description
                     </label>
@@ -188,7 +191,7 @@
                     />
                     <p
                       id="descriptionCount"
-                      class="text-mobileText text-yellow"
+                      class="text-mobileText text-yellow lg:text-desktopText"
                     >
                       0/200
                     </p>
@@ -196,7 +199,7 @@
                   <div class="flex flex-col font-nunito px-[20px] mt-[5px]">
                     <label
                       for="time"
-                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white"
+                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white lg:text-desktopText"
                     >
                       Time allowed to bid
                       <i
@@ -213,7 +216,7 @@
                   <div class="flex flex-col font-nunito px-[20px] mt-[20px]">
                     <label
                       for="image"
-                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white"
+                      class="-ml-[8px] pb-[5px] font-bold font-nunito px-2 xs:text-white lg:text-desktopText"
                     >
                       Image
                     </label>
@@ -225,12 +228,15 @@
                       class="pl-[20px] h-[47px] rounded-full font-nunito focus:outline-none focus:border-none md:text-desktopText"
                     />
                     <div class="flex justify-between">
-                      <p id="imageCount" class="text-mobileText text-yellow">
+                      <p
+                        id="imageCount"
+                        class="text-mobileText text-yellow lg:text-desktopText"
+                      >
                         Up to 5
                       </p>
                       <p
                         id="addImgCta"
-                        class="text-mobileText text-yellow mt-[5px] underline cursor-pointer underline-offset-[3px]"
+                        class="text-mobileText text-yellow mt-[5px] underline cursor-pointer underline-offset-[3px] lg:text-desktopText"
                       >
                         Add image URL <i class="fa-solid fa-plus"></i>
                       </p>
@@ -248,7 +254,7 @@
                   <button
                     type="button"
                     id="cancelOwnCTA"
-                    class="font-nunito my-[20px] w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:text-desktopButton hover:border hover:text-opacity-90"
+                    class="font-nunito my-[20px] w-[240px] h-[60px] font-bold rounded-full text-darkerYellow bg-yellow text-mobileButton xs:w-[280px] md:mt-4 md:w-[530px] md:h-[74px] md:mb-[50px] md:text-desktopButton hover:border hover:text-opacity-90"
                   >
                     Cancel
                   </button>
