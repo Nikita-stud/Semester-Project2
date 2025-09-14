@@ -20,16 +20,18 @@ export function createPosts(posts) {
     "sm:grid-cols-2",
     "lg:grid-cols-3",
     "xl:grid-cols-4",
+    "2xl:grid-cols-5",
     "gap-[20px]",
     "px-[20px]",
     "pt-[20px]",
     "pb-[90px]",
-    "sm:px-[50px]"
+    "md:px-[50px]",
+    "md:gap-[50px]"
   );
   postsContainer.innerHTML = "";
 
-  let currentLimit = 10;
-  let plusTen = 10;
+  let currentLimit = 12;
+  let plusTen = 12;
   createPostsArticles(posts.slice(0, currentLimit));
 
   if (posts.length > currentLimit) {
