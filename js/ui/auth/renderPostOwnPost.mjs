@@ -95,6 +95,7 @@ export function renderPostOwnPost() {
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
     landingContainer.classList.remove(
+      "before:bg-black/10",
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
@@ -112,6 +113,7 @@ export function renderPostOwnPost() {
     mainLandingContainer.classList.toggle("hidden");
     postOwnPostContainer.classList.toggle("hidden");
     landingContainer.classList.add(
+      "before:bg-black/10",
       "bg-mobileSheep",
       "md:bg-desktopSheep",
       "w-full",
@@ -122,5 +124,7 @@ export function renderPostOwnPost() {
       "bg-green",
       "rounded-[20px]"
     );
+    const renderPostError = document.getElementById("renderPostError");
+    renderPostError.classList.add("hidden");
   });
 }
