@@ -30,7 +30,7 @@ export function formHandler(formID, pathName, buttonID) {
         cta.innerText = "Placing bid...";
         sendBidToServer(entries);
         break;
-      case pathName === "/profile/edit/index.html":
+      case pathName === "/profile/edit/":
         {
           cta.innerText = "Saving...";
           const isValid = await displayErrorOnEditProfile(entries);
